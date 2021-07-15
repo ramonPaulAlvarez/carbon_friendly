@@ -19,3 +19,6 @@ media
 
 # OSX
 .DS_Store
+
+# Misc
+.make_env.sh
