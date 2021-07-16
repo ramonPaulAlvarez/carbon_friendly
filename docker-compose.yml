@@ -12,7 +12,7 @@ services:
     django:
         build: .
         command: sh -c "python carbon_friendly_api/manage.py collectstatic &&
-                        gunicorn carbon_friendly_api.wsgi:application --bind 0.0.0.0:${PORT} --chdir carbon_friendly_api"
+                        gunicorn carbon_friendly_api.wsgi:application --bind 0.0.0.0:8000 --chdir carbon_friendly_api"
         volumes:
             - .:/carbon_friendly_api:rw
             - static_volume:/app/carbon_friendly_api/static
@@ -20,7 +20,7 @@ services:
             - env.list
         image: django
         expose:
-            - ${PORT}
+            - 8000
         restart: "on-failure"
 volumes:
   static_volume:
