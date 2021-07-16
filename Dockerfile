@@ -14,7 +14,7 @@ ENV LANG C.UTF-8
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Project Environment Variables
-ENV PORT=8888
+ENV PORT=8000
 
 # Install Docker Requirements
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -31,5 +31,4 @@ rm -fr /var/lib/opt/lists/*
 RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
 
-EXPOSE 8888
-CMD gunicorn survey.wsgi:application --bind 0.0.0.0:$PORT
+EXPOSE $PORT

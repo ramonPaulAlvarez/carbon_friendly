@@ -1,5 +1,5 @@
 """
-WSGI config for carbon_friendly_api project.
+WSGI config for Carbon Friendly API.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

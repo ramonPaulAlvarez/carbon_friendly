@@ -20,13 +20,18 @@ def contact(request):
     message = request.POST.get('message', None)
 
     if email and subject and message:
-        send_mail(
-            f'Carbon Friendly: {subject}',
-            message,
-            email,
-            [email for _, email in settings.ADMINS],
-            fail_silently=not(settings.DEBUG),
-        )
-        return HttpResponse(json.dumps({"success": "Message sent!"}), content_type="application/json")
+        # Send E-Mail
+        if settings.EMAIL_HOST:
+            send_mail(
+                f'Carbon Friendly: {subject}',
+                message,
+                email,
+                [email for _, email in settings.ADMINS],
+                fail_silently=not(settings.DEBUG),
+            )
+            return HttpResponse(json.dumps({"success": "Message sent!"}), content_type="application/json")
+        # E-Mail Disabled
+        else:
+            return HttpResponse(json.dumps({"error": "SMTP service not yet configured"}), content_type="application/json")
         
     return HttpResponse(json.dumps({"error": "email, subject, and message are required fields"}), content_type="application/json")
