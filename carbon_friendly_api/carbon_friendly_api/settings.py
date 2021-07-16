@@ -30,9 +30,10 @@ ADMINS = [('Ramon Alvarez', 'ramon.paul.alvarez@gmail.com')]
 ALLOWED_HOSTS = [
     'localhost',
     'carbonfriendly.earth',
-    'www.carbonfriendly.earth'
+    'www.carbonfriendly.earth',
     'api.carbonfriendly.earth'
-]
+] + os.getenv("ALLOWED_HOSTS", "").split(",")
+
 CSRF_TRUSTED_ORIGINS = ALLOWED_HOSTS
 
 # Application definition
