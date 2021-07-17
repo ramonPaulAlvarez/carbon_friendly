@@ -24,7 +24,7 @@ def contact(request):
         if settings.EMAIL_HOST:
             send_mail(
                 f'Carbon Friendly: {subject}',
-                message,
+                message + "\n\n" + email,
                 email,
                 [email for _, email in settings.ADMINS],
                 fail_silently=not(settings.DEBUG),

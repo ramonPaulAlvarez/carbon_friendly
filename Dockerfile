@@ -6,7 +6,7 @@ RUN mkdir /app
 WORKDIR /app
 
 # Add code in CWD to Application Directory
-ADD . /app/
+COPY . /app/
 
 # Default Environment Variables
 ENV PYTHONUNBUFFERED 1

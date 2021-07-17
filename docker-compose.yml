@@ -5,21 +5,16 @@ services:
         ports:
             - 80:80
         volumes:
-            - static_volume:/app/carbon_friendly/static
+            - .:/app:rw
         depends_on:
             - django
         restart: "on-failure"
     django:
         build: .
         command: sh -c "gunicorn carbon_friendly_api.wsgi:application --bind 0.0.0.0:8000 --chdir carbon_friendly_api"
-        volumes:
-            - .:/carbon_friendly_api:rw
-            - static_volume:/app/carbon_friendly_api/static
         env_file:
             - env.list
         image: django
         expose:
             - 8000
         restart: "on-failure"
-volumes:
-  static_volume:
