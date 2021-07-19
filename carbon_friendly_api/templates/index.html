@@ -19,7 +19,7 @@
             a { color:white; }
             body { background-color: rgb(74, 101, 72); color: white; background-image: url(static/landing-bg.jpg); margin-bottom: 0px; background-size: cover; background-attachment: fixed; background-position: center center; background-repeat: no-repeat; }
             hr { border-color: rgb(74, 101, 72); }
-            .banner { border: 1px solid black; text-transform: uppercase; padding: 15px 0px 10px 0px; background-color:rgba(0, 0, 0, 0.6); }
+            .banner { border: 1px solid black; text-transform: uppercase; padding: 15px 0px 10px 0px; background-color:rgba(0, 0, 0, 0.6); margin-bottom: 0px; }
             .data-cell { padding: 5px 10px; line-height: 1.8; }
             .gcontainer { display: grid; grid-auto-flow: column dense; }
             .lfont { font-size: 1.3em; }
@@ -29,6 +29,7 @@
             .mform input { font-size: 1em; }
             .mform textarea { font-size: 1em; }
             .mbutton { width: -webkit-fill-available; background-color: black; color: white; border-color: rgb(74, 101, 72); font-weight: bold; padding: 10px; cursor: pointer; }
+            .metrics-container { background-color: rgba(0, 0, 0, 0.6); padding: 10px 20px; border-radius: 0px 0px 25px 25px; cursor: pointer; display: block; width: fit-content; margin: auto; font-size: .8em; }
             .mformtable { width: 400px; }
             .mtable { margin: 10px 5px; text-align: left; background-color: rgba(255, 255, 255, 0.05); }
             .subheader { font-size: 1.4em; margin: 3px 0px 0px 0px; text-transform: uppercase; }
@@ -55,6 +56,7 @@
         </style>
         
         <script type="text/javascript" src="static/base.js"></script>
+        <script type="text/javascript" src="static/global_warming_api.js"></script>
         <script>
             // Override Form Submission
             $(function() {
@@ -69,6 +71,12 @@
     <body>
         <div style="min-height: 100%; text-align: center; padding-bottom: 10px; margin:-15px -15px 0px -15px; background-color:rgba(0, 0, 0, 0.5);">
             <h3 class="banner">carbonfriendly.<font color="green">earth</font></h3>
+            <span id="metrics" class="metrics-container" title="Source: Global-Warming.org API">
+                <span id="metrics-loading">Loading metrics...</span>
+                <span id="metrics-ready" style="display:none;">
+                    <span id="metric_co2">0</span> CO2 PPM - <span id="metric_ch4"></span>0 CH4 PPM - <span id="metric_t">0</span> C
+                </span>
+            </span>
             <div style="height: 96%; text-align:center; display:table; width: 100%;">
                 <h1 class="headline">How can <font style="text-decoration: underline; text-decoration-color: white;">you</font> help fight the climate crisis?</h1>
                 <div style="display: table-row;">
@@ -346,7 +354,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </body>
 </html>
