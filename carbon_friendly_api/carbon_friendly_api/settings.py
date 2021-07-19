@@ -24,15 +24,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY', None)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False") == "True"
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
 ADMINS = [('Ramon Alvarez', 'ramon.paul.alvarez@gmail.com')]
 ALLOWED_HOSTS = [
+    '0.0.0.0',
+    '127.0.0.1',
     'localhost',
     'carbonfriendly.earth',
     'www.carbonfriendly.earth',
-    'api.carbonfriendly.earth'
-] + os.getenv("ALLOWED_HOSTS", "").split(",")
+] + os.getenv('ALLOWED_HOSTS', '').split(',')
 
 CSRF_TRUSTED_ORIGINS = ALLOWED_HOSTS
 
