@@ -28,6 +28,8 @@
             .mform { margin:auto; }
             .mform input { font-size: 1em; }
             .mform textarea { font-size: 1em; }
+            .metrics-ready span { padding: 3px 5px 3px 4px; }
+            .metrics-ready span:nth-child(n+2) { border-left: 1px solid white; }
             .mbutton { width: -webkit-fill-available; background-color: black; color: white; border-color: rgb(74, 101, 72); font-weight: bold; padding: 10px; cursor: pointer; }
             .metrics-container { background-color: rgba(0, 0, 0, 0.6); padding: 10px 20px; border-radius: 0px 0px 25px 25px; cursor: pointer; display: block; width: fit-content; margin: auto; font-size: .8em; }
             .mformtable { width: 400px; }
@@ -73,8 +75,8 @@
             <h3 class="banner">carbonfriendly.<font color="green">earth</font></h3>
             <span id="metrics" class="metrics-container" title="Source: Global-Warming.org API">
                 <span id="metrics-loading">Loading metrics...</span>
-                <span id="metrics-ready" style="display:none;">
-                    <span id="metric_co2">0</span> CO2 PPM - <span id="metric_ch4"></span>0 CH4 PPM - <span id="metric_t">0</span> C
+                <span id="metrics-ready" class="metrics-ready" style="display:none;">
+                    <span id="metric_co2"></span><span id="metric_t"></span><span id="metric_ch4"></span>
                 </span>
             </span>
             <div style="height: 96%; text-align:center; display:table; width: 100%;">
@@ -307,6 +309,8 @@
                             <img src="static/icons/lower_carbon_capital.png" width=14 height=14> <a href="https://lowercarboncapital.com/" title="Lower Carbon Capital: Jobs">Lower Carbon Capital</a>
                             <br>
                             <img src="static/icons/we_dont_have_time.png" width=14 height=14> <a href="https://www.wedonthavetime.org/" title="We Don't Have Time: News, Reviews, Contact Leaders">We Don't Have Time</a>
+                            <br>
+                            <img src="static/icons/work_on_climate.ico" width=14 height=14> <a href="https://workonclimate.org/" title="Work on Climate: Career, Social">Work on Climate</a>
                         </div>
                     </div>
                     <div class="mfont mtable">
