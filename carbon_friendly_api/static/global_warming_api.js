@@ -44,11 +44,9 @@ function setCurrentMethane(element_id){
 $(document).ready(function () {
     try {
         $.when(setCurrentCo2("metric_co2"), setCurrentMethane("metric_ch4"), setCurrentTemperatureAnomaly("metric_t")).done(() => {
-            $('#metrics-loading').hide();
-            $('#metrics-ready').show();
+            $('#metrics').slideDown();
         });
     } catch (err) {
         console.log(err);
-        $('#metrics').hide();
     }
 });

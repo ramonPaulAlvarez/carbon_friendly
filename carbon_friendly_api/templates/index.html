@@ -24,34 +24,40 @@
             .gcontainer { display: grid; grid-auto-flow: column dense; }
             .lfont { font-size: 1.3em; }
             .headline { font-size: 2.3em; display: table-cell; vertical-align: bottom; text-transform: uppercase; }
+            .mbutton { width: -webkit-fill-available; background-color: black; color: white; border-color: rgb(74, 101, 72); font-weight: bold; padding: 10px; cursor: pointer; }
+            .metrics-container span { padding: 10px; width: fit-content; }
+            .metrics-container { background-color: rgba(0, 0, 0, 0.6); padding: 10px 20px; border-radius: 0px 0px 25px 25px; cursor: help; display: block; width: fit-content; margin: auto; font-size: .8em; }
             .mfont { font-size: 1.2em; }
             .mform { margin:auto; }
             .mform input { font-size: 1em; }
             .mform textarea { font-size: 1em; }
-            .metrics-ready span { padding: 5px; }
-            .mbutton { width: -webkit-fill-available; background-color: black; color: white; border-color: rgb(74, 101, 72); font-weight: bold; padding: 10px; cursor: pointer; }
-            .metrics-container { background-color: rgba(0, 0, 0, 0.6); padding: 10px 20px; border-radius: 0px 0px 25px 25px; cursor: pointer; display: block; width: fit-content; margin: auto; font-size: .8em; }
-            .mformtable { width: 400px; }
+            .mform-table { width: 400px; }
             .mtable { margin: 10px 5px; text-align: left; background-color: rgba(255, 255, 255, 0.05); }
             .subheader { font-size: 1.4em; margin: 3px 0px 0px 0px; text-transform: uppercase; }
             .subsection { border: 1px solid black; border-radius: 25px; background-color:rgba(0, 0, 0, 0.6); margin: 5px 20px; padding: 10px; }
             .subsection-top { border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; }
             .subsection-middle { border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; }
             .subsection-bottom { border-top-left-radius: 0px; border-top-right-radius: 0px; }
-            .tableheader { background:black; padding: 5px 0px; border-bottom: 2px solid rgb(74, 101, 72); font-weight:bold; text-align:center; }
+            .table-header { background:black; padding: 5px 0px; border-bottom: 2px solid rgb(74, 101, 72); font-weight:bold; text-align:center; }
             
             @media only screen and (max-width: 500px), only screen and (max-device-width: 500px) {
+                .banner {
+                    padding: 25px 0px 15px 0px;
+                }
                 .gcontainer {
                     display:block;
                 }
-                .mformtable {
-                    width:100%;
+                .metrics-container {
+                    padding: 15px 25px;
                 }
                 .mform input {
                     font-size: 2em;
                 }
                 .mform textarea {
                     font-size: 2em;
+                }
+                .mform-table {
+                    width:100%;
                 }
             }
         </style>
@@ -71,12 +77,9 @@
 
     <body>
         <div style="min-height: 100%; text-align: center; padding-bottom: 10px; margin:-15px -15px 0px -15px; background-color:rgba(0, 0, 0, 0.5);">
-            <h3 class="banner">carbonfriendly.<font color="green">earth</font></h3>
-            <span id="metrics" class="metrics-container" title="Source: Global-Warming.org API">
-                <span id="metrics-loading">Loading metrics...</span>
-                <span id="metrics-ready" class="metrics-ready" style="display:none;">
-                    <span id="metric_co2"></span>&bull;<span id="metric_t"></span>&bull;<span id="metric_ch4"></span>
-                </span>
+            <h3 class="banner"><a href="/" title="carbonfriendly.earth">carbonfriendly<font color="green">.earth</font></a></h3>
+            <span id="metrics" class="metrics-container" style="display: none;" title="Source: Global-Warming.org API">
+                <span id="metric_co2"></span>&bull;<span id="metric_t"></span>&bull;<span id="metric_ch4"></span>
             </span>
             <div style="height: 96%; text-align:center; display:table; width: 100%;">
                 <h1 class="headline">How can <font style="text-decoration: underline; text-decoration-color: white;">you</font> help fight the climate crisis?</h1>
@@ -102,7 +105,7 @@
                 <br>
                 <div class="gcontainer">
                     <div class="mfont mtable">
-                        <div class="tableheader">Water</div>
+                        <div class="table-header">Water</div>
                         <div class="data-cell">
                             <img src="static/icons/carbon_kapture.png" width=14 height=14> <a href="https://www.carbonkapture.org/" title="Carbon Kapture: Ocean Carer Bonds, Donations, Kelp">Carbon Kapture</a>
                             <br>
@@ -117,7 +120,7 @@
                     </div>
 
                     <div class="mfont mtable">
-                        <div class="tableheader">Land</div>
+                        <div class="table-header">Land</div>
                         <div class="data-cell">
                             <img src="static/icons/8_billion_trees.png" width=14 height=14> <a href="https://8billiontrees.com/" title="8 Billion Trees: Donations, Trees">8 Billion Trees</a>
                             <br>
@@ -138,7 +141,7 @@
                     </div>
 
                     <div class="mfont mtable">
-                        <div class="tableheader">Atmosphere</div>
+                        <div class="table-header">Atmosphere</div>
                         <div class="data-cell">
                             <img src="static/icons/clean_air_task_force.png" width=14 height=14> <a href="https://www.catf.us/" title="Clean Air Task Force: Donations, Atmosphere">Clean Air Task Force</a>
                             <br>
@@ -151,7 +154,7 @@
                     </div>
 
                     <div class="mfont mtable">
-                        <div class="tableheader">Collectives</div>
+                        <div class="table-header">Collectives</div>
                         <div class="data-cell">
                             <img src="static/icons/climate_reality_project.ico" width=14 height=14> <a href="https://www.climaterealityproject.org/" title="Climate Reality Project: Donations, Collective">Climate Reality Project</a>
                             <br>
@@ -190,7 +193,7 @@
                 <br>
                 <div class="gcontainer">
                     <div class="mfont mtable">
-                        <div class="tableheader">Science News</div>
+                        <div class="table-header">Science News</div>
                         <div class="data-cell">
                             <img src="static/icons/climate_communication.ico" width=14 height=14> <a href="https://www.climatecommunication.org/">Climate Communication</a>
                             <br>
@@ -206,7 +209,7 @@
                         </div>
                     </div>
                     <div class="mfont mtable">
-                        <div class="tableheader">Classes</div>
+                        <div class="table-header">Classes</div>
                         <div class="data-cell">
                             <img src="static/icons/edx.ico" width=14 height=14> <a href="https://www.edx.org/course/climate-change-the-science-and-global-impact">Climate Change: The Science and Global Impact</a>
                             <br>
@@ -216,7 +219,7 @@
                         </div>
                     </div>
                     <div class="mfont mtable">
-                        <div class="tableheader">Videos</div>
+                        <div class="table-header">Videos</div>
                         <div class="data-cell">
                             <img src="static/icons/youtube.ico" width=14 height=14> <a href="https://www.youtube.com/c/UCILQpWPlaU74kIRd1cV1KtA">Collective for Climate Action</a>
                             <br>
@@ -234,7 +237,7 @@
                         </div>
                     </div>
                     <div class="mfont mtable">
-                        <div class="tableheader">Books</div>
+                        <div class="table-header">Books</div>
                         <div class="data-cell">                            
                             <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://books.google.com.ar/books?id=yihpxwEACAAJ&hl=en">Facing the Climate Emergency</a>
                             <br>
@@ -263,7 +266,7 @@
                 <br>
                 <div class="gcontainer">
                     <div class="mfont mtable">
-                        <div class="tableheader">Lifestyle</div>
+                        <div class="table-header">Lifestyle</div>
                         <div class="data-cell">
                             <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://anatomyofaction.org/" title="Anatomy of Action: Lifestyle">Anatomy of Action</a>
                             <br>
@@ -277,7 +280,7 @@
                         </div>
                     </div>
                     <div class="mfont mtable">
-                        <div class="tableheader">Community</div>
+                        <div class="table-header">Community</div>
                         <div class="data-cell">
                             <img src="static/icons/climate_reality_project.ico" width=14 height=14> <a href="hhttps://www.climaterealityproject.org/">Climate Reality Project</a>
                             <br>
@@ -293,7 +296,7 @@
                         </div>
                     </div>
                     <div class="mfont mtable">
-                        <div class="tableheader">Career</div>
+                        <div class="table-header">Career</div>
                         <div class="data-cell">
                             <img src="static/icons/climate_foundry.png" width=14 height=14> <a href="https://climatefoundry.com/" title="Climate Foundry: Software Studio">Climate Foundry</a>
                             <br>
@@ -313,7 +316,7 @@
                         </div>
                     </div>
                     <div class="mfont mtable">
-                        <div class="tableheader">Home</div>
+                        <div class="table-header">Home</div>
                         <div class="data-cell">                            
                             <img src="static/icons/carbicrete.png" width=14 height=14> <a href="https://carbicrete.com/" title="Carbicrete: Materials">Carbicrete</a>
                             <br>
@@ -331,8 +334,8 @@
                     Please <a onClick="$('#contact-form-container').toggle(); $('#contact-form-container').get(0).scrollIntoView();" style="text-decoration: underline; cursor:pointer;">contact me</a> if you have questions, comments, or would like to contribute.
                 </span>
                 <div id="contact-form-container" class="gcontainer" style="padding-top: 15px; display:none;">
-                    <div class="mfont mtable mformtable" style="text-align:center; margin:auto;">
-                        <div class="tableheader">Contact Me</div>
+                    <div class="mfont mtable mform-table" style="text-align:center; margin:auto;">
+                        <div class="table-header">Contact Me</div>
                         <div class="data-cell">                            
                             <form id="contact-form" class="mform">
                                 <table style="width:100%;">
