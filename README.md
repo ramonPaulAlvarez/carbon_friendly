@@ -24,6 +24,11 @@ vi make_env.sh
 source make_env.sh
 ```
 
+# Run Tests
+```
+python carbon_friendly_api/manage.py test carbon_friendly_api -r
+```
+
 # Start Server (without Docker):
 ```
 python carbon_friendly_api/manage.py runserver

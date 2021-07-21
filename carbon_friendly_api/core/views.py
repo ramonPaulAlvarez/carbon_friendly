@@ -1,9 +1,9 @@
 import json
 
-from carbon_friendly_api import settings
+from django.conf import settings
 from django.core.mail import send_mail
 from django.core.validators import validate_email
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseServerError
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework import status
@@ -22,7 +22,7 @@ def contact(request):
     """Process a contact request"""
     # Service is disabled
     if not settings.EMAIL_HOST:
-        return HttpResponse(json.dumps({"error": "SMTP service not yet configured"}), content_type="application/json")
+        return HttpResponseServerError(json.dumps({"error": "SMTP service not yet configured"}), content_type="application/json")
 
     # Validate payload
     data = {
