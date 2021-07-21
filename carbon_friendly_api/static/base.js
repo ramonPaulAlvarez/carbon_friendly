@@ -14,22 +14,18 @@ function submitContactForm(){
     let email = $("#contact-form #email").val();
     let subject = $("#contact-form #subject").val();
     let message = $("#contact-form #message").val();
+
+    // Submit payload
     $.ajax({
         type: "POST",
         url: '/contact',
-        data: {email: email, subject: subject, message: message},
+        data: {from_email: email, subject: subject, message: message},
     })
     .done((result) => {
-        if (result.error){
-            console.log(result.error);
-            enableContactInputs();
-            $("#contact-form #submit").val("Retry");
-        } else {
-            $("#contact-form #submit").val(result.success);
-        }
+        $("#contact-form #submit").val(result.success);
     })
     .fail((jqXHR, textStatus, error) => {
-        console.log(error);
+        console.log(JSON.parse(jqXHR.responseText));
         $("#contact-form #submit").val(error);
         enableContactInputs();
     });
