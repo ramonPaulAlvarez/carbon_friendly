@@ -146,3 +146,19 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Dataset Maximum File Age (Hours)
+DATASET_MAX_AGE = 1
+
+# Dataset File Information
+DATASET_CO2_FILENAME = "co2.csv"
+DATASET_CO2_URL = "ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_trend_gl.csv"
+DATASET_CH4_FILENAME = "ch4.csv"
+DATASET_CH4_URL = "ftp://aftp.cmdl.noaa.gov/products/trends/ch4/ch4_mm_gl.txt"
+DATASET_TANON_FILENAME = "temperature_anon.txt"
+DATASET_TANON_URL = "http://data.giss.nasa.gov/gistemp/graphs_v4/graph_data/Monthly_Mean_Global_Surface_Temperature/graph.csv"
+DATASETS = (
+    (DATASET_CO2_URL, DATASET_CO2_FILENAME),
+    (DATASET_CH4_URL, DATASET_CH4_FILENAME),
+    (DATASET_TANON_URL, DATASET_TANON_FILENAME),
+)

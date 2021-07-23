@@ -1,8 +1,8 @@
 import json
+import logging
 
 from django.conf import settings
 from django.core.mail import send_mail
-from django.core.validators import validate_email
 from django.http import HttpResponse, HttpResponseServerError
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
@@ -10,11 +10,22 @@ from rest_framework import status
 from rest_framework.exceptions import ValidationError
 
 from core.serializers import EmailSerializer
+from core.utils import download_datasets, get_latest_metrics
+
+logger = logging.getLogger(__name__)
 
 
 def index(request):
     """Render Landing Page"""
-    return render(request, "index.html")
+    context = {}
+    try:
+        # TODO: Convert to Celery Beat Task
+        download_datasets()
+        context["metrics"] = get_latest_metrics()
+    except Exception as e:
+        logger.error(f"Error fetching metrics: {e}")
+
+    return render(request, "index.html", context=context)
 
 
 @csrf_exempt

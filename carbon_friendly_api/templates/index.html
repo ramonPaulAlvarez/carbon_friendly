@@ -51,7 +51,6 @@
         </style>
         
         <script type="text/javascript" src="static/base.js"></script>
-        <script type="text/javascript" src="static/global_warming_api.js"></script>
         <script>
             // Override Form Submission
             $(function() {
@@ -66,9 +65,13 @@
     <body>
         <div style="min-height: 100%; text-align: center; padding-bottom: 10px; margin:-15px -15px 0px -15px; background-color:rgba(0, 0, 0, 0.5);">
             <h3 class="banner"><a href="/" title="carbonfriendly.earth" style="text-decoration: none;">carbonfriendly<font color="green">.earth</font></a></h3>
-            <span id="metrics" class="metrics-container" style="display: none;" title="Source: Global-Warming.org API">
-                <span id="metric_co2"></span>&bull;<span id="metric_t"></span>&bull;<span id="metric_ch4"></span>
-            </span>
+            {% if metrics %}
+                <span id="metrics" class="metrics-container">
+                    {% for metric in metrics %}
+                        <span title="{{ metric.title }}">{{ metric.value }} {% if metric.label %}{{metric.label}} {% endif %}{{ metric.unit }}</span>{% if not forloop.last %}&bull;{% endif %}
+                    {% endfor %}
+                </span>
+            {% endif %} 
             <div style="height: 96%; text-align:center; display:table; width: 100%;">
                 <h1 class="headline">How can <font style="text-decoration: underline; text-decoration-color: white;">you</font> help fight the climate crisis?</h1>
                 <div style="display: table-row;">
