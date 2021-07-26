@@ -13,12 +13,14 @@ def get_carbon_dioxide() -> pd.Series:
     file_path = f"{settings.BASE_DIR}/datasets/{settings.DATASET_CO2_FILENAME}"
     dataset = pd.read_csv(file_path, comment='#')
 
-    # Add custom last_updated column
+    # Add custom created_at column
     dataset["created_at"] = dataset.apply(
         lambda row: "/".join([str(int(row['month'])),
                              str(int(row['day'])), str(int(row['year']))]),
         axis=1
     )
+    dataset["created_at"] = pd.to_datetime(dataset.created_at)
+
     return dataset
 
 
@@ -31,7 +33,7 @@ def get_latest_metrics() -> dict:
         metrics.append({
             "label": "CO2",
             "value": latest_co2["trend"],
-            "title": f"Carbon Dioxide in PPM ({latest_co2['created_at']}, Source: NOAA)",
+            "title": f"Carbon Dioxide in PPM (~{latest_co2['created_at']}, Source: NOAA)",
             "unit": "PPM",
         })
 
@@ -39,8 +41,8 @@ def get_latest_metrics() -> dict:
     if len(latest_t_anon.index):
         metrics.append({
             "label": None,
-            "value": latest_t_anon["Station"],
-            "title": f"Temperature Anomaly in Celsius ({latest_t_anon['created_at']}, Source: NOAA)",
+            "value": latest_t_anon["station"],
+            "title": f"Temperature Anomaly in Celsius (~{latest_t_anon['created_at']}, Source: NOAA)",
             "unit": "C",
         })
 
@@ -49,7 +51,7 @@ def get_latest_metrics() -> dict:
         metrics.append({
             "label": "CH4",
             "value": latest_ch4["average"],
-            "title": f"Methane Dioxide in PPM ({latest_ch4['created_at']}, Source: NOAA)",
+            "title": f"Methane Dioxide in PPM (~{latest_ch4['created_at']}, Source: NOAA)",
             "unit": "PPM",
         })
 
@@ -58,28 +60,33 @@ def get_latest_metrics() -> dict:
 
 def get_methane() -> pd.Series:
     """Get CH4 trend data."""
-    names = ["year", "month", "decimal", "average",
+    column_names = ["year", "month", "decimal", "average",
              "average_unc", "trend", "trend_unc"]
     file_path = f"{settings.BASE_DIR}/datasets/{settings.DATASET_CH4_FILENAME}"
-    dataset = pd.read_csv(file_path, comment='#', delim_whitespace=True, names=names)
+    dataset = pd.read_csv(file_path, comment='#',
+                          delim_whitespace=True, names=column_names)
 
-    # Add custom last_updated column
+    # Add custom created_at column
     dataset["created_at"] = dataset.apply(
         lambda row: "/".join([str(int(row['month'])), str(int(row['year']))]),
         axis=1
     )
+    dataset["created_at"] = pd.to_datetime(dataset.created_at)
+
     return dataset
 
 
 def get_temperature_anomaly() -> pd.Series:
     """Get temperature anomaly trend data."""
-    # Year+Month, Station, Land+Ocean
+    column_names = ["year_month", "station", "land_ocean"]
     file_path = f"{settings.BASE_DIR}/datasets/{settings.DATASET_TANON_FILENAME}"
-    dataset = pd.read_csv(file_path, skiprows=[0])
+    dataset = pd.read_csv(file_path, skiprows=[0, 1], names=column_names)
 
-    # Add custom last_updated column
-    dataset["created_at"] = dataset["Year+Month"].apply(
+    # Add custom created_at column
+    dataset["created_at"] = dataset["year_month"].apply(
         lambda value: year_percent_to_year_month_day(value))
+    dataset["created_at"] = pd.to_datetime(dataset.created_at)
+
     return dataset
 
 
@@ -88,4 +95,5 @@ def year_percent_to_year_month_day(value: int) -> str:
     year, percentage_complete = str(value).split(".")
     datetime_obj = datetime.datetime(
         int(year), 1, 1) + datetime.timedelta(365 * (int(percentage_complete) / 100) - 1)
+
     return f"{datetime_obj.month}/{datetime_obj.day}/{datetime_obj.year}"

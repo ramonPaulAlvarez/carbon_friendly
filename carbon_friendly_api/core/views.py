@@ -8,15 +8,22 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework import status
 from rest_framework.exceptions import ValidationError
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 from core.serializers import EmailSerializer
-from core.utils import get_latest_metrics
+from core.utils import (
+    get_carbon_dioxide,
+    get_latest_metrics,
+    get_methane,
+    get_temperature_anomaly,
+)
 
 logger = logging.getLogger(__name__)
 
 
 def index(request):
-    """Render Landing Page"""
+    """Render landing page."""
     context = {}
     try:
         context["metrics"] = get_latest_metrics()
@@ -28,10 +35,11 @@ def index(request):
 
 @csrf_exempt
 def contact(request):
-    """Process a contact request"""
+    """Process a contact request."""
     # Service is disabled
     if not settings.EMAIL_HOST:
-        return HttpResponseServerError(json.dumps({"error": "SMTP service not yet configured"}), content_type="application/json")
+        error = json.dumps({"error": "SMTP service not yet configured"})
+        return HttpResponse(error, status=status.HTTP_503_SERVICE_UNAVAILABLE, content_type="application/json")
 
     # Validate payload
     data = {
@@ -56,3 +64,40 @@ def contact(request):
     )
 
     return HttpResponse(json.dumps({"success": "Message sent!"}), content_type="application/json")
+
+
+class MetricViewMixin(APIView):
+    """Provide base functionality to metric endpoints."""
+    metric_method = None
+
+    @classmethod
+    def get(self, request):
+        """Dynamically provide a Series."""
+        if not self.metric_method:
+            return HttpResponseServerError(json.dumps({"error": "Metric endpoint not yet configured"}), content_type="application/json")
+
+        # Load metrics and sort them ascending by date
+        metric = self.metric_method()
+        metric.sort_values(by=['created_at'], inplace=True, ascending=False)
+
+        records = []
+        for record in metric.itertuples():
+            records.append({column_name: getattr(record, column_name)
+                           for column_name in metric.columns.values})
+
+        return Response(records)
+
+
+class Co2MetricView(MetricViewMixin):
+    """Provide the CO2 Series."""
+    metric_method = get_carbon_dioxide
+
+
+class Ch4MetricView(MetricViewMixin):
+    """Provide the CH4 Series."""
+    metric_method = get_methane
+
+
+class TemperatureAnomalyMetricView(MetricViewMixin):
+    """Provide the Temperature Anomaly Series."""
+    metric_method = get_temperature_anomaly

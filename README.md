@@ -26,7 +26,7 @@ source make_env.sh
 
 # Run tests
 ```
-python carbon_friendly_api/manage.py test carbon_friendly_api -r
+python carbon_friendly_api/manage.py test carbon_friendly_api
 ```
 
 # Start Django service:

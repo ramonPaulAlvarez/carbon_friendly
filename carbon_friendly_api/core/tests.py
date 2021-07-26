@@ -81,10 +81,10 @@ class ContactViewsetTests(TestCase):
                 self.contact_url, data=self.valid_payload)
 
         # Verify that the request resulted in error
-        self.assertEqual(response.status_code, status.HTTP_500_INTERNAL_SERVER_ERROR,
+        self.assertEqual(response.status_code, status.HTTP_503_SERVICE_UNAVAILABLE,
                          "Request did not fail as expected")
         self.assertContains(response, "SMTP service not yet configured",
-                            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
+                            status_code=status.HTTP_503_SERVICE_UNAVAILABLE)
 
         # Verify no mail was sent
         self.assertFalse(mock_send_mail.called)
