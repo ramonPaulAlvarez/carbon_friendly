@@ -18,3 +18,29 @@ services:
         expose:
             - 8000
         restart: "on-failure"
+        volumes:
+            - .:/app:rw
+    redis:
+        image: redis:alpine
+    celery-worker:
+        build: .
+        working_dir: /app/carbon_friendly_api
+        command: celery -A carbon_friendly_api worker -l info
+        env_file:
+            - env.list
+        volumes:
+            - .:/app:rw
+        depends_on:
+            - redis
+        restart: "on-failure"
+    celery-beat:
+        build: .
+        working_dir: /app/carbon_friendly_api
+        command: celery -A carbon_friendly_api beat -l info
+        env_file:
+            - env.list
+        volumes:
+            - .:/app:rw
+        depends_on:
+            - redis
+        restart: "on-failure"

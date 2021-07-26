@@ -13,9 +13,6 @@ ENV PYTHONUNBUFFERED 1
 ENV LANG C.UTF-8
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Project Environment Variables
-ENV PORT=8000
-
 # Install Docker Requirements
 RUN apt-get update && apt-get install -y --no-install-recommends \
     tzdata \
@@ -30,5 +27,3 @@ rm -fr /var/lib/opt/lists/*
 
 RUN pip3 install --upgrade pip
 RUN pip3 install -r requirements.txt
-
-EXPOSE $PORT

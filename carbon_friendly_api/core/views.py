@@ -10,7 +10,7 @@ from rest_framework import status
 from rest_framework.exceptions import ValidationError
 
 from core.serializers import EmailSerializer
-from core.utils import download_datasets, get_latest_metrics
+from core.utils import get_latest_metrics
 
 logger = logging.getLogger(__name__)
 
@@ -19,11 +19,9 @@ def index(request):
     """Render Landing Page"""
     context = {}
     try:
-        # TODO: Convert to Celery Beat Task
-        download_datasets()
         context["metrics"] = get_latest_metrics()
     except Exception as e:
-        logger.error(f"Error fetching metrics: {e}")
+        logger.error(f"Error reading metrics: {e}")
 
     return render(request, "index.html", context=context)
 
