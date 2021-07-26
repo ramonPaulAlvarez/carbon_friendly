@@ -1,0 +1,60 @@
+{
+	"info": {
+		"_postman_id": "cca7ff4a-08fd-41f7-a3b7-e45954bb062e",
+		"name": "Carbon Friendly API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Carbon",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SERVER}}/co2",
+					"host": [
+						"{{SERVER}}"
+					],
+					"path": [
+						"co2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Methane",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SERVER}}/ch4",
+					"host": [
+						"{{SERVER}}"
+					],
+					"path": [
+						"ch4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Temperature Anomaly",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SERVER}}/temperature_anomaly",
+					"host": [
+						"{{SERVER}}"
+					],
+					"path": [
+						"temperature_anomaly"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
