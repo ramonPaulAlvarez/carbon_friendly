@@ -1,356 +1,283 @@
-<html>
-    <head>
-        <link rel="icon" href="static/favicon.ico" type="image/x-icon">
-        <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon">
-        
-        <meta name="description" content="Resources to fight the climate crisis and improve the health of the planet.">
-        <meta name="keywords" content="climate crisis carbon earth donate action green credits bonds extinction emergency books videos news lifestyle community career buildings fire sunrise hero calculator science classes jobs career crypto kelp trees ocean co2 warming drawdown arbor ecocide cleanup vegan albedo heat drought rise sea love planet">
-        <meta property="og:image" content="http://carbonfriendly.earth/static/preview.png">
-        <meta property="og:image:width" content="1200"/>
-        <meta property="og:image:height" content="630"/>
-        <meta property="og:url" content="http://carbonfriendly.earth">
-        <meta property="og:title" content="Carbon Friendly">
-        
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+{% extends "base.html" %}
 
-        <title>Carbon Friendly</title>
-
-        <style>
-            a { color:white; }
-            body { background-color: rgb(74, 101, 72); color: white; background-image: url(static/landing-bg.jpg); margin-bottom: 0px; background-size: cover; background-attachment: fixed; background-position: center center; background-repeat: no-repeat; }
-            hr { border-color: rgb(74, 101, 72); }
-            .banner { border: 1px solid black; text-transform: uppercase; padding: 15px 0px 10px 0px; background-color:rgba(0, 0, 0, 0.6); margin-bottom: 0px; }
-            .data-cell { padding: 5px 10px; line-height: 1.8; }
-            .gcontainer { display: grid; grid-auto-flow: column dense; }
-            .lfont { font-size: 1.3em; }
-            .headline { font-size: 2.3em; display: table-cell; vertical-align: bottom; text-transform: uppercase; }
-            .mbutton { width: -webkit-fill-available; background-color: black; color: white; border-color: rgb(74, 101, 72); font-weight: bold; padding: 10px; cursor: pointer; }
-            .metrics-container span { padding: 10px; width: fit-content; }
-            .metrics-container { background-color: rgba(0, 0, 0, 0.6); padding: 10px 20px; border-radius: 0px 0px 25px 25px; cursor: help; display: block; width: fit-content; margin: auto; font-size: .8em; }
-            .mfont { font-size: 1.2em; }
-            .mform { margin:auto; }
-            .mform input { font-size: 1em; }
-            .mform textarea { font-size: 1em; }
-            .mform-table { width: 400px; }
-            .mtable { margin: 10px 5px; text-align: left; background-color: rgba(255, 255, 255, 0.05); }
-            .subheader { font-size: 1.4em; margin: 3px 0px 0px 0px; text-transform: uppercase; }
-            .subsection { border: 1px solid black; border-radius: 25px; background-color:rgba(0, 0, 0, 0.6); margin: 5px 20px; padding: 10px; }
-            .subsection-top { border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; }
-            .subsection-middle { border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; }
-            .subsection-bottom { border-top-left-radius: 0px; border-top-right-radius: 0px; }
-            .table-header { background:black; padding: 5px 0px; border-bottom: 2px solid rgb(74, 101, 72); font-weight:bold; text-align:center; }
-            
-            @media only screen and (max-width: 500px), only screen and (max-device-width: 500px) {
-                .banner { padding: 25px 0px 15px 0px; }
-                .gcontainer { display:block; }
-                .metrics-container { padding: 15px 25px; font-size: 1.8em; white-space: nowrap; border-radius: 0px 0px 50px 50px; }
-                .mform input { font-size: 2em; }
-                .mform textarea { font-size: 2em; }
-                .mform-table { width:100%; }
-            }
-        </style>
-        
-        <script type="text/javascript" src="static/base.js"></script>
-        <script>
-            // Override Form Submission
-            $(function() {
-                $('#contact-form').on('submit', function(e) {
-                    e.preventDefault();
-                    submitContactForm();
-                });
-            });
-        </script>
-    </head>
-
-    <body>
-        <div style="min-height: 100%; text-align: center; padding-bottom: 10px; margin:-15px -15px 0px -15px; background-color:rgba(0, 0, 0, 0.5);">
-            <h3 class="banner"><a href="/" title="carbonfriendly.earth" style="text-decoration: none;">carbonfriendly<font color="green">.earth</font></a></h3>
-            {% if metrics %}
-                <span id="metrics" class="metrics-container">
-                    {% for metric in metrics %}
-                        <span title="{{ metric.title }}">{{ metric.value }} {% if metric.label %}{{metric.label}} {% endif %}{{ metric.unit }}</span>{% if not forloop.last %}&bull;{% endif %}
-                    {% endfor %}
-                </span>
-            {% endif %} 
-            <div style="height: 96%; text-align:center; display:table; width: 100%;">
-                <h1 class="headline">How can <font style="text-decoration: underline; text-decoration-color: white;">you</font> help fight the climate crisis?</h1>
-                <div style="display: table-row;">
-                    Scroll down to find out!
+{% block inner_body %}
+    <div style="height: 96%; text-align:center; display:table; width: 100%;">
+        <h1 class="headline">How can <font style="text-decoration: underline; text-decoration-color: white;">you</font> help fight the climate crisis?</h1>
+        <div style="display: table-row;">
+            Scroll down to find out!
+            <br>
+            <br>
+            <a href="#donate-section"><img height=50 width=50 src="static/buttons/scroll_down_gradient.gif"></a>
+        </div>
+    </div>
+    
+    <div class="subsection subsection-top" id="donate-section">
+        <h3 class="subheader">Donate</h3>
+        <hr>
+        <span class="lfont">
+            The direct action we take to improve the health of the planet does not always offset all of the emissions we are responsible for.  
+            Many environmental projects exist that will help reduce our emissions further.  
+            Whether you're saving the world with kelp or pressuring lawmakers to do the right thing there are always more ways to help.
+            Projects like these need our support!  
+            Please read about the projects below and consider supporting their missions.
+        </span>
+        <br>
+        <br>
+        <div class="gcontainer">
+            <div class="mfont mtable">
+                <div class="table-header">Water</div>
+                <div class="data-cell">
+                    <img src="static/icons/carbon_kapture.png" width=14 height=14> <a href="https://www.carbonkapture.org/" title="Carbon Kapture: Ocean Carer Bonds, Donations, Kelp">Carbon Kapture</a>
                     <br>
+                    <img src="static/icons/coral_reef_alliance.ico" width=14 height=14> <a href="https://coral.org/" title="Coral Reef Alliance: Donations, Coral Reefs">Coral Reef Alliance</a>
                     <br>
-                    <a href="#donate-section"><img height=50 width=50 src="static/buttons/scroll_down_gradient.gif"></a>
-                </div>
-            </div>
-            
-            <div class="subsection subsection-top" id="donate-section">
-                <h3 class="subheader">Donate</h3>
-                <hr>
-                <span class="lfont">
-                    The direct action we take to improve the health of the planet does not always offset all of the emissions we are responsible for.  
-                    Many environmental projects exist that will help reduce our emissions further.  
-                    Whether you're saving the world with kelp or pressuring lawmakers to do the right thing there are always more ways to help.
-                    Projects like these need our support!  
-                    Please read about the projects below and consider supporting their missions.
-                </span>
-                <br>
-                <br>
-                <div class="gcontainer">
-                    <div class="mfont mtable">
-                        <div class="table-header">Water</div>
-                        <div class="data-cell">
-                            <img src="static/icons/carbon_kapture.png" width=14 height=14> <a href="https://www.carbonkapture.org/" title="Carbon Kapture: Ocean Carer Bonds, Donations, Kelp">Carbon Kapture</a>
-                            <br>
-                            <img src="static/icons/coral_reef_alliance.ico" width=14 height=14> <a href="https://coral.org/" title="Coral Reef Alliance: Donations, Coral Reefs">Coral Reef Alliance</a>
-                            <br>
-                            <img src="static/icons/environmental_defense_fund.png" width=14 height=14> <a href="https://www.edf.org/" title="Environmental Defense Fund: Donastions, Water">Environmental Defense Fund</a>
-                            <br>
-                            <img src="static/icons/oceana.ico" width=14 height=14> <a href="https://oceana.org/" title="Oceana: Donations, Ocean">Oceana</a>
-                            <br>
-                            <img src="static/icons/the_ocean_cleanup.png" width=14 height=14> <a href="https://theoceancleanup.com/" title="The Ocean Cleanup: Donations, Ocean">The Ocean Cleanup</a>
-                        </div>
-                    </div>
-
-                    <div class="mfont mtable">
-                        <div class="table-header">Land</div>
-                        <div class="data-cell">
-                            <img src="static/icons/8_billion_trees.png" width=14 height=14> <a href="https://8billiontrees.com/" title="8 Billion Trees: Donations, Trees">8 Billion Trees</a>
-                            <br>
-                            <img src="static/icons/arbor_day_foundation.png" width=14 height=14> <a href="https://www.arborday.org/" title="Arbor Day Foundation: Donations, Trees">Arbor Day Foundation</a>
-                            <br>
-                            <img src="static/icons/carbon_fund.png" width=14 height=14> <a href="https://www.carbonfund.org/" title="Carbon Fund: Donations, Trees">Carbon Fund</a>
-                            <br>
-                            <img src="static/icons/indigo.ico" width=14 height=14 alt="Indigo: Carbon Credits"> <a href="https://www.indigoag.com" title="Indigo: Carbon Credits, Trees">Indigo</a>
-                            <br>        
-                            <img src="static/icons/moss.png" width=14 height=14> <a href="https://moss.earth/" title="Moss: Carbon Credits, Trees">Moss</a>
-                            <br>
-                            <img src="static/icons/nori.png" width=14 height=14> <a href="http://nori.com/" title="Nori: Carbon Credits, Trees">Nori</a>
-                            <br>
-                            <img src="static/icons/pachama.ico" width=14 height=14> <a href="https://pachama.com/" title="Pachama: Carbon Credits, Trees">Pachama</a>
-                            <br>
-                            <img src="static/icons/truterra.ico" width=14 height=14> <a href="https://www.truterraag.com/" title="TruTerra: Carbon Credits, Agriculture">TruTerra</a>
-                        </div>
-                    </div>
-
-                    <div class="mfont mtable">
-                        <div class="table-header">Atmosphere</div>
-                        <div class="data-cell">
-                            <img src="static/icons/clean_air_task_force.png" width=14 height=14> <a href="https://www.catf.us/" title="Clean Air Task Force: Donations, Atmosphere">Clean Air Task Force</a>
-                            <br>
-                            <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://climeworks.com/" title="Climeworks: Donations, Atmosphere">Climeworks</a>
-                            <br>
-                            <img src="static/icons/carbon_180.png" width=14 height=14> <a href="https://carbon180.org/" title="Carbon 180: Donations, Atmosphere">Carbon 180</a>
-                            <br>
-                            <img src="static/icons/tradewater.png" width=14 height=14> <a href="https://tradewater.us/" title="Tradewater: Donations, Atmosphere">Tradewater</a>
-                        </div>
-                    </div>
-
-                    <div class="mfont mtable">
-                        <div class="table-header">Collectives</div>
-                        <div class="data-cell">
-                            <img src="static/icons/climate_reality_project.ico" width=14 height=14> <a href="https://www.climaterealityproject.org/" title="Climate Reality Project: Donations, Collective">Climate Reality Project</a>
-                            <br>
-                            <img src="static/icons/dollar_donation_club.png" width=14 height=14> <a href="https://dollardonationclub.com/" title="Dollar Donation Club: Donations, Lifestyle">Dollar Donation Club</a>
-                            <br>
-                            <img src="static/icons/extinction_rebellion.png" width=14 height=14> <a href="https://rebellion.global/" title="Extinction Rebellion: Donations, Collective">Extinction Rebellion</a>
-                            <br>
-                            <img src="static/icons/fridays_for_future.png" width=14 height=14> <a href="https://fridaysforfuture.org/" title="Fridays for Future: Donations, Collective">Fridays for Future</a>
-                            <br>
-                            <img src="static/icons/friends_of_the_earth.png" width=14 height=14> <a href="https://foe.org/" title="Friends of the Earth: Donstions, Collective">Friends of the Earth</a>
-                            <br>
-                            <img src="static/icons/greenpeace.png" width=14 height=14> <a href="https://www.greenpeace.org/" title="Greenpeace: Donations, Collective">Greenpeace</a>
-                            <br>
-                            <img src="static/icons/drawdown.ico" width=14 height=14> <a href="https://www.drawdown.org" title="Project Drawdown: Donations, Collective">Project Drawdown</a>
-                            <br>
-                            <img src="static/icons/rise_for_animals.png" width=14 height=14> <a href="https://riseforanimals.org/" title="Rise for Animals: Donations, Collective">Rise for Animals</a>
-                            <br>
-                            <img src="static/icons/stop_ecocide.png" width=14 height=14> <a href="https://www.stopecocide.earth/" title="Ride for Animals: Donations, Collective">Stop Ecocide</a>
-                            <br>
-                            <img src="static/icons/sunrise_movement.jpg" width=14 height=14> <a href="https://www.sunrisemovement.org/" title="Subrise Movement: Donations, Collective">Sunrise Movement</a>
-                        </div>
-                    </div>
+                    <img src="static/icons/environmental_defense_fund.png" width=14 height=14> <a href="https://www.edf.org/" title="Environmental Defense Fund: Donastions, Water">Environmental Defense Fund</a>
+                    <br>
+                    <img src="static/icons/oceana.ico" width=14 height=14> <a href="https://oceana.org/" title="Oceana: Donations, Ocean">Oceana</a>
+                    <br>
+                    <img src="static/icons/the_ocean_cleanup.png" width=14 height=14> <a href="https://theoceancleanup.com/" title="The Ocean Cleanup: Donations, Ocean">The Ocean Cleanup</a>
                 </div>
             </div>
 
-            <div class="subsection subsection-middle" id="debunk-section">
-                <h3 class="subheader">Debunk</h3>
-                <hr>
-                <span class="lfont">
-                    Sharing the science the right way can go a long way.  
-                    The more we know about this crisis the better we can fight it.  
-                    These resources help educate us on what we know and more importantly what we can do.  
-                    Once we understand the science and psychology of this crisis we'll know how to fight it.  
-                </span>
-                <br>
-                <br>
-                <div class="gcontainer">
-                    <div class="mfont mtable">
-                        <div class="table-header">Science News</div>
-                        <div class="data-cell">
-                            <img src="static/icons/climate_communication.ico" width=14 height=14> <a href="https://www.climatecommunication.org/">Climate Communication</a>
-                            <br>
-                            <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://www.climateemergencyinstitute.com/">Climate Emergency Institute</a>
-                            <br>
-                            <img src="static/icons/nasa.ico" width=14 height=14> <a href="https://climate.nasa.gov/" title="NASA: Data, News">NASA: Vital Signs of the Planet</a>
-                            <br>
-                            <img src="static/icons/real_climate.jpg" width=14 height=14> <a href="https://www.realclimate.org/">Real Climate</a>
-                            <br>
-                            <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://realclimatescience.com/">Real Climate Science</a>
-                            <br>
-                            <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://skepticalscience.com/">Skeptical Science</a>
-                        </div>
-                    </div>
-                    <div class="mfont mtable">
-                        <div class="table-header">Classes</div>
-                        <div class="data-cell">
-                            <img src="static/icons/edx.ico" width=14 height=14> <a href="https://www.edx.org/course/climate-change-the-science-and-global-impact">Climate Change: The Science and Global Impact</a>
-                            <br>
-                            <img src="static/icons/edx.ico" width=14 height=14> <a href="https://www.edx.org/course/making-sense-of-climate-science-denial">Making Sense of Climate Science Denial</a>
-                            <br>
-                            <img src="static/icons/edx.ico" width=14 height=14> <a href="https://www.edx.org/course/nature-based-solutions-for-disaster-and-climate-resilience">Nature-based Solutions for Disaster and Climate Resilience</a>
-                        </div>
-                    </div>
-                    <div class="mfont mtable">
-                        <div class="table-header">Videos</div>
-                        <div class="data-cell">
-                            <img src="static/icons/youtube.ico" width=14 height=14> <a href="https://www.youtube.com/c/UCILQpWPlaU74kIRd1cV1KtA">Collective for Climate Action</a>
-                            <br>
-                            <img src="static/icons/feedback_loops_climate.png" width=14 height=14> <a href="https://feedbackloopsclimate.com/">Climate Emergency: Feedback Loops</a>
-                            <br>
-                            <img src="static/icons/youtube.ico" width=14 height=14> <a href="https://www.youtube.com/c/FacingFuture">FacingFuture.TV</a>
-                            <br>
-                            <img src="static/icons/once_you_know.jpg" width=14 height=14> <a href="https://www.onceyouknow-thefilm.com/">Once You Know</a>
-                            <br>
-                            <img src="static/icons/drawdown.ico" width=14 height=14> <a href="https://www.drawdown.org">Project Drawdown</a>
-                            <br>
-                            <img src="static/icons/youtube.ico" width=14 height=14> <a href="https://www.youtube.com/c/ScientistsWarning">ScientistsWarning.TV</a>
-                            <br>
-                            <img src="static/icons/think_resilience.ico" width=14 height=14> <a href="https://education.resilience.org/">Think Resilience</a>
-                        </div>
-                    </div>
-                    <div class="mfont mtable">
-                        <div class="table-header">Books</div>
-                        <div class="data-cell">                            
-                            <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://books.google.com.ar/books?id=yihpxwEACAAJ&hl=en">Facing the Climate Emergency</a>
-                            <br>
-                            <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://books.google.com.ar/books?id=LFVxDAAAQBAJ&hl=en">The Madhouse Effect</a>
-                            <br>
-                            <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://books.google.com.ar/books?id=z5flDwAAQBAJ&hl=en">The New Climate War</a>
-                            <br>
-                            <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://books.google.com.ar/books?id=A8lqDwAAQBAJ&hl=en">The Uninhabitable Earth</a>
-                            <br>
-                            <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://books.google.com.ar/books?id=IC6VDwAAQBAJ&hl=en">This Is Not A Drill</a>
-                        </div>
-                    </div>
+            <div class="mfont mtable">
+                <div class="table-header">Land</div>
+                <div class="data-cell">
+                    <img src="static/icons/8_billion_trees.png" width=14 height=14> <a href="https://8billiontrees.com/" title="8 Billion Trees: Donations, Trees">8 Billion Trees</a>
+                    <br>
+                    <img src="static/icons/arbor_day_foundation.png" width=14 height=14> <a href="https://www.arborday.org/" title="Arbor Day Foundation: Donations, Trees">Arbor Day Foundation</a>
+                    <br>
+                    <img src="static/icons/carbon_fund.png" width=14 height=14> <a href="https://www.carbonfund.org/" title="Carbon Fund: Donations, Trees">Carbon Fund</a>
+                    <br>
+                    <img src="static/icons/indigo.ico" width=14 height=14 alt="Indigo: Carbon Credits"> <a href="https://www.indigoag.com" title="Indigo: Carbon Credits, Trees">Indigo</a>
+                    <br>        
+                    <img src="static/icons/moss.png" width=14 height=14> <a href="https://moss.earth/" title="Moss: Carbon Credits, Trees">Moss</a>
+                    <br>
+                    <img src="static/icons/nori.png" width=14 height=14> <a href="http://nori.com/" title="Nori: Carbon Credits, Trees">Nori</a>
+                    <br>
+                    <img src="static/icons/pachama.ico" width=14 height=14> <a href="https://pachama.com/" title="Pachama: Carbon Credits, Trees">Pachama</a>
+                    <br>
+                    <img src="static/icons/truterra.ico" width=14 height=14> <a href="https://www.truterraag.com/" title="TruTerra: Carbon Credits, Agriculture">TruTerra</a>
                 </div>
             </div>
 
-            <div class="subsection subsection-middle" id="direct-action-section">
-                <h3 class="subheader">Direct Action</h3>
-                <hr>
-                <span class="lfont">
-                    We all need to take responsibility and improve our behavior.  
-                    There are many short-term and long-term actions that can make a difference!
-                    The ways we eat, spend, travel, work, and build can all be improved.
-                    How we choose to spend our time can raise our voices, improve the health of the planet, and save lives.
-                </span>
-                <br>
-                <br>
-                <div class="gcontainer">
-                    <div class="mfont mtable">
-                        <div class="table-header">Lifestyle</div>
-                        <div class="data-cell">
-                            <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://anatomyofaction.org/" title="Anatomy of Action: Lifestyle">Anatomy of Action</a>
-                            <br>
-                            <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://carbon-calculator.climatehero.me/" title="Climate Hero: Carbon Calculator">Climate Hero</a>
-                            <br>
-                            <img src="static/icons/footprint_calculator.png" width=14 height=14> <a href="https://www.footprintcalculator.org/" title="Footprint Calculator: Carbon Calculator">Footprint Calculator</a>
-                            <br>
-                            <img src="static/icons/vegan.png" width=14 height=14> <a href="https://vegan.org/" title="Vegan.org: Animal Rights, Donations">Vegan.org</a>
-                            <br>
-                            <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://wren.co/" title="Wren: Carbon Calculator, Donations">Wren</a>
-                        </div>
-                    </div>
-                    <div class="mfont mtable">
-                        <div class="table-header">Community</div>
-                        <div class="data-cell">
-                            <img src="static/icons/climate_reality_project.ico" width=14 height=14> <a href="hhttps://www.climaterealityproject.org/">Climate Reality Project</a>
-                            <br>
-                            <img src="static/icons/extinction_rebellion.png" width=14 height=14> <a href="https://rebellion.global/">Extinction Rebellion</a>
-                            <br>
-                            <img src="static/icons/fire_drill_fridays.png" width=14 height=14> <a href="https://firedrillfridays.com/">Fire Drill Fridays</a>
-                            <br>
-                            <img src="static/icons/fridays_for_future.png" width=14 height=14> <a href="https://fridaysforfuture.org/">Fridays for Future</a>
-                            <br>
-                            <img src="static/icons/friends_of_the_earth.png" width=14 height=14> <a href="https://foe.org/">Friends of the Earth</a>
-                            <br>
-                            <img src="static/icons/sunrise_movement.jpg" width=14 height=14> <a href="https://www.sunrisemovement.org/">Sunrise Movement</a>
-                        </div>
-                    </div>
-                    <div class="mfont mtable">
-                        <div class="table-header">Career</div>
-                        <div class="data-cell">
-                            <img src="static/icons/climate_foundry.png" width=14 height=14> <a href="https://climatefoundry.com/" title="Climate Foundry: Software Studio">Climate Foundry</a>
-                            <br>
-                            <img src="static/icons/climate_interactive.png" width=14 height=14> <a href="https://www.climateinteractive.org/" title="Climate Interactive: Impact Modeling, Business">Climate Interactive</a>
-                            <br>
-                            <img src="static/icons/climate_reporting_master_class.png" width=14 height=14> <a href="https://climatereportingmasterclass.com/" title="Climate Reporting Master Class: Education, Career">Climate Reporting Master Class</a>
-                            <br>
-                            <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://ddpinitiative.org/" title="Deep Decarbonization Pathways: Decarbonization">Deep Decarbonization Pathways</a>
-                            <br>
-                            <img src="static/icons/bookmark.png" width=14 height=14> <a href="http://greenjobsearch.org/" title="Green Job Search: Jobs">Green Job Search</a>
-                            <br>
-                            <img src="static/icons/lower_carbon_capital.png" width=14 height=14> <a href="https://lowercarboncapital.com/" title="Lower Carbon Capital: Jobs">Lower Carbon Capital</a>
-                            <br>
-                            <img src="static/icons/we_dont_have_time.png" width=14 height=14> <a href="https://www.wedonthavetime.org/" title="We Don't Have Time: News, Reviews, Contact Leaders">We Don't Have Time</a>
-                            <br>
-                            <img src="static/icons/work_on_climate.ico" width=14 height=14> <a href="https://workonclimate.org/" title="Work on Climate: Career, Social">Work on Climate</a>
-                        </div>
-                    </div>
-                    <div class="mfont mtable">
-                        <div class="table-header">Home</div>
-                        <div class="data-cell">                            
-                            <img src="static/icons/carbicrete.png" width=14 height=14> <a href="https://carbicrete.com/" title="Carbicrete: Materials">Carbicrete</a>
-                            <br>
-                            <img src="static/icons/earthship_biotecture.jpg" width=14 height=14> <a href="https://earthshipbiotecture.com/" title="Earthship Biotecture: Homes">Earthship Biotecture</a>
-                        </div>
-                    </div>
+            <div class="mfont mtable">
+                <div class="table-header">Atmosphere</div>
+                <div class="data-cell">
+                    <img src="static/icons/clean_air_task_force.png" width=14 height=14> <a href="https://www.catf.us/" title="Clean Air Task Force: Donations, Atmosphere">Clean Air Task Force</a>
+                    <br>
+                    <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://climeworks.com/" title="Climeworks: Donations, Atmosphere">Climeworks</a>
+                    <br>
+                    <img src="static/icons/carbon_180.png" width=14 height=14> <a href="https://carbon180.org/" title="Carbon 180: Donations, Atmosphere">Carbon 180</a>
+                    <br>
+                    <img src="static/icons/tradewater.png" width=14 height=14> <a href="https://tradewater.us/" title="Tradewater: Donations, Atmosphere">Tradewater</a>
                 </div>
             </div>
 
-            <div class="subsection subsection-bottom" id="standby-section">
-                <h3 class="subheader">Stand By</h3>
-                <hr>
-                <span class="lfont">
-                    As time passes I will provide additional resources and tools related to combating the climate crisis.
-                    Please <a onClick="$('#contact-form-container').toggle(); $('#contact-form-container').get(0).scrollIntoView();" style="text-decoration: underline; cursor:pointer;">contact me</a> if you have questions, comments, or would like to contribute.
-                </span>
-                <div id="contact-form-container" class="gcontainer" style="padding-top: 15px; display:none;">
-                    <div class="mfont mtable mform-table" style="text-align:center; margin:auto;">
-                        <div class="table-header">Contact Me</div>
-                        <div class="data-cell">                            
-                            <form id="contact-form" class="mform">
-                                <table style="width:100%;">
-                                    <tr>
-                                        <td><input type="text" id="email" name="email" placeholder="E-Mail" style="min-width: -webkit-fill-available;" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td><input type="text" id="subject" name="subject" placeholder="Subject" style="min-width: -webkit-fill-available;" required></td>
-                                    </tr>
-                                    <tr>
-                                        <td><textarea id="message" name="message" placeholder="Message" style="min-width: -webkit-fill-available;" required></textarea></td>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align:center;">
-                                            <br>
-                                            <input id="submit" type="submit" class="mbutton">
-                                        </td>
-                                    </tr>
-                                </table>
-                            </form>
-                        </div>
-                    </div>
+            <div class="mfont mtable">
+                <div class="table-header">Collectives</div>
+                <div class="data-cell">
+                    <img src="static/icons/climate_reality_project.ico" width=14 height=14> <a href="https://www.climaterealityproject.org/" title="Climate Reality Project: Donations, Collective">Climate Reality Project</a>
+                    <br>
+                    <img src="static/icons/dollar_donation_club.png" width=14 height=14> <a href="https://dollardonationclub.com/" title="Dollar Donation Club: Donations, Lifestyle">Dollar Donation Club</a>
+                    <br>
+                    <img src="static/icons/extinction_rebellion.png" width=14 height=14> <a href="https://rebellion.global/" title="Extinction Rebellion: Donations, Collective">Extinction Rebellion</a>
+                    <br>
+                    <img src="static/icons/fridays_for_future.png" width=14 height=14> <a href="https://fridaysforfuture.org/" title="Fridays for Future: Donations, Collective">Fridays for Future</a>
+                    <br>
+                    <img src="static/icons/friends_of_the_earth.png" width=14 height=14> <a href="https://foe.org/" title="Friends of the Earth: Donstions, Collective">Friends of the Earth</a>
+                    <br>
+                    <img src="static/icons/greenpeace.png" width=14 height=14> <a href="https://www.greenpeace.org/" title="Greenpeace: Donations, Collective">Greenpeace</a>
+                    <br>
+                    <img src="static/icons/drawdown.ico" width=14 height=14> <a href="https://www.drawdown.org" title="Project Drawdown: Donations, Collective">Project Drawdown</a>
+                    <br>
+                    <img src="static/icons/rise_for_animals.png" width=14 height=14> <a href="https://riseforanimals.org/" title="Rise for Animals: Donations, Collective">Rise for Animals</a>
+                    <br>
+                    <img src="static/icons/stop_ecocide.png" width=14 height=14> <a href="https://www.stopecocide.earth/" title="Ride for Animals: Donations, Collective">Stop Ecocide</a>
+                    <br>
+                    <img src="static/icons/sunrise_movement.jpg" width=14 height=14> <a href="https://www.sunrisemovement.org/" title="Subrise Movement: Donations, Collective">Sunrise Movement</a>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+
+    <div class="subsection subsection-middle" id="debunk-section">
+        <h3 class="subheader">Debunk</h3>
+        <hr>
+        <span class="lfont">
+            Sharing the science the right way can go a long way.  
+            The more we know about this crisis the better we can fight it.  
+            These resources help educate us on what we know and more importantly what we can do.  
+            Once we understand the science and psychology of this crisis we'll know how to fight it.  
+        </span>
+        <br>
+        <br>
+        <div class="gcontainer">
+            <div class="mfont mtable">
+                <div class="table-header">Science News</div>
+                <div class="data-cell">
+                    <img src="static/icons/climate_communication.ico" width=14 height=14> <a href="https://www.climatecommunication.org/">Climate Communication</a>
+                    <br>
+                    <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://www.climateemergencyinstitute.com/">Climate Emergency Institute</a>
+                    <br>
+                    <img src="static/icons/nasa.ico" width=14 height=14> <a href="https://climate.nasa.gov/" title="NASA: Data, News">NASA: Vital Signs of the Planet</a>
+                    <br>
+                    <img src="static/icons/real_climate.jpg" width=14 height=14> <a href="https://www.realclimate.org/">Real Climate</a>
+                    <br>
+                    <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://realclimatescience.com/">Real Climate Science</a>
+                    <br>
+                    <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://skepticalscience.com/">Skeptical Science</a>
+                </div>
+            </div>
+            <div class="mfont mtable">
+                <div class="table-header">Classes</div>
+                <div class="data-cell">
+                    <img src="static/icons/edx.ico" width=14 height=14> <a href="https://www.edx.org/course/climate-change-the-science-and-global-impact">Climate Change: The Science and Global Impact</a>
+                    <br>
+                    <img src="static/icons/edx.ico" width=14 height=14> <a href="https://www.edx.org/course/making-sense-of-climate-science-denial">Making Sense of Climate Science Denial</a>
+                    <br>
+                    <img src="static/icons/edx.ico" width=14 height=14> <a href="https://www.edx.org/course/nature-based-solutions-for-disaster-and-climate-resilience">Nature-based Solutions for Disaster and Climate Resilience</a>
+                </div>
+            </div>
+            <div class="mfont mtable">
+                <div class="table-header">Videos</div>
+                <div class="data-cell">
+                    <img src="static/icons/youtube.ico" width=14 height=14> <a href="https://www.youtube.com/c/UCILQpWPlaU74kIRd1cV1KtA">Collective for Climate Action</a>
+                    <br>
+                    <img src="static/icons/feedback_loops_climate.png" width=14 height=14> <a href="https://feedbackloopsclimate.com/">Climate Emergency: Feedback Loops</a>
+                    <br>
+                    <img src="static/icons/youtube.ico" width=14 height=14> <a href="https://www.youtube.com/c/FacingFuture">FacingFuture.TV</a>
+                    <br>
+                    <img src="static/icons/once_you_know.jpg" width=14 height=14> <a href="https://www.onceyouknow-thefilm.com/">Once You Know</a>
+                    <br>
+                    <img src="static/icons/drawdown.ico" width=14 height=14> <a href="https://www.drawdown.org">Project Drawdown</a>
+                    <br>
+                    <img src="static/icons/youtube.ico" width=14 height=14> <a href="https://www.youtube.com/c/ScientistsWarning">ScientistsWarning.TV</a>
+                    <br>
+                    <img src="static/icons/think_resilience.ico" width=14 height=14> <a href="https://education.resilience.org/">Think Resilience</a>
+                </div>
+            </div>
+            <div class="mfont mtable">
+                <div class="table-header">Books</div>
+                <div class="data-cell">                            
+                    <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://books.google.com.ar/books?id=yihpxwEACAAJ&hl=en">Facing the Climate Emergency</a>
+                    <br>
+                    <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://books.google.com.ar/books?id=LFVxDAAAQBAJ&hl=en">The Madhouse Effect</a>
+                    <br>
+                    <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://books.google.com.ar/books?id=z5flDwAAQBAJ&hl=en">The New Climate War</a>
+                    <br>
+                    <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://books.google.com.ar/books?id=A8lqDwAAQBAJ&hl=en">The Uninhabitable Earth</a>
+                    <br>
+                    <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://books.google.com.ar/books?id=IC6VDwAAQBAJ&hl=en">This Is Not A Drill</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection subsection-middle" id="direct-action-section">
+        <h3 class="subheader">Direct Action</h3>
+        <hr>
+        <span class="lfont">
+            We all need to take responsibility and improve our behavior.  
+            There are many short-term and long-term actions that can make a difference!
+            The ways we eat, spend, travel, work, and build can all be improved.
+            How we choose to spend our time can raise our voices, improve the health of the planet, and save lives.
+        </span>
+        <br>
+        <br>
+        <div class="gcontainer">
+            <div class="mfont mtable">
+                <div class="table-header">Lifestyle</div>
+                <div class="data-cell">
+                    <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://anatomyofaction.org/" title="Anatomy of Action: Lifestyle">Anatomy of Action</a>
+                    <br>
+                    <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://carbon-calculator.climatehero.me/" title="Climate Hero: Carbon Calculator">Climate Hero</a>
+                    <br>
+                    <img src="static/icons/footprint_calculator.png" width=14 height=14> <a href="https://www.footprintcalculator.org/" title="Footprint Calculator: Carbon Calculator">Footprint Calculator</a>
+                    <br>
+                    <img src="static/icons/vegan.png" width=14 height=14> <a href="https://vegan.org/" title="Vegan.org: Animal Rights, Donations">Vegan.org</a>
+                    <br>
+                    <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://wren.co/" title="Wren: Carbon Calculator, Donations">Wren</a>
+                </div>
+            </div>
+            <div class="mfont mtable">
+                <div class="table-header">Community</div>
+                <div class="data-cell">
+                    <img src="static/icons/climate_reality_project.ico" width=14 height=14> <a href="hhttps://www.climaterealityproject.org/">Climate Reality Project</a>
+                    <br>
+                    <img src="static/icons/extinction_rebellion.png" width=14 height=14> <a href="https://rebellion.global/">Extinction Rebellion</a>
+                    <br>
+                    <img src="static/icons/fire_drill_fridays.png" width=14 height=14> <a href="https://firedrillfridays.com/">Fire Drill Fridays</a>
+                    <br>
+                    <img src="static/icons/fridays_for_future.png" width=14 height=14> <a href="https://fridaysforfuture.org/">Fridays for Future</a>
+                    <br>
+                    <img src="static/icons/friends_of_the_earth.png" width=14 height=14> <a href="https://foe.org/">Friends of the Earth</a>
+                    <br>
+                    <img src="static/icons/sunrise_movement.jpg" width=14 height=14> <a href="https://www.sunrisemovement.org/">Sunrise Movement</a>
+                </div>
+            </div>
+            <div class="mfont mtable">
+                <div class="table-header">Career</div>
+                <div class="data-cell">
+                    <img src="static/icons/climate_foundry.png" width=14 height=14> <a href="https://climatefoundry.com/" title="Climate Foundry: Software Studio">Climate Foundry</a>
+                    <br>
+                    <img src="static/icons/climate_interactive.png" width=14 height=14> <a href="https://www.climateinteractive.org/" title="Climate Interactive: Impact Modeling, Business">Climate Interactive</a>
+                    <br>
+                    <img src="static/icons/climate_reporting_master_class.png" width=14 height=14> <a href="https://climatereportingmasterclass.com/" title="Climate Reporting Master Class: Education, Career">Climate Reporting Master Class</a>
+                    <br>
+                    <img src="static/icons/bookmark.png" width=14 height=14> <a href="https://ddpinitiative.org/" title="Deep Decarbonization Pathways: Decarbonization">Deep Decarbonization Pathways</a>
+                    <br>
+                    <img src="static/icons/bookmark.png" width=14 height=14> <a href="http://greenjobsearch.org/" title="Green Job Search: Jobs">Green Job Search</a>
+                    <br>
+                    <img src="static/icons/lower_carbon_capital.png" width=14 height=14> <a href="https://lowercarboncapital.com/" title="Lower Carbon Capital: Jobs">Lower Carbon Capital</a>
+                    <br>
+                    <img src="static/icons/we_dont_have_time.png" width=14 height=14> <a href="https://www.wedonthavetime.org/" title="We Don't Have Time: News, Reviews, Contact Leaders">We Don't Have Time</a>
+                    <br>
+                    <img src="static/icons/work_on_climate.ico" width=14 height=14> <a href="https://workonclimate.org/" title="Work on Climate: Career, Social">Work on Climate</a>
+                </div>
+            </div>
+            <div class="mfont mtable">
+                <div class="table-header">Home</div>
+                <div class="data-cell">                            
+                    <img src="static/icons/carbicrete.png" width=14 height=14> <a href="https://carbicrete.com/" title="Carbicrete: Materials">Carbicrete</a>
+                    <br>
+                    <img src="static/icons/earthship_biotecture.jpg" width=14 height=14> <a href="https://earthshipbiotecture.com/" title="Earthship Biotecture: Homes">Earthship Biotecture</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection subsection-bottom" id="standby-section">
+        <h3 class="subheader">Stand By</h3>
+        <hr>
+        <span class="lfont">
+            As time passes I will provide additional resources and tools related to combating the climate crisis.
+            Please <a onClick="$('#contact-form-container').toggle(); $('#contact-form-container').get(0).scrollIntoView();" style="text-decoration: underline; cursor:pointer;">contact me</a> if you have questions, comments, or would like to contribute.
+        </span>
+        <div id="contact-form-container" class="gcontainer" style="padding-top: 15px; display:none;">
+            <div class="mfont mtable mform-table" style="text-align:center; margin:auto;">
+                <div class="table-header">Contact Me</div>
+                <div class="data-cell">                            
+                    <form id="contact-form" class="mform">
+                        <table style="width:100%;">
+                            <tr>
+                                <td><input type="text" id="email" name="email" placeholder="E-Mail" style="min-width: -webkit-fill-available;" required></td>
+                            </tr>
+                            <tr>
+                                <td><input type="text" id="subject" name="subject" placeholder="Subject" style="min-width: -webkit-fill-available;" required></td>
+                            </tr>
+                            <tr>
+                                <td><textarea id="message" name="message" placeholder="Message" style="min-width: -webkit-fill-available;" required></textarea></td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;">
+                                    <br>
+                                    <input id="submit" type="submit" class="mbutton">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

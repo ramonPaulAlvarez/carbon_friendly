@@ -22,17 +22,6 @@ from core.utils import (
 logger = logging.getLogger(__name__)
 
 
-def index(request):
-    """Render landing page."""
-    context = {}
-    try:
-        context["metrics"] = get_latest_metrics()
-    except Exception as e:
-        logger.error(f"Error reading metrics: {e}")
-
-    return render(request, "index.html", context=context)
-
-
 @csrf_exempt
 def contact(request):
     """Process a contact request."""
@@ -66,6 +55,39 @@ def contact(request):
     return HttpResponse(json.dumps({"success": "Message sent!"}), content_type="application/json")
 
 
+def error_404(request, exception):
+    """Render the 404 page."""
+    context = {}
+    try:
+        context["metrics"] = get_latest_metrics()
+    except Exception as e:
+        logger.error(f"Metrics error: {e}")
+
+    return render(request, "404.html", context=context, status=status.HTTP_404_NOT_FOUND)
+
+
+def error_500(request, exception):
+    """Render the 500 page."""
+    context = {}
+    try:
+        context["metrics"] = get_latest_metrics()
+    except Exception as e:
+        logger.error(f"Metrics error: {e}")
+
+    return render(request, "500.html", context=context, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+def index(request):
+    """Render the index page."""
+    context = {}
+    try:
+        context["metrics"] = get_latest_metrics()
+    except Exception as e:
+        logger.error(f"Metrics error: {e}")
+
+    return render(request, "index.html", context=context)
+
+
 class MetricViewMixin(APIView):
     """Provide base functionality to metric endpoints."""
     metric_method = None
@@ -74,7 +96,7 @@ class MetricViewMixin(APIView):
     def get(self, request):
         """Dynamically provide a Series."""
         if not self.metric_method:
-            return HttpResponseServerError(json.dumps({"error": "Metric endpoint not yet configured"}), content_type="application/json")
+            return HttpResponseServerError(json.dumps({"error": "Metric not yet configured"}), content_type="application/json")
 
         # Load metrics and sort them ascending by date
         metric = self.metric_method()
@@ -88,14 +110,14 @@ class MetricViewMixin(APIView):
         return Response(records)
 
 
-class Co2MetricView(MetricViewMixin):
-    """Provide the CO2 Series."""
-    metric_method = get_carbon_dioxide
-
-
 class Ch4MetricView(MetricViewMixin):
     """Provide the CH4 Series."""
     metric_method = get_methane
+
+
+class Co2MetricView(MetricViewMixin):
+    """Provide the CO2 Series."""
+    metric_method = get_carbon_dioxide
 
 
 class TemperatureAnomalyMetricView(MetricViewMixin):

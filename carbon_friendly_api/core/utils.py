@@ -61,7 +61,7 @@ def get_latest_metrics() -> dict:
 def get_methane() -> pd.Series:
     """Get CH4 trend data."""
     column_names = ["year", "month", "decimal", "average",
-             "average_unc", "trend", "trend_unc"]
+                    "average_unc", "trend", "trend_unc"]
     file_path = f"{settings.BASE_DIR}/datasets/{settings.DATASET_CH4_FILENAME}"
     dataset = pd.read_csv(file_path, comment='#',
                           delim_whitespace=True, names=column_names)
