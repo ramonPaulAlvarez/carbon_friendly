@@ -14,7 +14,7 @@
     <div class="subsection subsection-top">
         <h3 class="subheader">Overview</h3>
         <hr>
-        <span class="lfont">
+        <span class="mfont">
             This API is intended to make climate data more available for free.  
             The goal is to identify useful climate datasets from credible sources and provide an interface to access them from.  
             This would not be possible without the efforts of those credible sources.   
@@ -28,13 +28,36 @@
     </div>
 
     <div class="subsection subsection-middle">
+        <h3 class="subheader">Filters</h3>
+        <hr>
+        <div class="mfont" style="text-align: left;">
+            <div style="padding: 5px; margin: 5px 0px;">
+                <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Include records created after the provided date</div>
+                <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?created_at__gt=YYYY-MM-DD</div>
+            </div>
+            <div style="padding: 5px; margin: 5px 0px;">
+                <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Include records created after or on the provided date</div>
+                <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?created_at__gte=YYYY-MM-DD</div>
+            </div>
+            <div style="padding: 5px; margin: 5px 0px;">
+                <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Include records created before the provided date</div>
+                <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?created_at__lt=YYYY-MM-DD</div>
+            </div>
+            <div style="padding: 5px; margin: 5px 0px;">
+                <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Include records created before or on the provided date</div>
+                <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?created_at__lte=YYYY-MM-DD</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="subsection subsection-middle">
         <h3 class="subheader">Carbon Dioxide</h3>
         <hr>
-        <div class="lfont" style="text-align: left;">
+        <div class="mfont" style="text-align: left;">
             <table class="mtable" style="border-spacing: 10px; background-color: unset; width: -webkit-fill-available;">
-                <tr><td>Description:</td><td>Estimated CO2 daily global seasonal cycle and trend.</td></tr>
-                <tr><td>Request:</td><td>GET /co2</td></tr>
-                <tr><td>Response:</td><td><code>[
+                <tr><td class="table-key" style="background-color: black;">Description:</td><td>Estimated CO2 daily global seasonal cycle and trend.</td></tr>
+                <tr><td class="table-key" style="background-color: black;">Request:</td><td>GET /co2</td></tr>
+                <tr><td class="table-key" style="background-color: black;">Response:</td><td><code>[
     {
         "year": 2021,
         "month": 7,
@@ -45,8 +68,8 @@
     },
 ]
                 </code></td></tr>
-                <tr><td>Source:</td><td><a href="http://noaa.gov/">NOAA</a></td></tr>
-                <tr><td>Dataset:</td><td><a href="ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_trend_gl.csv">co2_trend_gl.csv</a></td></tr>
+                <tr><td class="table-key" style="background-color: black;">Source:</td><td><a href="http://noaa.gov/">NOAA</a></td></tr>
+                <tr><td class="table-key" style="background-color: black;">Dataset:</td><td><a href="ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_trend_gl.csv">co2_trend_gl.csv</a></td></tr>
             </table>
         </div>
     </div>
@@ -54,11 +77,11 @@
     <div class="subsection subsection-middle">
         <h3 class="subheader">Methane</h3>
         <hr>
-        <div class="lfont" style="text-align: left;">
+        <div class="mfont" style="text-align: left;">
             <table class="mtable" style="border-spacing: 10px; background-color: unset; width: -webkit-fill-available;">
-                <tr><td>Description:</td><td>Globally-averaged, monthly mean atmospheric methane abundance determined from marine surface sites.</td></tr>
-                <tr><td>Request:</td><td>GET /ch4</td></tr>
-                <tr><td>Response:</td><td><code>[
+                <tr><td class="table-key" style="background-color: black;">Description:</td><td>Globally-averaged, monthly mean atmospheric methane abundance determined from marine surface sites.</td></tr>
+                <tr><td class="table-key" style="background-color: black;">Request:</td><td>GET /ch4</td></tr>
+                <tr><td class="table-key" style="background-color: black;">Response:</td><td><code>[
     {
         "year": 2021,
         "month": 3,
@@ -71,19 +94,19 @@
     },
 ]
                 </code></td></tr>
-                <tr><td>Source:</td><td><a href="http://noaa.gov/">NOAA</a></td></tr>
-                <tr><td>Dataset:</td><td><a href="ftp://aftp.cmdl.noaa.gov/products/trends/ch4/ch4_mm_gl.txt">ch4_mm_gl.txt</a></td></tr>
+                <tr><td class="table-key" style="background-color: black;">Source:</td><td><a href="http://noaa.gov/">NOAA</a></td></tr>
+                <tr><td class="table-key" style="background-color: black;">Dataset:</td><td><a href="ftp://aftp.cmdl.noaa.gov/products/trends/ch4/ch4_mm_gl.txt">ch4_mm_gl.txt</a></td></tr>
             </table>
         </div>
     </div>
     <div class="subsection subsection-bottom">
         <h3 class="subheader">Temperature Change</h3>
         <hr>
-        <div class="lfont" style="text-align: left;">
+        <div class="mfont" style="text-align: left;">
             <table class="mtable" style="border-spacing: 10px; background-color: unset; width: -webkit-fill-available;">
-                <tr><td>Description:</td><td>Monthly mean global surface temperature change.</td></tr>
-                <tr><td>Request:</td><td>GET /temperature_change</td></tr>
-                <tr><td>Response:</td><td><code>[
+                <tr><td class="table-key" style="background-color: black;">Description:</td><td>Monthly mean global surface temperature change.</td></tr>
+                <tr><td class="table-key" style="background-color: black;">Request:</td><td>GET /temperature_change</td></tr>
+                <tr><td class="table-key" style="background-color: black;">Response:</td><td><code>[
     {
         "year_month": 2021.46,
         "station": 1.1,
@@ -92,8 +115,8 @@
     },
 ]
                 </code></td></tr>
-                <tr><td>Source:</td><td><a href="http://noaa.gov/">NOAA</a></td></tr>
-                <tr><td>Dataset:</td><td><a href="http://data.giss.nasa.gov/gistemp/graphs_v4/graph_data/Monthly_Mean_Global_Surface_Temperature/graph.csv">graph.csv</a></td></tr>
+                <tr><td class="table-key" style="background-color: black;">Source:</td><td><a href="http://noaa.gov/">NOAA</a></td></tr>
+                <tr><td class="table-key" style="background-color: black;">Dataset:</td><td><a href="http://data.giss.nasa.gov/gistemp/graphs_v4/graph_data/Monthly_Mean_Global_Surface_Temperature/graph.csv">graph.csv</a></td></tr>
             </table>
         </div>
     </div>

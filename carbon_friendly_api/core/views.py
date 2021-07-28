@@ -1,6 +1,7 @@
 import json
 import logging
 
+import pandas as pd
 from django.conf import settings
 from django.core.mail import send_mail
 from django.http import HttpResponse, HttpResponseServerError
@@ -13,8 +14,8 @@ from rest_framework.views import APIView
 
 from core.serializers import EmailSerializer
 from core.utils import (
-    get_carbon_dioxide,
-    get_latest_metrics,
+    get_carbon_dioxide, 
+    get_latest_metrics, 
     get_methane,
     get_temperature_change,
 )
@@ -103,15 +104,37 @@ class MetricViewMixin(APIView):
     """Provide base functionality to metric endpoints."""
     metric_method = None
 
+    def filter_dataset(ds: pd.Series, filters: dict = {}) -> pd.Series:
+        """Filters the provided dataset."""
+        for key, value in filters.items():
+            logger.debug(f"Filtering dataset by {key} with value {value}")
+
+            # Filter support for created_at
+            if key == "created_at__gt":
+                ds = ds[ds["created_at"] > value]
+            elif key == "created_at__gte":
+                ds = ds[ds["created_at"] >= value]
+            elif key == "created_at__lt":
+                ds = ds[ds["created_at"] < value]
+            elif key == "created_at__lte":
+                ds = ds[ds["created_at"] <= value]
+
+        return ds
+
     @classmethod
-    def get(self, request):
+    def get(cls, request):
         """Dynamically provide a Series."""
-        if not self.metric_method:
+        if not cls.metric_method:
             return HttpResponseServerError(json.dumps({"error": "Metric not yet configured"}), content_type="application/json")
 
         # Load metrics and sort them ascending by date
-        metric = self.metric_method()
+        metric = cls.metric_method()
         metric.sort_values(by=['created_at'], inplace=True, ascending=False)
+
+        try:
+            metric = cls.filter_dataset(metric, filters=request.GET)
+        except Exception as e:
+            logger.error(f"Error parsing filter(s): {e}")
 
         records = []
         for record in metric.itertuples():
