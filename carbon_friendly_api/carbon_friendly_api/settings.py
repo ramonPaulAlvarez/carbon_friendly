@@ -152,7 +152,7 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Dataset Maximum File Age (Hours)
-DATASET_MAX_AGE = 1
+DATASET_MAX_AGE = 6
 
 # Dataset File Information
 DATASET_CO2_FILENAME = "co2.csv"
@@ -173,6 +173,6 @@ CELERY_RESULT_BACKEND = "redis://redis:6379"
 CELERY_BEAT_SCHEDULE = {
     "download_datasets": {
         "task": "core.tasks.download_datasets",
-        "schedule": crontab(minute="0", hour="*/1"),
+        "schedule": crontab(minute="0", hour="*/3"),
     },
 }
