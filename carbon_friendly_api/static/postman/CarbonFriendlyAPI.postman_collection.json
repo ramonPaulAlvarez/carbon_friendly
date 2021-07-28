@@ -40,17 +40,17 @@
 			"response": []
 		},
 		{
-			"name": "Temperature Anomaly",
+			"name": "Temperature Change",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{SERVER}}/temperature_anomaly",
+					"raw": "{{SERVER}}/temperature_change",
 					"host": [
 						"{{SERVER}}"
 					],
 					"path": [
-						"temperature_anomaly"
+						"temperature_change"
 					]
 				}
 			},

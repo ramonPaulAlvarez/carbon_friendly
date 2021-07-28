@@ -3,7 +3,7 @@
 {% block inner_body %}
     <div style="height: 96%; text-align:center; display:table; width: 100%;">
         <h1 class="headline">How can <font style="text-decoration: underline; text-decoration-color: white;">you</font> help fight the climate crisis?</h1>
-        <div style="display: table-row;">
+        <div class="small-headline">
             Scroll down to find out!
             <br>
             <br>
@@ -251,9 +251,11 @@
         <hr>
         <span class="lfont">
             As time passes I will provide additional resources and tools related to combating the climate crisis.
-            Please <a onClick="$('#contact-form-container').toggle(); $('#contact-form-container').get(0).scrollIntoView();" style="text-decoration: underline; cursor:pointer;">contact me</a> if you have questions, comments, or would like to contribute.
+            Please <a onClick="$('#contact-form-container').toggle(); $('#contact-form-container').get(0).scrollIntoView();" style="text-decoration: underline; cursor:pointer;" title="Contact Me">contact me</a> if you have questions, comments, or would like to contribute.  
+            For information on how to access climate metrics used here please read the <a href="/docs" title="API Documentation">API Documentation</a>.
+            <br><br>
         </span>
-        <div id="contact-form-container" class="gcontainer" style="padding-top: 15px; display:none;">
+        <div id="contact-form-container" class="gcontainer" style="padding-top: 20px; display:none;">
             <div class="mfont mtable mform-table" style="text-align:center; margin:auto;">
                 <div class="table-header">Contact Me</div>
                 <div class="data-cell">                            

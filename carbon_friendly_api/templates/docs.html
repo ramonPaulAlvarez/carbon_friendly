@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block meta_url %}http://carbonfriendly.earth/docs{% endblock %}
+{% block meta_title %}Carbon Friendly - API Documentation{% endblock %}
+{% block title %}Carbon Friendly - API Documentation{% endblock %}
+
+{% block background %}static/docs-bg.jpg{% endblock %}
+
+{% block inner_body %}
+    <div style="height: 50%; text-align:center; display:table; width: 100%;">
+        <h1 class="headline" style="vertical-align: middle;">API Documentation</h1>
+    </div>
+    
+    <div class="subsection subsection-top">
+        <h3 class="subheader">Overview</h3>
+        <hr>
+        <span class="lfont">
+            This API is intended to make climate data more available for free.  
+            The goal is to identify useful climate datasets from credible sources and provide an interface to access them from.  
+            This would not be possible without the efforts of those credible sources.   
+            All data is provided unmodified with rare exception to field names.  
+            An additional field named <code>created_at</code> has been included in all datasets that is an <i>estimation</i> of record creation.  
+            <br><br>
+            To quickly get started querying the API download the <a href="static/postman/CarbonFriendlyAPI.postman_collection.json" title="Postman Collection">Postman Collection</a> and <a href="static/postman/CarbonFriendlyAPI.postman_environment.json" title="Postman Environment">Environment</a> files.  
+            If you do not already have Postman installed you can get it from the <a href="https://www.postman.com/downloads" title="Postman Downloads" target="_blank">Postman Downloads</a> page.  
+            <br><br>
+        </span>
+    </div>
+
+    <div class="subsection subsection-middle">
+        <h3 class="subheader">Carbon Dioxide</h3>
+        <hr>
+        <div class="lfont" style="text-align: left;">
+            <table class="mtable" style="border-spacing: 10px; background-color: unset; width: -webkit-fill-available;">
+                <tr><td>Description:</td><td>Estimated CO2 daily global seasonal cycle and trend.</td></tr>
+                <tr><td>Request:</td><td>GET /co2</td></tr>
+                <tr><td>Response:</td><td><code>[
+    {
+        "year": 2021,
+        "month": 7,
+        "day": 26,
+        "smoothed": 412.83,
+        "trend": 415.2,
+        "created_at": "2021-07-26T00:00:00"
+    },
+]
+                </code></td></tr>
+                <tr><td>Source:</td><td><a href="http://noaa.gov/">NOAA</a></td></tr>
+                <tr><td>Dataset:</td><td><a href="ftp://aftp.cmdl.noaa.gov/products/trends/co2/co2_trend_gl.csv">co2_trend_gl.csv</a></td></tr>
+            </table>
+        </div>
+    </div>
+    
+    <div class="subsection subsection-middle">
+        <h3 class="subheader">Methane</h3>
+        <hr>
+        <div class="lfont" style="text-align: left;">
+            <table class="mtable" style="border-spacing: 10px; background-color: unset; width: -webkit-fill-available;">
+                <tr><td>Description:</td><td>Globally-averaged, monthly mean atmospheric methane abundance determined from marine surface sites.</td></tr>
+                <tr><td>Request:</td><td>GET /ch4</td></tr>
+                <tr><td>Response:</td><td><code>[
+    {
+        "year": 2021,
+        "month": 3,
+        "decimal": 2021.208,
+        "average": 1888.5,
+        "average_unc": -9.9,
+        "trend": 1888.3,
+        "trend_unc": -9.9,
+        "created_at": "2021-03-01T00:00:00"
+    },
+]
+                </code></td></tr>
+                <tr><td>Source:</td><td><a href="http://noaa.gov/">NOAA</a></td></tr>
+                <tr><td>Dataset:</td><td><a href="ftp://aftp.cmdl.noaa.gov/products/trends/ch4/ch4_mm_gl.txt">ch4_mm_gl.txt</a></td></tr>
+            </table>
+        </div>
+    </div>
+    <div class="subsection subsection-bottom">
+        <h3 class="subheader">Temperature Change</h3>
+        <hr>
+        <div class="lfont" style="text-align: left;">
+            <table class="mtable" style="border-spacing: 10px; background-color: unset; width: -webkit-fill-available;">
+                <tr><td>Description:</td><td>Monthly mean global surface temperature change.</td></tr>
+                <tr><td>Request:</td><td>GET /temperature_change</td></tr>
+                <tr><td>Response:</td><td><code>[
+    {
+        "year_month": 2021.46,
+        "station": 1.1,
+        "land_ocean": 0.85,
+        "created_at": "2021-06-16T00:00:00"
+    },
+]
+                </code></td></tr>
+                <tr><td>Source:</td><td><a href="http://noaa.gov/">NOAA</a></td></tr>
+                <tr><td>Dataset:</td><td><a href="http://data.giss.nasa.gov/gistemp/graphs_v4/graph_data/Monthly_Mean_Global_Surface_Temperature/graph.csv">graph.csv</a></td></tr>
+            </table>
+        </div>
+    </div>
+{% endblock %}

@@ -16,7 +16,7 @@ from core.utils import (
     get_carbon_dioxide,
     get_latest_metrics,
     get_methane,
-    get_temperature_anomaly,
+    get_temperature_change,
 )
 
 logger = logging.getLogger(__name__)
@@ -53,6 +53,17 @@ def contact(request):
     )
 
     return HttpResponse(json.dumps({"success": "Message sent!"}), content_type="application/json")
+
+
+def docs(request):
+    """Render the docs page."""
+    context = {}
+    try:
+        context["metrics"] = get_latest_metrics()
+    except Exception as e:
+        logger.error(f"Metrics error: {e}")
+
+    return render(request, "docs.html", context=context)
 
 
 def error_404(request, exception):
@@ -120,6 +131,6 @@ class Co2MetricView(MetricViewMixin):
     metric_method = get_carbon_dioxide
 
 
-class TemperatureAnomalyMetricView(MetricViewMixin):
-    """Provide the Temperature Anomaly Series."""
-    metric_method = get_temperature_anomaly
+class TemperatureChangeMetricView(MetricViewMixin):
+    """Provide the Temperature Change Series."""
+    metric_method = get_temperature_change

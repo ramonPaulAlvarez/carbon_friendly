@@ -37,12 +37,12 @@ def get_latest_metrics() -> dict:
             "unit": "PPM",
         })
 
-    latest_t_anon = get_temperature_anomaly().iloc[-1]
-    if len(latest_t_anon.index):
+    latest_temperature_change = get_temperature_change().iloc[-1]
+    if len(latest_temperature_change.index):
         metrics.append({
             "label": None,
-            "value": latest_t_anon["station"],
-            "title": f"Temperature Anomaly in Celsius (~{latest_t_anon['created_at']}, Source: NOAA)",
+            "value": latest_temperature_change["station"],
+            "title": f"Temperature Change in Celsius (~{latest_temperature_change['created_at']}, Source: NOAA)",
             "unit": "C",
         })
 
@@ -76,10 +76,10 @@ def get_methane() -> pd.Series:
     return dataset
 
 
-def get_temperature_anomaly() -> pd.Series:
-    """Get temperature anomaly trend data."""
+def get_temperature_change() -> pd.Series:
+    """Get temperature change trend data."""
     column_names = ["year_month", "station", "land_ocean"]
-    file_path = f"{settings.BASE_DIR}/datasets/{settings.DATASET_TANON_FILENAME}"
+    file_path = f"{settings.BASE_DIR}/datasets/{settings.DATASET_TEMPERATURE_CHANGE_FILENAME}"
     dataset = pd.read_csv(file_path, skiprows=[0, 1], names=column_names)
 
     # Add custom created_at column

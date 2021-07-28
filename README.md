@@ -52,4 +52,4 @@ docker-compose up --build
 Open your favorite browser and visit the address of the host you are running the services on.  For example, http://localhost if you're using Docker or http://localhost:8000 if you're not.  I'm currently running the services at http://carbonfriendly.earth.
 
 ## API Service
-If you'd like to query the API then I recommend installing Postman and downloading the [Postman Collection](postman/CarbonFriendlyAPI.postman_collection.json) and [Postman Environment](postman/CarbonFriendlyAPI.postman_environment.json) files for the project.  If you're working on the API be sure to adjust the `SERVER` environment variable to use your correct host.
+If you'd like to query the API then I recommend installing Postman and downloading the [Postman Collection](carbon_friendly_api/static/postman/CarbonFriendlyAPI.postman_collection.json) and [Environment](carbon_friendly_api/static/postman/CarbonFriendlyAPI.postman_environment.json) files for the project.  If you're working on the API be sure to adjust the `SERVER` environment variable to use your correct host.

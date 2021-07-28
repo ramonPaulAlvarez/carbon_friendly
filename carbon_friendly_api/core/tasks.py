@@ -29,15 +29,15 @@ def download_dataset(url: str, file_name: str, force: bool = False) -> None:
     # Download the dataset and store locally
     logger.info(f"Downloading dataset {url}...")
 
-    with urllib.request.urlopen(url) as response, open(file_path, 'wb') as fd:
+    with urllib.request.urlopen(url) as response, open(file_path, "wb") as fd:
         shutil.copyfileobj(response, fd)
 
 
 @shared_task
 def download_datasets(force: bool = False) -> None:
     """Download all datasets that we need."""
-    for url, local_file_name in settings.DATASETS:
-        download_dataset.apply_async(args=(url, local_file_name, force))
+    for dataset in settings.DATASETS:
+        download_dataset.apply_async(args=(dataset["url"], dataset["file_name"], force))
 
 
 @worker_ready.connect

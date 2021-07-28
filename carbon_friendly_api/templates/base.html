@@ -17,7 +17,8 @@
 
         <style>
             a { color:white; }
-            body { background-color: rgb(74, 101, 72); color: white; background-image: url(static/landing-bg.jpg); margin-bottom: 0px; background-size: cover; background-attachment: fixed; background-position: center center; background-repeat: no-repeat; }
+            body { background-color: rgb(74, 101, 72); color: white; background-image: url({% block background %}static/landing-bg.jpg{% endblock %}); margin-bottom: 0px; background-size: cover; background-attachment: fixed; background-position: center center; background-repeat: no-repeat; }
+            code { white-space: pre-wrap; font: unset; }
             hr { border-color: rgb(74, 101, 72); }
             .banner { border: 1px solid black; text-transform: uppercase; padding: 15px 0px 10px 0px; background-color:rgba(0, 0, 0, 0.6); margin-bottom: 0px; }
             .data-cell { padding: 5px 10px; line-height: 1.8; }
@@ -33,13 +34,16 @@
             .mform textarea { font-size: 1em; }
             .mform-table { width: 400px; }
             .mtable { margin: 10px 5px; text-align: left; background-color: rgba(255, 255, 255, 0.05); }
+            .mtable>tbody>tr>td:first-child { width: 10%; font-weight: bold; }
+            .mtable>tbody>tr>td { vertical-align: top; font-size: 1.2em; padding: 15px; background-color: rgba(255, 255, 255, 0.05); }
+            .small-headline { display: table-row; }
             .subheader { font-size: 1.4em; margin: 3px 0px 0px 0px; text-transform: uppercase; }
-            .subsection { border: 1px solid black; border-radius: 25px; background-color:rgba(0, 0, 0, 0.6); margin: 5px 20px; padding: 10px; }
+            .subsection { border: 1px solid black; border-radius: 25px; background-color:rgba(0, 0, 0, 0.6); margin: 10px 20px; padding: 10px; }
             .subsection-top { border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; }
             .subsection-middle { border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; }
             .subsection-bottom { border-top-left-radius: 0px; border-top-right-radius: 0px; }
             .table-header { background:black; padding: 5px 0px; border-bottom: 2px solid rgb(74, 101, 72); font-weight:bold; text-align:center; }
-            
+
             @media only screen and (max-width: 500px), only screen and (max-device-width: 500px) {
                 .banner { padding: 25px 0px 15px 0px; }
                 .gcontainer { display:block; }
@@ -47,6 +51,9 @@
                 .mform input { font-size: 2em; }
                 .mform textarea { font-size: 2em; }
                 .mform-table { width:100%; }
+                .mtable>tbody>tr>td:first-child { font-size: 2.5em; }
+                .mtable>tbody>tr>td:nth-child(2) { font-size: 1.6em; }
+                .small-headline {font-size: 2em;}
             }
         </style>
         <script type="text/javascript" src="static/base.js"></script>
