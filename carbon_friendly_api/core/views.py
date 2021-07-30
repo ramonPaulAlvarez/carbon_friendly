@@ -104,12 +104,22 @@ class MetricViewMixin(APIView):
     """Provide base functionality to metric endpoints."""
     metric_method = None
 
-    def filter_dataset(ds: pd.Series, filters: dict = {}) -> pd.Series:
+    def filter_dataset(ds: pd.Series, query_params: dict = {}) -> pd.Series:
         """Filters the provided dataset."""
-        for key, value in filters.items():
-            logger.debug(f"Filtering dataset by {key} with value {value}")
+        valid_filters = (
+            "created_at__gt",
+            "created_at__gte",
+            "created_at__lt",
+            "created_at__lte",
+        )
+
+        for key, value in query_params.items():
+            # Skip unsupported query params
+            if key not in valid_filters:
+                continue
 
             # Filter support for created_at
+            logger.debug(f"Filtering dataset by {key} with value {value}")
             if key == "created_at__gt":
                 ds = ds[ds["created_at"] > value]
             elif key == "created_at__gte":
@@ -121,20 +131,44 @@ class MetricViewMixin(APIView):
 
         return ds
 
+    def order_dataset(ds: pd.Series, query_params: dict = {}) -> pd.Series:
+        """Orders the provided dataset."""
+        for key, value in query_params.items():
+            # Skip unsupported query params
+            if key != "order_by":
+                continue
+
+            # Skip unsupported columns
+            ascending = not value.startswith("-")
+            value = value.replace("-", "")
+            if value not in ds.columns:
+                continue
+
+            # Order dataset
+            logger.debug(f"Ordering dataset by {value} {'ascending' if ascending else 'descending'}")
+            ds.sort_values(by=[value], inplace=True, ascending=ascending)
+
+        return ds
+
     @classmethod
     def get(cls, request):
         """Dynamically provide a Series."""
         if not cls.metric_method:
             return HttpResponseServerError(json.dumps({"error": "Metric not yet configured"}), content_type="application/json")
 
-        # Load metrics and sort them ascending by date
-        metric = cls.metric_method()
-        metric.sort_values(by=['created_at'], inplace=True, ascending=False)
+        dataset = cls.metric_method()
 
         try:
-            metric = cls.filter_dataset(metric, filters=request.GET)
+            metric = cls.filter_dataset(dataset, query_params=request.GET)
         except Exception as e:
-            logger.error(f"Error parsing filter(s): {e}")
+            logger.error(f"Error filtering dataset: {e}")
+
+        try:
+            metric = cls.order_dataset(dataset, query_params=request.GET)
+        except Exception as e:
+            # Order by descending created_at
+            dataset.sort_values(by=['created_at'], inplace=True, ascending=False)
+            logger.error(f"Error ordering dataset: {e}")
 
         records = []
         for record in metric.itertuples():
