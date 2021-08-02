@@ -131,22 +131,26 @@ class MetricViewMixin(APIView):
 
         return ds
 
+    def limit_dataset(ds: pd.Series, query_params: dict = {}) -> pd.Series:
+        """Limit the provided dataset."""
+        value = query_params.get("limit", settings.DEFAULT_PAGE_SIZE)
+        return ds[:int(value)]
+
     def order_dataset(ds: pd.Series, query_params: dict = {}) -> pd.Series:
         """Orders the provided dataset."""
-        for key, value in query_params.items():
-            # Skip unsupported query params
-            if key != "order_by":
-                continue
-
+        value = query_params.get("order_by")
+        if value:
             # Skip unsupported columns
             ascending = not value.startswith("-")
             value = value.replace("-", "")
-            if value not in ds.columns:
-                continue
 
             # Order dataset
-            logger.debug(f"Ordering dataset by {value} {'ascending' if ascending else 'descending'}")
-            ds.sort_values(by=[value], inplace=True, ascending=ascending)
+            if value in ds.columns:
+                logger.debug(f"Ordering dataset by {value} {'ascending' if ascending else 'descending'}")
+                ds.sort_values(by=[value], inplace=True, ascending=ascending)
+        else:
+            # Order by descending created_at
+            ds.sort_values(by=['created_at'], inplace=True, ascending=False)
 
         return ds
 
@@ -166,9 +170,12 @@ class MetricViewMixin(APIView):
         try:
             metric = cls.order_dataset(dataset, query_params=request.GET)
         except Exception as e:
-            # Order by descending created_at
-            dataset.sort_values(by=['created_at'], inplace=True, ascending=False)
             logger.error(f"Error ordering dataset: {e}")
+
+        try:
+            metric = cls.limit_dataset(dataset, query_params=request.GET)
+        except Exception as e:
+            logger.error(f"Error limiting dataset: {e}")
 
         records = []
         for record in metric.itertuples():

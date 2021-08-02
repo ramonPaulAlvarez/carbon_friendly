@@ -28,32 +28,29 @@
     </div>
 
     <div class="subsection subsection-middle">
-        <h3 class="subheader">Filters</h3>
+        <h3 class="subheader">Query Parameters</h3>
         <hr>
         <div class="mfont" style="text-align: left;">
             <div style="padding: 5px; margin: 5px 0px;">
-                <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Records created after date</div>
+                <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Filter records created after date</div>
                 <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?created_at__gt=YYYY-MM-DD</div>
             </div>
             <div style="padding: 5px; margin: 5px 0px;">
-                <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Records created after or on date</div>
+                <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Filter records created after or on date</div>
                 <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?created_at__gte=YYYY-MM-DD</div>
             </div>
             <div style="padding: 5px; margin: 5px 0px;">
-                <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Records created before date</div>
+                <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Filter records created before date</div>
                 <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?created_at__lt=YYYY-MM-DD</div>
             </div>
             <div style="padding: 5px; margin: 5px 0px;">
-                <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Records created before or on date</div>
+                <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Filter records created before or on date</div>
                 <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?created_at__lte=YYYY-MM-DD</div>
             </div>
-        </div>
-    </div>
-
-    <div class="subsection subsection-middle">
-        <h3 class="subheader">Ordering</h3>
-        <hr>
-        <div class="mfont" style="text-align: left;">
+            <div style="padding: 5px; margin: 5px 0px;">
+                <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Limit the number of records provided</div>
+                <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?limit=100</div>
+            </div>
             <div style="padding: 5px; margin: 5px 0px;">
                 <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Order records by any field ascending</div>
                 <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?order_by=created_at</div>
