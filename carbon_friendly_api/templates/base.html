@@ -3,7 +3,7 @@
         <link rel="icon" href="static/favicon.ico" type="image/x-icon">
         <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon">
         
-        <meta name="description" content="Resources to fight the climate crisis and improve the health of the planet.">
+        <meta name="description" content="{% block meta_description %}Resources to fight the climate crisis and improve the health of the planet.{% endblock %}">
         <meta name="keywords" content="climate crisis carbon earth donate action green credits bonds extinction emergency books videos news lifestyle community career buildings fire sunrise hero calculator science classes jobs career crypto kelp trees ocean co2 warming drawdown arbor ecocide cleanup vegan albedo heat drought rise sea love planet">
         <meta property="og:image" content="http://carbonfriendly.earth/static/preview.png">
         <meta property="og:image:width" content="1200"/>
@@ -60,7 +60,7 @@
     </head>
 
     <body>
-        <div style="min-height: 100%; text-align: center; padding-bottom: 10px; margin:-15px -15px 0px -15px; background-color:rgba(0, 0, 0, 0.5);">
+        <div style="min-height: 100%; text-align: center; padding-bottom: 10px; margin:-15px -15px 0px -15px; background-color:rgba(0, 0, 0, 0.5);" data-nosnippet>
             <h3 class="banner"><a href="/" title="carbonfriendly.earth" style="text-decoration: none;">carbonfriendly<font color="green">.earth</font></a></h3>
             {% if metrics %}
                 <span id="metrics" class="metrics-container">
