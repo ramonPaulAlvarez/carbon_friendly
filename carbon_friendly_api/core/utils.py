@@ -33,7 +33,7 @@ def get_latest_metrics() -> dict:
         metrics.append({
             "label": "CO2",
             "value": latest_co2["trend"],
-            "title": f"Carbon Dioxide in PPM (~{latest_co2['created_at']}, Source: NOAA)",
+            "title": f"Carbon Dioxide PPM (Updated: ~{latest_co2['created_at']}, Source: NOAA)",
             "unit": "PPM",
         })
 
@@ -42,7 +42,7 @@ def get_latest_metrics() -> dict:
         metrics.append({
             "label": None,
             "value": latest_temperature_change["station"],
-            "title": f"Temperature Change in Celsius (~{latest_temperature_change['created_at']}, Source: NOAA)",
+            "title": f"Temperature Change in Celsius (Updated: ~{latest_temperature_change['created_at']}, Source: NOAA)",
             "unit": "C",
         })
 
@@ -51,7 +51,7 @@ def get_latest_metrics() -> dict:
         metrics.append({
             "label": "CH4",
             "value": latest_ch4["average"],
-            "title": f"Methane Dioxide in PPM (~{latest_ch4['created_at']}, Source: NOAA)",
+            "title": f"Methane PPM (Updated: ~{latest_ch4['created_at']}, Source: NOAA)",
             "unit": "PPM",
         })
 
