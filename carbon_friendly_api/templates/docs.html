@@ -92,7 +92,7 @@
         <hr>
         <div class="mfont" style="text-align: left;">
             <table class="mtable" style="border-spacing: 10px; background-color: unset; width: -webkit-fill-available;">
-                <tr><td class="table-key" style="background-color: black;">Description:</td><td>Globally-averaged, monthly mean atmospheric methane abundance determined from marine surface sites.</td></tr>
+                <tr><td class="table-key" style="background-color: black;">Description:</td><td>Globally-averaged monthly mean atmospheric methane abundance determined from marine surface sites.</td></tr>
                 <tr><td class="table-key" style="background-color: black;">Request:</td><td>GET /ch4</td></tr>
                 <tr><td class="table-key" style="background-color: black;">Response:</td><td><code>[
     {
@@ -112,6 +112,33 @@
             </table>
         </div>
     </div>
+
+    <div class="subsection subsection-middle">
+        <h3 class="subheader">Nitrous Oxide</h3>
+        <hr>
+        <div class="mfont" style="text-align: left;">
+            <table class="mtable" style="border-spacing: 10px; background-color: unset; width: -webkit-fill-available;">
+                <tr><td class="table-key" style="background-color: black;">Description:</td><td>Globally averaged marine surface monthly mean nitrous oxide data.</td></tr>
+                <tr><td class="table-key" style="background-color: black;">Request:</td><td>GET /n2o</td></tr>
+                <tr><td class="table-key" style="background-color: black;">Response:</td><td><code>[
+    {
+        "year": 2021,
+        "month": 4,
+        "decimal": 2021.292,
+        "average": 334.1,
+        "average_unc": -9.9,
+        "trend": 334.1,
+        "trend_unc": -9.9,
+        "created_at": "2021-04-01T00:00:00"
+    },
+]
+                </code></td></tr>
+                <tr><td class="table-key" style="background-color: black;">Source:</td><td><a href="http://noaa.gov/">NOAA</a></td></tr>
+                <tr><td class="table-key" style="background-color: black;">Dataset:</td><td><a href="https://gml.noaa.gov/webdata/ccgg/trends/n2o/n2o_mm_gl.txt">n2o_mm_gl.txt</a></td></tr>
+            </table>
+        </div>
+    </div>
+
     <div class="subsection subsection-bottom">
         <h3 class="subheader">Temperature Change</h3>
         <hr>

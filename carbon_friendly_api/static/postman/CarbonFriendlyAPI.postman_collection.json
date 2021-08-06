@@ -40,6 +40,23 @@
 			"response": []
 		},
 		{
+			"name": "Nitrous Oxide",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SERVER}}/n2o",
+					"host": [
+						"{{SERVER}}"
+					],
+					"path": [
+						"n2o"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Temperature Change",
 			"request": {
 				"method": "GET",

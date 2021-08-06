@@ -3,12 +3,15 @@ import os
 import shutil
 import urllib.request
 
-from django.conf import settings
-from celery.signals import worker_ready
 from celery import shared_task
+from celery.signals import worker_ready
 from celery.utils.log import get_task_logger
+from django.apps import apps
+from django.conf import settings
+
 
 logger = get_task_logger(__name__)
+app_config = apps.get_app_config('core')
 
 
 @shared_task
@@ -19,7 +22,7 @@ def download_dataset(url: str, file_name: str, force: bool = False) -> None:
     if os.path.exists(file_path) and not force:
         dataset_created_at = datetime.datetime.fromtimestamp(
             os.path.getmtime(file_path))
-        if dataset_created_at + datetime.timedelta(hours=settings.DATASET_MAX_AGE) > datetime.datetime.now():
+        if dataset_created_at + datetime.timedelta(hours=app_config.MAX_AGE) > datetime.datetime.now():
             return
 
     # Create directory for the dataset if it doesn't exist
@@ -36,8 +39,9 @@ def download_dataset(url: str, file_name: str, force: bool = False) -> None:
 @shared_task
 def download_datasets(force: bool = False) -> None:
     """Download all datasets that we need."""
-    for dataset in settings.DATASETS:
-        download_dataset.apply_async(args=(dataset["url"], dataset["file_name"], force))
+    for dataset in app_config.DATASETS:
+        download_dataset.apply_async(
+            args=(dataset["url"], dataset["file_name"], force))
 
 
 @worker_ready.connect

@@ -13,12 +13,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from core.serializers import EmailSerializer
-from core.utils import (
-    get_carbon_dioxide, 
-    get_latest_metrics, 
-    get_methane,
-    get_temperature_change,
-)
+from core.utils import get_latest_metrics, Datasets
 
 logger = logging.getLogger(__name__)
 
@@ -146,7 +141,8 @@ class MetricViewMixin(APIView):
 
             # Order dataset
             if value in ds.columns:
-                logger.debug(f"Ordering dataset by {value} {'ascending' if ascending else 'descending'}")
+                logger.debug(
+                    f"Ordering dataset by {value} {'ascending' if ascending else 'descending'}")
                 ds.sort_values(by=[value], inplace=True, ascending=ascending)
         else:
             # Order by descending created_at
@@ -185,16 +181,21 @@ class MetricViewMixin(APIView):
         return Response(records)
 
 
-class Ch4MetricView(MetricViewMixin):
+class MethaneView(MetricViewMixin):
     """Provide the CH4 Series."""
-    metric_method = get_methane
+    metric_method = Datasets.methane
 
 
-class Co2MetricView(MetricViewMixin):
+class CarbonDioxideView(MetricViewMixin):
     """Provide the CO2 Series."""
-    metric_method = get_carbon_dioxide
+    metric_method = Datasets.carbon_dioxide
 
 
-class TemperatureChangeMetricView(MetricViewMixin):
+class NitrousOxideView(MetricViewMixin):
+    """Provide the N2O Series."""
+    metric_method = Datasets.nitrous_oxide
+
+
+class TemperatureChangeView(MetricViewMixin):
     """Provide the Temperature Change Series."""
-    metric_method = get_temperature_change
+    metric_method = Datasets.temperature_change
