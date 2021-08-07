@@ -97,7 +97,7 @@ def get_latest_metrics() -> dict:
         metrics.append({
             "label": metric_config.get("label"),
             "value": latest_record.get(metric_config.get("field", "value")),
-            "title": f"{metric_config['name']} (Updated: {latest_record['created_at']}, Unit: {metric_config['unit']}, Source: {metric_config['source']})",
+            "title": f"{metric_config['name']} (Updated: {latest_record['created_at'].strftime('%Y-%m-%d')}, Source: {metric_config['source']})",
             "unit": metric_config["unit"],
         })
 
