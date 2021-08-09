@@ -1,6 +1,16 @@
 {% extends "base.html" %}
 
 {% block inner_body %}
+    <script>
+        // Prevent default contact form submission
+        $(function() {
+            $('#contact-form').on('submit', function(e) {
+                e.preventDefault();
+                submitContactForm();
+            });
+        });
+    </script>
+
     <div style="height: 96%; text-align:center; display:table; width: 100%;">
         <h1 class="headline">How can <font style="text-decoration: underline; text-decoration-color: white;">you</font> help fight the climate crisis?</h1>
         <div class="small-headline">
