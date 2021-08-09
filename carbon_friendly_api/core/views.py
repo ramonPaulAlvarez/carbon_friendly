@@ -102,10 +102,10 @@ class MetricViewMixin(APIView):
     def filter_dataset(ds: pd.Series, query_params: dict = {}) -> pd.Series:
         """Filters the provided dataset."""
         valid_filters = (
-            "created_at__gt",
-            "created_at__gte",
-            "created_at__lt",
-            "created_at__lte",
+            "timestamp__gt",
+            "timestamp__gte",
+            "timestamp__lt",
+            "timestamp__lte",
         )
 
         for key, value in query_params.items():
@@ -113,16 +113,16 @@ class MetricViewMixin(APIView):
             if key not in valid_filters:
                 continue
 
-            # Filter support for created_at
+            # Filter support for timestamp
             logger.debug(f"Filtering dataset by {key} with value {value}")
-            if key == "created_at__gt":
-                ds = ds[ds["created_at"] > value]
-            elif key == "created_at__gte":
-                ds = ds[ds["created_at"] >= value]
-            elif key == "created_at__lt":
-                ds = ds[ds["created_at"] < value]
-            elif key == "created_at__lte":
-                ds = ds[ds["created_at"] <= value]
+            if key == "timestamp__gt":
+                ds = ds[ds["timestamp"] > value]
+            elif key == "timestamp__gte":
+                ds = ds[ds["timestamp"] >= value]
+            elif key == "timestamp__lt":
+                ds = ds[ds["timestamp"] < value]
+            elif key == "timestamp__lte":
+                ds = ds[ds["timestamp"] <= value]
 
         return ds
 
@@ -145,8 +145,8 @@ class MetricViewMixin(APIView):
                     f"Ordering dataset by {value} {'ascending' if ascending else 'descending'}")
                 ds.sort_values(by=[value], inplace=True, ascending=ascending)
         else:
-            # Order by descending created_at
-            ds.sort_values(by=['created_at'], inplace=True, ascending=False)
+            # Order by descending timestamp
+            ds.sort_values(by=['timestamp'], inplace=True, ascending=False)
 
         return ds
 

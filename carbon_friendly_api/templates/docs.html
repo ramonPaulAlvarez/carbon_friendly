@@ -20,7 +20,7 @@
             The goal is to identify useful climate datasets from credible sources and provide an interface to access them from.  
             This would not be possible without the efforts of those credible sources.   
             All data is provided unmodified with rare exception to field names.  
-            An additional field named <code>created_at</code> has been included in all datasets that is an <i>estimation</i> of record creation.  
+            An additional field named <code>timestamp</code> has been included in all datasets that is an <i>estimation</i> of when the record starts.  
             <br><br>
             To quickly get started querying the API download the <a href="static/postman/CarbonFriendlyAPI.postman_collection.json" title="Postman Collection">Postman Collection</a> and <a href="static/postman/CarbonFriendlyAPI.postman_environment.json" title="Postman Environment">Environment</a> files.  
             If you do not already have Postman installed you can get it from the <a href="https://www.postman.com/downloads" title="Postman Downloads" target="_blank">Postman Downloads</a> page.  
@@ -34,19 +34,19 @@
         <div class="mfont" style="text-align: left;">
             <div style="padding: 5px; margin: 5px 0px;">
                 <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Filter records created after date</div>
-                <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?created_at__gt=YYYY-MM-DD</div>
+                <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?timestamp__gt=YYYY-MM-DD</div>
             </div>
             <div style="padding: 5px; margin: 5px 0px;">
                 <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Filter records created after or on date</div>
-                <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?created_at__gte=YYYY-MM-DD</div>
+                <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?timestamp__gte=YYYY-MM-DD</div>
             </div>
             <div style="padding: 5px; margin: 5px 0px;">
                 <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Filter records created before date</div>
-                <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?created_at__lt=YYYY-MM-DD</div>
+                <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?timestamp__lt=YYYY-MM-DD</div>
             </div>
             <div style="padding: 5px; margin: 5px 0px;">
                 <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Filter records created before or on date</div>
-                <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?created_at__lte=YYYY-MM-DD</div>
+                <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?timestamp__lte=YYYY-MM-DD</div>
             </div>
             <div style="padding: 5px; margin: 5px 0px;">
                 <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Limit the number of records provided</div>
@@ -54,11 +54,11 @@
             </div>
             <div style="padding: 5px; margin: 5px 0px;">
                 <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Order records by any field ascending</div>
-                <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?order_by=created_at</div>
+                <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?order_by=timestamp</div>
             </div>
             <div style="padding: 5px; margin: 5px 0px;">
                 <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Order records by any field descending</div>
-                <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?order_by=-created_at</div>
+                <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?order_by=-timestamp</div>
             </div>
         </div>
     </div>
@@ -77,7 +77,7 @@
         "day": 26,
         "smoothed": 412.83,
         "trend": 415.2,
-        "created_at": "2021-07-26T00:00:00"
+        "timestamp": "2021-07-26T00:00:00Z"
     },
 ]
                 </code></td></tr>
@@ -103,7 +103,7 @@
         "average_unc": -9.9,
         "trend": 1888.3,
         "trend_unc": -9.9,
-        "created_at": "2021-03-01T00:00:00"
+        "timestamp": "2021-03-01T00:00:00Z"
     },
 ]
                 </code></td></tr>
@@ -129,7 +129,7 @@
         "average_unc": -9.9,
         "trend": 334.1,
         "trend_unc": -9.9,
-        "created_at": "2021-04-01T00:00:00"
+        "timestamp": "2021-04-01T00:00:00Z"
     },
 ]
                 </code></td></tr>
@@ -151,7 +151,7 @@
         "year_month": 2021.46,
         "station": 1.1,
         "land_ocean": 0.85,
-        "created_at": "2021-06-16T00:00:00"
+        "timestamp": "2021-06-16T00:00:00Z"
     },
 ]
                 </code></td></tr>

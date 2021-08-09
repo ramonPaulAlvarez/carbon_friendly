@@ -19,13 +19,13 @@ class Datasets:
         file_path = f"{settings.BASE_DIR}/datasets/{app_config.CO2_FILENAME}"
         dataset = pd.read_csv(file_path, comment='#')
 
-        # Add custom created_at column
-        dataset["created_at"] = dataset.apply(
+        # Add custom timestamp column
+        dataset["timestamp"] = dataset.apply(
             lambda row: "/".join([str(int(row['month'])),
                                   str(int(row['day'])), str(int(row['year']))]),
             axis=1
         )
-        dataset["created_at"] = pd.to_datetime(dataset.created_at)
+        dataset["timestamp"] = pd.to_datetime(dataset.timestamp, utc=True)
 
         return dataset
 
@@ -37,13 +37,13 @@ class Datasets:
         dataset = pd.read_csv(file_path, comment='#',
                               delim_whitespace=True, names=column_names)
 
-        # Add custom created_at column
-        dataset["created_at"] = dataset.apply(
+        # Add custom timestamp column
+        dataset["timestamp"] = dataset.apply(
             lambda row: "/".join([str(int(row['month'])),
                                  str(int(row['year']))]),
             axis=1
         )
-        dataset["created_at"] = pd.to_datetime(dataset.created_at)
+        dataset["timestamp"] = pd.to_datetime(dataset.timestamp, utc=True)
 
         return dataset
 
@@ -55,13 +55,13 @@ class Datasets:
         dataset = pd.read_csv(file_path, comment='#',
                               delim_whitespace=True, names=column_names)
 
-        # Add custom created_at column
-        dataset["created_at"] = dataset.apply(
+        # Add custom timestamp column
+        dataset["timestamp"] = dataset.apply(
             lambda row: "/".join([str(int(row['month'])),
                                  str(int(row['year']))]),
             axis=1
         )
-        dataset["created_at"] = pd.to_datetime(dataset.created_at)
+        dataset["timestamp"] = pd.to_datetime(dataset.timestamp, utc=True)
 
         return dataset
 
@@ -71,10 +71,10 @@ class Datasets:
         file_path = f"{settings.BASE_DIR}/datasets/{app_config.TEMPERATURE_CHANGE_FILENAME}"
         dataset = pd.read_csv(file_path, skiprows=[0, 1], names=column_names)
 
-        # Add custom created_at column
-        dataset["created_at"] = dataset["year_month"].apply(
-            lambda value: year_percent_to_year_month_day(value))
-        dataset["created_at"] = pd.to_datetime(dataset.created_at)
+        # Add custom timestamp column
+        dataset["timestamp"] = dataset["year_month"].apply(
+            lambda value: year_percent_to_month_year(value))
+        dataset["timestamp"] = pd.to_datetime(dataset.timestamp, utc=True)
 
         return dataset
 
@@ -97,17 +97,17 @@ def get_latest_metrics() -> dict:
         metrics.append({
             "label": metric_config.get("label"),
             "value": latest_record.get(metric_config.get("field", "value")),
-            "title": f"{metric_config['name']} (Updated: {latest_record['created_at'].strftime('%Y-%m-%d')}, Source: {metric_config['source']})",
+            "title": f"{metric_config['name']} (Timestamp: {latest_record['timestamp'].strftime('%Y-%m-%d')}, Source: {metric_config['source']})",
             "unit": metric_config["unit"],
         })
 
     return metrics
 
 
-def year_percent_to_year_month_day(value: int) -> str:
-    """Converts YEAR.PERCENT_COMPLETE to M/D/Y."""
+def year_percent_to_month_year(value: int) -> str:
+    """Converts YEAR.PERCENT_COMPLETE to M/Y."""
     year, percentage_complete = str(value).split(".")
     datetime_obj = datetime.datetime(
         int(year), 1, 1) + datetime.timedelta(365 * (int(percentage_complete) / 100) - 1)
 
-    return f"{datetime_obj.month}/{datetime_obj.day}/{datetime_obj.year}"
+    return f"{datetime_obj.month}/{datetime_obj.year}"
