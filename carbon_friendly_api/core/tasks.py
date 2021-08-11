@@ -41,7 +41,7 @@ def download_datasets(force: bool = False) -> None:
     """Download all datasets that we need."""
     for dataset in app_config.DATASETS:
         download_dataset.apply_async(
-            args=(dataset["url"], dataset["file_name"], force))
+            args=(dataset["url"], dataset["file"], force))
 
 
 @worker_ready.connect
