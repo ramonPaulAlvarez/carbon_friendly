@@ -1,21 +1,9 @@
 {% extends "base.html" %}
 
 {% block inner_body %}
-    <script>
-        // Prevent default contact form submission
-        $(function() {
-            $('#contact-form').on('submit', function(e) {
-                e.preventDefault();
-                submitContactForm();
-            });
-        });
-    </script>
-
     <div style="height: 96%; text-align:center; display:table; width: 100%;">
         <h1 class="headline">How can <font style="text-decoration: underline; text-decoration-color: white;">you</font> help fight the climate crisis?</h1>
         <div class="small-headline">
-            Scroll down to find out!
-            <br>
             <br>
             <a href="#donate-section"><img height=50 width=50 src="static/buttons/scroll_down_gradient.gif"></a>
         </div>
@@ -187,7 +175,7 @@
         </div>
     </div>
 
-    <div class="subsection subsection-middle" id="direct-action-section">
+    <div class="subsection subsection-bottom" id="direct-action-section">
         <h3 class="subheader">Direct Action</h3>
         <hr>
         <span class="mfont">
@@ -270,43 +258,6 @@
                     <br>
                     <img src="static/icons/carbicrete.png" width=14 height=14> <a href="https://carbicrete.com/" title="Carbicrete: Carbon Negative Concrete">Carbicrete</a>
                     <br>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="subsection subsection-bottom" id="standby-section">
-        <h3 class="subheader">Stand By</h3>
-        <hr>
-        <span class="mfont">
-            As time passes I will provide additional resources and tools related to combating the climate crisis.
-            Please <a onClick="$('#contact-form-container').toggle(); $('#contact-form-container').get(0).scrollIntoView();" style="text-decoration: underline; cursor:pointer;" title="Contact Me">contact me</a> if you have questions, comments, or would like to contribute.  
-            For information on how to access climate metrics used here please read the <a href="/docs" title="API Documentation">API Documentation</a>.
-            <br><br>
-        </span>
-        <div id="contact-form-container" class="gcontainer" style="padding-top: 20px; display:none;">
-            <div class="mfont mtable mform-table" style="text-align:center; margin:auto;">
-                <div class="table-header">Contact Me</div>
-                <div class="data-cell">                            
-                    <form id="contact-form" class="mform">
-                        <table style="width:100%;">
-                            <tr>
-                                <td><input type="text" id="email" name="email" placeholder="E-Mail" style="min-width: -webkit-fill-available;" required></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" id="subject" name="subject" placeholder="Subject" style="min-width: -webkit-fill-available;" required></td>
-                            </tr>
-                            <tr>
-                                <td><textarea id="message" name="message" placeholder="Message" style="min-width: -webkit-fill-available;" required></textarea></td>
-                            </tr>
-                            <tr>
-                                <td style="text-align:center;">
-                                    <br>
-                                    <input id="submit" type="submit" class="mbutton">
-                                </td>
-                            </tr>
-                        </table>
-                    </form>
                 </div>
             </div>
         </div>

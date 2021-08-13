@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% block meta_url %}http://carbonfriendly.earth/chart{% endblock %}
+{% block meta_title %}Carbon Friendly - Chart{% endblock %}
+{% block meta_description %}Chart useful third party climate data available on the Carbon Friendly API{% endblock %}
+{% block title %}Carbon Friendly - Chart{% endblock %}
+
+{% block background %}static/charts-bg.jpg{% endblock %}
+
+{% block inner_body %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqPlot/1.0.9/jquery.jqplot.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqPlot/1.0.9/plugins/jqplot.canvasAxisLabelRenderer.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqPlot/1.0.9/plugins/jqplot.canvasAxisTickRenderer.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqPlot/1.0.9/plugins/jqplot.canvasTextRenderer.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqPlot/1.0.9/plugins/jqplot.categoryAxisRenderer.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqPlot/1.0.9/plugins/jqplot.dateAxisRenderer.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqPlot/1.0.9/plugins/jqplot.dateAxisRenderer.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqPlot/1.0.9/plugins/jqplot.highlighter.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqPlot/1.0.9/jquery.jqplot.min.css">
+<script>
+    $(document).ready(function(){
+        loadChart("co2");
+    });
+
+    let jqplotBaseOptions = {
+        highlighter: { 
+            show: true,
+            formatString: "Date: %s, Reading: %.2f"
+        },
+        textColor: 'white',
+        grid: {
+            backgroundColor: "rgb(34, 34, 34)",
+            gridLineColor: 'rgba(0, 0, 0, 0.5)',
+        },
+        axes: {
+            xaxis: {
+                tickOptions: { 
+                    angle: -30
+                },
+                tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+                labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
+                renderer: $.jqplot.DateAxisRenderer,
+                tickOptions: {
+                    angle: -60,
+                    formatString: "%Y-%#m-%d",
+                    textColor: "#FFFFFF",
+                },
+            },
+            yaxis: {
+                tickOptions: {
+                    textColor: "#FFFFFF",
+                },
+                tickRenderer:$.jqplot.CanvasAxisTickRenderer,
+                labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
+            },
+        },
+        series: [ 
+            {
+                color: "#008000",
+                lineWidth: 1, 
+                markerOptions: { size: 3 }
+            }, 
+        ],
+    };
+
+    function fetchData(url, plot, options) {
+        // Fetch data from the API
+        var ret = [];
+        $.ajax({
+            async: false,
+            url: url,
+            dataType: "json",
+            success: function(data) {
+                $.each(data, (index, record) => {
+                    ret.push([record["timestamp"].replace("T", " "), record[options.field]]);
+                })
+                
+            }
+        });
+        return [ret];
+    };
+
+    function loadChart(value){
+        // Determine x-axis
+        let field;
+        if (value == "co2"){
+            field = "trend";
+        } else if (value == "temperature_change"){
+            field = "station";
+        } else {
+            field = "average";
+        }
+
+        // Plot data
+        jqplotBaseOptions["dataRenderer"] = fetchData;
+        jqplotBaseOptions["dataRendererOptions"] = {field: field};
+        let plot = $.jqplot('plot', [`/${value}?order_by=timestamp&limit=365000`], jqplotBaseOptions);
+        
+        // Update title
+        $("#metric-title").html($("#metric-select option:selected").text());
+        plot.replot();
+    }
+
+    let chartLoopEnabled = false;
+    const sleep = (delay) => new Promise((resolve) => setTimeout(resolve, delay))
+    async function loopCharts() {
+        seconds = 30;
+        charts = ["ch4", "n2o", "temperature_change", "co2"];
+        while (chartLoopEnabled === true){
+            for (i=0; i<charts.length; i++){
+                if (chartLoopEnabled === true){
+                    document.getElementById('metric-select').value = charts[i];
+                    loadChart(charts[i]);
+                    await sleep(1000 * seconds);
+                }
+            }
+        }
+    }
+
+    function toggleLoop(){
+        chartLoopEnabled = !chartLoopEnabled;
+        if (chartLoopEnabled == true){
+            $("#metric-loop").attr("src", "/static/icons/pause.png");
+            $("#metric-loop").attr("title", "Pause");
+            loopCharts();
+        } else {
+            $("#metric-loop").attr("src", "/static/icons/loop.png");
+            $("#metric-loop").attr("title", "Loop");
+        }
+    }
+</script>
+
+    <div style="height: 50%; text-align:center; display:table; width: 100%;">
+        <h1 class="headline" style="vertical-align: middle;">Chart</h1>
+    </div>
+    
+    <div class="subsection subsection-top">
+        <h3 class="subheader">Overview</h3>
+        <hr>
+        <span class="mfont">
+            Climate data helps us better understand the health of the planet.  
+            Using the chart below you can visualize all of the climate data available on the Carbon Friendly API.  
+            All datasets available are currently provided by <a href="http://noaa.gov/" title="NOAA">NOAA</a>.  
+            For more information on how to query the API or download the raw datasets please read the <a href="/docs" title="API Documentation">API Documentation</a>.  
+            <br><br>
+        </span>
+    </div>
+
+    <div class="subsection subsection-bottom">
+        <h3 class="subheader" id="metric-title">Average Daily Carbon Dioxide</h3>
+        <hr>
+        <span>
+            <div id="plot" class="chart"></div>
+            <div style="margin-top: 15px;">
+                <select id="metric-select" onchange='loadChart(this.value);' class="metric-select">
+                    <option value="co2">Average Daily Carbon Dioxide</option>
+                    <option value="ch4">Monthly Average Methane</option>
+                    <option value="n2o">Monthly Average Nitrous Oxide</option>
+                    <option value="temperature_change">Monthly Average Temperature Change</option>
+                </select> <img onClick="toggleLoop();" id="metric-loop" src="/static/icons/loop.png" height=32 width=32 style="cursor: pointer; vertical-align: middle;" title="Loop">
+            </div>
+        </span>
+    </div>
+{% endblock %}

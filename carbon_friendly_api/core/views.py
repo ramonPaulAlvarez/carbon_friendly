@@ -13,7 +13,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from core.serializers import EmailSerializer
-from core.utils import get_latest_metrics, Datasets
+from core.utils import Datasets
 
 logger = logging.getLogger(__name__)
 
@@ -53,49 +53,30 @@ def contact(request):
 
 def docs(request):
     """Render the docs page."""
-    context = {}
-    try:
-        context["metrics"] = get_latest_metrics()
-    except Exception as e:
-        logger.error(f"Metrics error: {e}")
-
-    return render(request, "docs.html", context=context)
+    return render(request, "docs.html")
 
 
 def error_404(request, exception):
     """Render the 404 page."""
-    context = {}
-    try:
-        context["metrics"] = get_latest_metrics()
-    except Exception as e:
-        logger.error(f"Metrics error: {e}")
-
-    return render(request, "404.html", context=context, status=status.HTTP_404_NOT_FOUND)
+    return render(request, "404.html", status=status.HTTP_404_NOT_FOUND)
 
 
 def error_500(request, exception):
     """Render the 500 page."""
-    context = {}
-    try:
-        context["metrics"] = get_latest_metrics()
-    except Exception as e:
-        logger.error(f"Metrics error: {e}")
-
-    return render(request, "500.html", context=context, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    return render(request, "500.html", status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 def index(request):
     """Render the index page."""
-    context = {}
-    try:
-        context["metrics"] = get_latest_metrics()
-    except Exception as e:
-        logger.error(f"Metrics error: {e}")
-
-    return render(request, "index.html", context=context)
+    return render(request, "index.html")
 
 
-class MetricViewMixin(APIView):
+def chart(request):
+    """Render the chart page."""
+    return render(request, "chart.html")
+
+
+class DatasetViewMixin(APIView):
     """Provide base functionality to metric endpoints."""
     metric_method = None
 
@@ -181,21 +162,21 @@ class MetricViewMixin(APIView):
         return Response(records)
 
 
-class MethaneView(MetricViewMixin):
+class MethaneView(DatasetViewMixin):
     """Provide the CH4 Series."""
     metric_method = Datasets.methane
 
 
-class CarbonDioxideView(MetricViewMixin):
+class CarbonDioxideView(DatasetViewMixin):
     """Provide the CO2 Series."""
     metric_method = Datasets.carbon_dioxide
 
 
-class NitrousOxideView(MetricViewMixin):
+class NitrousOxideView(DatasetViewMixin):
     """Provide the N2O Series."""
     metric_method = Datasets.nitrous_oxide
 
 
-class TemperatureChangeView(MetricViewMixin):
+class TemperatureChangeView(DatasetViewMixin):
     """Provide the Temperature Change Series."""
     metric_method = Datasets.temperature_change
