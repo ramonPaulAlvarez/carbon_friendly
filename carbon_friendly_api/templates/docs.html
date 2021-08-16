@@ -15,7 +15,7 @@
     <div class="subsection subsection-top">
         <h3 class="subheader">Overview</h3>
         <hr>
-        <span class="mfont">
+        <span class="medium-font">
             This API is intended to make climate data more available for free.  
             The goal is to identify useful climate datasets from credible sources and provide an interface to access them from.  
             This would not be possible without the efforts of those credible sources.   
@@ -31,32 +31,32 @@
     <div class="subsection subsection-middle">
         <h3 class="subheader">Query Parameters</h3>
         <hr>
-        <div class="mfont" style="text-align: left;">
-            <div style="padding: 5px; margin: 5px 0px;">
+        <div style="text-align: left;">
+            <div style="padding: 5px;">
                 <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Filter records created after date</div>
                 <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?timestamp__gt=YYYY-MM-DD</div>
             </div>
-            <div style="padding: 5px; margin: 5px 0px;">
+            <div style="padding: 5px;">
                 <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Filter records created after or on date</div>
                 <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?timestamp__gte=YYYY-MM-DD</div>
             </div>
-            <div style="padding: 5px; margin: 5px 0px;">
+            <div style="padding: 5px;">
                 <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Filter records created before date</div>
                 <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?timestamp__lt=YYYY-MM-DD</div>
             </div>
-            <div style="padding: 5px; margin: 5px 0px;">
+            <div style="padding: 5px;">
                 <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Filter records created before or on date</div>
                 <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?timestamp__lte=YYYY-MM-DD</div>
             </div>
-            <div style="padding: 5px; margin: 5px 0px;">
+            <div style="padding: 5px;">
                 <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Limit the number of records provided</div>
                 <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?limit=100</div>
             </div>
-            <div style="padding: 5px; margin: 5px 0px;">
+            <div style="padding: 5px;">
                 <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Order records by any field ascending</div>
                 <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?order_by=timestamp</div>
             </div>
-            <div style="padding: 5px; margin: 5px 0px;">
+            <div style="padding: 5px;">
                 <div class="table-header" style="text-align: left; padding: 15px; background-color: black; ">Order records by any field descending</div>
                 <div style="padding: 15px; background-color: rgba(255, 255, 255, 0.05); ">GET /co2?order_by=-timestamp</div>
             </div>
@@ -66,8 +66,8 @@
     <div class="subsection subsection-middle">
         <h3 class="subheader">Carbon Dioxide</h3>
         <hr>
-        <div class="mfont" style="text-align: left;">
-            <table class="mtable" style="border-spacing: 10px; background-color: unset; width: -webkit-fill-available;">
+        <div style="text-align: left;">
+            <table class="mtable" style="border-spacing: 0px 5px; background-color: unset; width: -webkit-fill-available;">
                 <tr><td class="table-key" style="background-color: black;">Description:</td><td>Estimated CO2 daily global seasonal cycle and trend.</td></tr>
                 <tr><td class="table-key" style="background-color: black;">Request:</td><td>GET /co2</td></tr>
                 <tr><td class="table-key" style="background-color: black;">Response:</td><td><code>[
@@ -90,8 +90,8 @@
     <div class="subsection subsection-middle">
         <h3 class="subheader">Methane</h3>
         <hr>
-        <div class="mfont" style="text-align: left;">
-            <table class="mtable" style="border-spacing: 10px; background-color: unset; width: -webkit-fill-available;">
+        <div style="text-align: left;">
+            <table class="mtable" style="border-spacing: 0px 5px; background-color: unset; width: -webkit-fill-available;">
                 <tr><td class="table-key" style="background-color: black;">Description:</td><td>Globally-averaged monthly mean atmospheric methane abundance determined from marine surface sites.</td></tr>
                 <tr><td class="table-key" style="background-color: black;">Request:</td><td>GET /ch4</td></tr>
                 <tr><td class="table-key" style="background-color: black;">Response:</td><td><code>[
@@ -116,8 +116,8 @@
     <div class="subsection subsection-middle">
         <h3 class="subheader">Nitrous Oxide</h3>
         <hr>
-        <div class="mfont" style="text-align: left;">
-            <table class="mtable" style="border-spacing: 10px; background-color: unset; width: -webkit-fill-available;">
+        <div style="text-align: left;">
+            <table class="mtable" style="border-spacing: 0px 5px; background-color: unset; width: -webkit-fill-available;">
                 <tr><td class="table-key" style="background-color: black;">Description:</td><td>Globally averaged marine surface monthly mean nitrous oxide data.</td></tr>
                 <tr><td class="table-key" style="background-color: black;">Request:</td><td>GET /n2o</td></tr>
                 <tr><td class="table-key" style="background-color: black;">Response:</td><td><code>[
@@ -142,8 +142,8 @@
     <div class="subsection subsection-bottom">
         <h3 class="subheader">Temperature Change</h3>
         <hr>
-        <div class="mfont" style="text-align: left;">
-            <table class="mtable" style="border-spacing: 10px; background-color: unset; width: -webkit-fill-available;">
+        <div style="text-align: left;">
+            <table class="mtable" style="border-spacing: 0px 5px; background-color: unset; width: -webkit-fill-available;">
                 <tr><td class="table-key" style="background-color: black;">Description:</td><td>Monthly mean global surface temperature change.</td></tr>
                 <tr><td class="table-key" style="background-color: black;">Request:</td><td>GET /temperature_change</td></tr>
                 <tr><td class="table-key" style="background-color: black;">Response:</td><td><code>[
