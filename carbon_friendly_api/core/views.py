@@ -7,12 +7,15 @@ from django.core.mail import send_mail
 from django.http import HttpResponse, HttpResponseServerError
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from rest_framework import status
+from django_filters import rest_framework as filters
+from rest_framework import filters as drf_filters
+from rest_framework import status, viewsets
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from core.serializers import EmailSerializer
+from core.models import Resources
+from core.serializers import EmailSerializer, ResourceSerializer
 from core.utils import Datasets
 
 logger = logging.getLogger(__name__)
@@ -68,7 +71,21 @@ def error_500(request, exception):
 
 def index(request):
     """Render the index page."""
-    return render(request, "index.html")
+    context = {}
+
+    # Gather resource items for context
+    for resource in Resources.objects.order_by("group", "subgroup", "name"):
+        group_pk = resource.group.lower().replace(" ", "_")
+        subgroup_pk = resource.subgroup.lower().replace(" ", "_")
+        if group_pk not in context:
+            context[group_pk] = {}
+
+        if subgroup_pk not in context[group_pk]:
+            context[group_pk][subgroup_pk] = {"name": resource.subgroup, "resources": []}
+
+        context[group_pk][subgroup_pk]["resources"].append(resource)
+
+    return render(request, "index.html", context=context)
 
 
 def chart(request):
@@ -160,6 +177,11 @@ class DatasetViewMixin(APIView):
                            for column_name in metric.columns.values})
 
         return Response(records)
+        
+
+class CarbonDioxideView(DatasetViewMixin):
+    """Provide the CO2 Series."""
+    metric_method = Datasets.carbon_dioxide
 
 
 class MethaneView(DatasetViewMixin):
@@ -167,14 +189,17 @@ class MethaneView(DatasetViewMixin):
     metric_method = Datasets.methane
 
 
-class CarbonDioxideView(DatasetViewMixin):
-    """Provide the CO2 Series."""
-    metric_method = Datasets.carbon_dioxide
-
-
 class NitrousOxideView(DatasetViewMixin):
     """Provide the N2O Series."""
     metric_method = Datasets.nitrous_oxide
+
+
+class ResourcesView(viewsets.ReadOnlyModelViewSet):
+    """Provide all third party resources."""
+    queryset = Resources.objects.all()
+    serializer_class = ResourceSerializer
+    filter_backends = (filters.DjangoFilterBackend, drf_filters.OrderingFilter,)
+    filterset_fields = ('id', 'name', 'description', 'url', 'group', 'subgroup', 'icon',)
 
 
 class TemperatureChangeView(DatasetViewMixin):

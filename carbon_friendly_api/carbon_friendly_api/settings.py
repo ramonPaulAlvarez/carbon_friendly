@@ -158,7 +158,9 @@ REST_FRAMEWORK = {
     ],
     'DEFAULT_THROTTLE_RATES': {
         'anon': '6/minute',
-    }
+    },
+    'ORDERING_PARAM': "order_by",
+    'PAGE_SIZE': DEFAULT_PAGE_SIZE,
 }
 
 # Celery Configuration

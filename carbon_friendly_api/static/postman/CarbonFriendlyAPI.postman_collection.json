@@ -57,6 +57,23 @@
 			"response": []
 		},
 		{
+			"name": "Resources",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{SERVER}}/resources",
+					"host": [
+						"{{SERVER}}"
+					],
+					"path": [
+						"resources"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Temperature Change",
 			"request": {
 				"method": "GET",

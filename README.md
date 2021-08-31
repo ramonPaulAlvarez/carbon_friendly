@@ -34,9 +34,11 @@ python carbon_friendly_api/manage.py test carbon_friendly_api
 
 # Starting services
 ## Start only the Django service
-This will download the datasets once and start the Django service:
+This will download the datasets, load the resource fixture, and start the Django service:
 ```
 python carbon_friendly_api/manage.py shell -c "from core.tasks import download_datasets; download_datasets.apply()"
+
+python carbon_friendly_api/manage.py migrate
 
 python carbon_friendly_api/manage.py runserver
 ```

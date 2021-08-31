@@ -11,7 +11,10 @@ services:
         restart: "on-failure"
     django:
         build: .
-        command: sh -c "gunicorn carbon_friendly_api.wsgi:application --bind 0.0.0.0:8000 --chdir carbon_friendly_api"
+        command: >
+            sh -c "python carbon_friendly_api/manage.py migrate && 
+            gunicorn carbon_friendly_api.wsgi:application --bind 0.0.0.0:8000 --chdir carbon_friendly_api
+            "
         env_file:
             - env.list
         image: django

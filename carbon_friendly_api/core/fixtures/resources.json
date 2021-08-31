@@ -1,0 +1,1158 @@
+ [
+    {
+      "model": "core.resources",
+      "pk": "0338b0d9-b879-40d7-b0d5-221be7846744",
+      "fields": {
+        "name": "Climate Reality Project",
+        "description": "",
+        "url": "https://www.climaterealityproject.org",
+        "subgroup": "Community",
+        "group": "Direct Action",
+        "icon": "climate_reality_project.ico",
+        "tags": [
+          "Donations",
+          "Community"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "0bb4f12d-8771-4bea-97d7-64cb0ff56f53",
+      "fields": {
+        "name": "Work on Climate",
+        "description": "",
+        "url": "https://workonclimate.org",
+        "subgroup": "Career",
+        "group": "Direct Action",
+        "icon": "work_on_climate.ico",
+        "tags": [
+          "Career",
+          "Networking"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "103ebbb3-3ce5-44c6-a56d-352d7b5f2473",
+      "fields": {
+        "name": "Once You Know",
+        "description": "",
+        "url": "https://www.onceyouknow-thefilm.com",
+        "subgroup": "Videos",
+        "group": "Educate",
+        "icon": "once_you_know.jpg",
+        "tags": [
+          "Film"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "11b3e485-b03b-4189-9a10-a364dbc55363",
+      "fields": {
+        "name": "Wren",
+        "description": "",
+        "url": "https://wren.co",
+        "subgroup": "Lifestyle",
+        "group": "Direct Action",
+        "icon": "bookmark.png",
+        "tags": [
+          "Carbon Calculator",
+          "Donations"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "140b1761-3d1a-40b8-85d9-55c60ba9a8c8",
+      "fields": {
+        "name": "Carbon 180",
+        "description": "",
+        "url": "https://carbon180.org",
+        "subgroup": "Atmosphere",
+        "group": "Donate",
+        "icon": "carbon_180.png",
+        "tags": [
+          "Donations",
+          "Atmosphere"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "2047ba33-c11e-42c9-b9f5-17265bd0cb01",
+      "fields": {
+        "name": "This Is Not A Drill",
+        "description": "",
+        "url": "https://books.google.com.ar/books?id=IC6VDwAAQBAJ",
+        "subgroup": "Books",
+        "group": "Educate",
+        "icon": "bookmark.png",
+        "tags": [
+          "Books"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "20b5cced-bf2b-46a5-a04c-7147c64e41b4",
+      "fields": {
+        "name": "We Don't Have Time",
+        "description": "",
+        "url": "https://www.wedonthavetime.org",
+        "subgroup": "Career",
+        "group": "Direct Action",
+        "icon": "we_dont_have_time.png",
+        "tags": [
+          "News",
+          "Reviews",
+          "Contact Leaders"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "21655f43-6282-4c00-93e9-80d907bf5e94",
+      "fields": {
+        "name": "Environmental Defense Fund",
+        "description": "",
+        "url": "https://www.edf.org",
+        "subgroup": "Water",
+        "group": "Donate",
+        "icon": "environmental_defense_fund.png",
+        "tags": [
+          "Donations",
+          "Water"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "22189f00-51b6-494a-8817-b9dd38c8416e",
+      "fields": {
+        "name": "Earthship Biotecture",
+        "description": "",
+        "url": "https://earthshipbiotecture.com",
+        "subgroup": "Lifestyle",
+        "group": "Direct Action",
+        "icon": "earthship_biotecture.jpg",
+        "tags": [
+          "Homes"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "241d8729-4471-488b-94dc-daa3af014695",
+      "fields": {
+        "name": "Carbicrete",
+        "description": "",
+        "url": "https://carbicrete.com",
+        "subgroup": "Business",
+        "group": "Direct Action",
+        "icon": "carbicrete.png",
+        "tags": [
+          "Carbon Negative",
+          "Concrete"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "246b1a6e-856e-4a1a-8d46-59dd1e4b5bf8",
+      "fields": {
+        "name": "Fridays for Future",
+        "description": "",
+        "url": "https://fridaysforfuture.org",
+        "subgroup": "Community",
+        "group": "Direct Action",
+        "icon": "fridays_for_future.png",
+        "tags": [
+          "Donations",
+          "Community"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "2abe7e28-24db-47f1-9095-aef46253857e",
+      "fields": {
+        "name": "Dollar Donation Club",
+        "description": "",
+        "url": "https://dollardonationclub.com",
+        "subgroup": "General",
+        "group": "Direct Action",
+        "icon": "dollar_donation_club.png",
+        "tags": [
+          "Donations",
+          "Lifestyle"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "2e03da30-a40f-4c29-9e7f-cb2263fc826f",
+      "fields": {
+        "name": "The Madhouse Effec",
+        "description": "",
+        "url": "https://books.google.com.ar/books?id=LFVxDAAAQBAJ",
+        "subgroup": "Books",
+        "group": "Educate",
+        "icon": "bookmark.png",
+        "tags": [
+          "Books"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "3854dbeb-5e22-44dd-87e4-633698bab86d",
+      "fields": {
+        "name": "Skeptical Science",
+        "description": "",
+        "url": "https://skepticalscience.com",
+        "subgroup": "Science News",
+        "group": "Educate",
+        "icon": "bookmark.png",
+        "tags": [
+          "Data",
+          "News"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "4015c786-702e-4bde-81df-9550a46747c1",
+      "fields": {
+        "name": "Negative Emissions Centre",
+        "description": "",
+        "url": "https://www.negativeemissionscentre.co.uk",
+        "subgroup": "Business",
+        "group": "Direct Action",
+        "icon": "negative_emissions_centre.png",
+        "tags": [
+          "Sustainability",
+          "Service"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "4c4f5cf6-8c75-4c8d-8bfe-10d9ece620c5",
+      "fields": {
+        "name": "Deep Decarbonization Pathways",
+        "description": "",
+        "url": "https://ddpinitiative.org",
+        "subgroup": "Career",
+        "group": "Direct Action",
+        "icon": "bookmark.png",
+        "tags": [
+          "Decarbonization"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "55af3368-9af9-4f0f-ade0-8d08bd263212",
+      "fields": {
+        "name": "Climate Hero",
+        "description": "",
+        "url": "https://carbon-calculator.climatehero.me",
+        "subgroup": "Lifestyle",
+        "group": "Direct Action",
+        "icon": "bookmark.png",
+        "tags": [
+          "Carbon Calculator"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "57cba4d6-834d-43de-b1b9-3fdf998be914",
+      "fields": {
+        "name": "Vegan.org",
+        "description": "",
+        "url": "https://vegan.org",
+        "subgroup": "Lifestyle",
+        "group": "Direct Action",
+        "icon": "vegan.png",
+        "tags": [
+          "Animal Rights",
+          "Donations"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "58adaa0b-540f-44c4-94d4-6ca5ceeaa925",
+      "fields": {
+        "name": "Climate Base",
+        "description": "",
+        "url": "https://climatebase.org",
+        "subgroup": "Career",
+        "group": "Direct Action",
+        "icon": "climate_base.png",
+        "tags": [
+          "Jobs",
+          "Organizations",
+          "People"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "59c1f397-0fd9-4818-8d6b-4cacbe116da1",
+      "fields": {
+        "name": "Climate People",
+        "description": "",
+        "url": "https://www.climatepeople.com",
+        "subgroup": "Career",
+        "group": "Direct Action",
+        "icon": "climate_people.png",
+        "tags": [
+          "Jobs"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "5c4066a8-e900-485f-b59e-1f5dc108f244",
+      "fields": {
+        "name": "Friends of the Earth",
+        "description": "",
+        "url": "https://foe.org",
+        "subgroup": "General",
+        "group": "Direct Action",
+        "icon": "friends_of_the_earth.png",
+        "tags": [
+          "Donations",
+          "Collective"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "64e4a138-301a-4e10-9169-caf5317ea4db",
+      "fields": {
+        "name": "Moss",
+        "description": "",
+        "url": "https://moss.earth",
+        "subgroup": "Land",
+        "group": "Donate",
+        "icon": "moss.png",
+        "tags": [
+          "Credits",
+          "Trees"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "6555f522-988b-414a-bca0-938601e6acc1",
+      "fields": {
+        "name": "Arbor Day Foundation",
+        "description": "",
+        "url": "https://www.arborday.org",
+        "subgroup": "Land",
+        "group": "Donate",
+        "icon": "arbor_day_foundation.png",
+        "tags": [
+          "Donations",
+          "Trees"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "66c17579-76b8-442e-8ac9-1b0ef52b6bfb",
+      "fields": {
+        "name": "Collective for Climate Action",
+        "description": "",
+        "url": "https://www.youtube.com/c/UCILQpWPlaU74kIRd1cV1KtA",
+        "subgroup": "Videos",
+        "group": "Educate",
+        "icon": "youtube.ico",
+        "tags": [
+          "Channel",
+          "Videos"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "6870756c-c0c8-4a91-891a-2d43ef506b19",
+      "fields": {
+        "name": "Nori",
+        "description": "",
+        "url": "http://nori.com",
+        "subgroup": "Land",
+        "group": "Donate",
+        "icon": "nori.png",
+        "tags": [
+          "Credits",
+          "Trees"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "689f05bd-7cf3-45dc-a650-8bf7412b9788",
+      "fields": {
+        "name": "Oceana",
+        "description": "",
+        "url": "https://oceana.org",
+        "subgroup": "Water",
+        "group": "Donate",
+        "icon": "oceana.ico",
+        "tags": [
+          "Donations",
+          "Ocean"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "6d0adaba-8282-4f5d-b486-19cb38886c05",
+      "fields": {
+        "name": "Pachama",
+        "description": "",
+        "url": "https://pachama.com",
+        "subgroup": "Land",
+        "group": "Donate",
+        "icon": "pachama.ico",
+        "tags": [
+          "Credits",
+          "Trees"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "6eb60138-dc0b-43f4-8d72-6fe3f006ebe7",
+      "fields": {
+        "name": "Greenpeace",
+        "description": "",
+        "url": "https://www.greenpeace.org",
+        "subgroup": "General",
+        "group": "Direct Action",
+        "icon": "greenpeace.png",
+        "tags": [
+          "Donations",
+          "Collective"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "701fc96c-0f46-404b-9712-f3c1359bb6c9",
+      "fields": {
+        "name": "Green Job Search",
+        "description": "",
+        "url": "http://greenjobsearch.org",
+        "subgroup": "Career",
+        "group": "Direct Action",
+        "icon": "bookmark.png",
+        "tags": [
+          "Jobs"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "70250c84-3542-492b-9ffa-1b2dd93438b9",
+      "fields": {
+        "name": "Making Sense of Climate Science Denial",
+        "description": "",
+        "url": "https://www.edx.org/course/making-sense-of-climate-science-denial",
+        "subgroup": "Classes",
+        "group": "Educate",
+        "icon": "edx.ico",
+        "tags": [
+          "Classes",
+          "Videos"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "70b46733-55d4-4328-85f9-e2cd8788e7f1",
+      "fields": {
+        "name": "8 Billion Trees",
+        "description": "",
+        "url": "https://8billiontrees.com",
+        "subgroup": "Land",
+        "group": "Donate",
+        "icon": "8_billion_trees.png",
+        "tags": [
+          "Donations",
+          "Trees"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "730cb28b-3158-4993-97dc-95fe77ccd45d",
+      "fields": {
+        "name": "Carbon Kapture",
+        "description": "",
+        "url": "https://www.carbonkapture.org",
+        "subgroup": "Water",
+        "group": "Donate",
+        "icon": "carbon_kapture.png",
+        "tags": [
+          "Bonds",
+          "Donations",
+          "Ocean",
+          "Kelp"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "737b1e3c-42c9-47b8-bd29-7ba837a57b09",
+      "fields": {
+        "name": "Real Climate Science",
+        "description": "",
+        "url": "https://realclimatescience.com",
+        "subgroup": "Science News",
+        "group": "Educate",
+        "icon": "bookmark.png",
+        "tags": [
+          "News"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "76fcc33a-6ef2-4c5e-8c8d-b49fb8313e72",
+      "fields": {
+        "name": "Terra.do",
+        "description": "",
+        "url": "https://www.terra.do",
+        "subgroup": "Career",
+        "group": "Direct Action",
+        "icon": "terra_do.png",
+        "tags": [
+          "Jobs",
+          "Networking"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "78d7a0da-1daf-49de-8234-7f4736aa253d",
+      "fields": {
+        "name": "The Green link",
+        "description": "",
+        "url": "https://www.thegreenlink.co",
+        "subgroup": "Business",
+        "group": "Direct Action",
+        "icon": "the_green_link.jpeg",
+        "tags": [
+          "Sustainability",
+          "Service"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "7950ea83-1ae6-4ced-8633-a39da94b6c6c",
+      "fields": {
+        "name": "Clean Air Task Force",
+        "description": "",
+        "url": "https://www.catf.us",
+        "subgroup": "Atmosphere",
+        "group": "Donate",
+        "icon": "clean_air_task_force.png",
+        "tags": [
+          "Donations",
+          "Atmosphere"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "79d74efe-a483-4bca-bdd4-93fd27696b41",
+      "fields": {
+        "name": "Coral Reef Alliance",
+        "description": "",
+        "url": "https://coral.org",
+        "subgroup": "Water",
+        "group": "Donate",
+        "icon": "coral_reef_alliance.ico",
+        "tags": [
+          "Donations",
+          "Ocean",
+          "Reefs"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "7a51c88e-54dd-4601-9407-dca3e74c78b5",
+      "fields": {
+        "name": "Carbon Fund",
+        "description": "",
+        "url": "https://www.carbonfund.org",
+        "subgroup": "Land",
+        "group": "Donate",
+        "icon": "carbon_fund.png",
+        "tags": [
+          "Donations",
+          "Trees"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "7c64fb14-0f7d-4d08-b1e4-024198e35beb",
+      "fields": {
+        "name": "The Uninhabitable Earth",
+        "description": "",
+        "url": "https://books.google.com.ar/books?id=A8lqDwAAQBAJ",
+        "subgroup": "Books",
+        "group": "Educate",
+        "icon": "bookmark.png",
+        "tags": [
+          "Books"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "7f088e18-8509-485f-908c-be4f12a459bc",
+      "fields": {
+        "name": "Climate Change: The Science and Global Impact",
+        "description": "",
+        "url": "https://www.edx.org/course/climate-change-the-science-and-global-impact",
+        "subgroup": "Classes",
+        "group": "Educate",
+        "icon": "edx.ico",
+        "tags": [
+          "Classes",
+          "Videos"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "83fbc844-cbd2-4e22-8ea7-4cffbaab1da1",
+      "fields": {
+        "name": "Facing the Climate Emergency",
+        "description": "",
+        "url": "https://books.google.com.ar/books?id=yihpxwEACAAJ",
+        "subgroup": "Books",
+        "group": "Educate",
+        "icon": "bookmark.png",
+        "tags": [
+          "Books"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "84217d49-a5db-48cb-bd87-c2fcccc411f3",
+      "fields": {
+        "name": "ScientistsWarning.TV",
+        "description": "",
+        "url": "https://www.youtube.com/c/ScientistsWarning",
+        "subgroup": "Videos",
+        "group": "Educate",
+        "icon": "youtube.ico",
+        "tags": [
+          "Channel",
+          "Videos"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "84bfcbea-04c5-4f36-ba97-a3179e622703",
+      "fields": {
+        "name": "Climate Reporting Master Class",
+        "description": "",
+        "url": "https://climatereportingmasterclass.com",
+        "subgroup": "Career",
+        "group": "Direct Action",
+        "icon": "climate_reporting_master_class.png",
+        "tags": [
+          "Education",
+          "Jobs"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "87f2ed3a-a148-4ae5-b108-08589d47cb62",
+      "fields": {
+        "name": "Tradewater",
+        "description": "",
+        "url": "https://tradewater.us",
+        "subgroup": "Atmosphere",
+        "group": "Donate",
+        "icon": "tradewater.png",
+        "tags": [
+          "Donations",
+          "Atmosphere"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "89af5c7c-5e81-44ec-81a9-c24742e46ef1",
+      "fields": {
+        "name": "Climate Foundry",
+        "description": "",
+        "url": "https://climatefoundry.com",
+        "subgroup": "Career",
+        "group": "Direct Action",
+        "icon": "climate_foundry.png",
+        "tags": [
+          "Start-Up",
+          "Development"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "93b55394-721e-47c6-892e-1cbabb2b5195",
+      "fields": {
+        "name": "Footprint Calculator",
+        "description": "",
+        "url": "https://www.footprintcalculator.org",
+        "subgroup": "Lifestyle",
+        "group": "Direct Action",
+        "icon": "footprint_calculator.png",
+        "tags": [
+          "Carbon Calculator"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "93c221a9-6876-4c4c-b1fb-e6aa4a0707fa",
+      "fields": {
+        "name": "The Ocean Cleanup",
+        "description": "",
+        "url": "https://theoceancleanup.com",
+        "subgroup": "Water",
+        "group": "Donate",
+        "icon": "the_ocean_cleanup.png",
+        "tags": [
+          "Donations",
+          "Ocean"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "93d9133d-4e62-4675-b42b-05f6b16fdeba",
+      "fields": {
+        "name": "Climeworks",
+        "description": "",
+        "url": "https://climeworks.com",
+        "subgroup": "Atmosphere",
+        "group": "Donate",
+        "icon": "bookmark.png",
+        "tags": [
+          "Donations",
+          "Atmosphere"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "9b04182b-31c6-481f-b9d9-723b065fcc6a",
+      "fields": {
+        "name": "Project Drawdown",
+        "description": "",
+        "url": "https://www.drawdown.org",
+        "subgroup": "General",
+        "group": "Donate",
+        "icon": "drawdown.ico",
+        "tags": [
+          "Donations",
+          "Collective"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "9cf09137-c93b-4cde-8de8-427c1aa2aa86",
+      "fields": {
+        "name": "TruTerra",
+        "description": "",
+        "url": "https://www.truterraag.com",
+        "subgroup": "Land",
+        "group": "Donate",
+        "icon": "truterra.ico",
+        "tags": [
+          "Credits",
+          "Agriculture"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "a358167a-1d45-4a7a-9e14-30152bb9b1f8",
+      "fields": {
+        "name": "Climate Communication",
+        "description": "",
+        "url": "https://www.climatecommunication.org",
+        "subgroup": "Science News",
+        "group": "Educate",
+        "icon": "climate_communication.ico",
+        "tags": [
+          "Data",
+          "Resources"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "ab3640d1-415e-4f63-9a6b-69f0ffb67064",
+      "fields": {
+        "name": "Extinction Rebellion",
+        "description": "",
+        "url": "https://rebellion.global",
+        "subgroup": "Community",
+        "group": "Direct Action",
+        "icon": "extinction_rebellion.png",
+        "tags": [
+          "Donations",
+          "Community"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "ab8d964f-d504-4a8f-b622-d45313161843",
+      "fields": {
+        "name": "Climate Change Academy",
+        "description": "",
+        "url": "http://climatechangeacademy.com",
+        "subgroup": "Classes",
+        "group": "Educate",
+        "icon": "climate_change_academy.ico",
+        "tags": [
+          "Classes",
+          "Videos"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "aee7f2d5-9fb2-4b2c-8e93-f794eb46f276",
+      "fields": {
+        "name": "Real Climate",
+        "description": "",
+        "url": "https://www.realclimate.org",
+        "subgroup": "Science News",
+        "group": "Educate",
+        "icon": "real_climate.jpg",
+        "tags": [
+          "Data",
+          "News"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "aef69af2-0bfa-445a-9d19-91b723bd1681",
+      "fields": {
+        "name": "NASA: Vital Signs of the Planet",
+        "description": "",
+        "url": "https://climate.nasa.gov",
+        "subgroup": "Science News",
+        "group": "Educate",
+        "icon": "nasa.ico",
+        "tags": [
+          "Data",
+          "News"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "b1889dcd-88bc-4e50-ab1d-5de31a7a804b",
+      "fields": {
+        "name": "Climate Interactive",
+        "description": "",
+        "url": "https://www.climateinteractive.org",
+        "subgroup": "Career",
+        "group": "Direct Action",
+        "icon": "climate_interactive.png",
+        "tags": [
+          "Impact Modeling",
+          "Business"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "b2987f64-a18e-4412-972d-0dab3854c279",
+      "fields": {
+        "name": "Indigo",
+        "description": "",
+        "url": "https://www.indigoag.com",
+        "subgroup": "Land",
+        "group": "Donate",
+        "icon": "indigo.ico",
+        "tags": [
+          "Credits",
+          "Agriculture"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "b9dbde85-97e0-43c9-9674-1e3f9c9e39e0",
+      "fields": {
+        "name": "Fire Drill Fridays",
+        "description": "",
+        "url": "https://firedrillfridays.com",
+        "subgroup": "Community",
+        "group": "Direct Action",
+        "icon": "fire_drill_fridays.png",
+        "tags": [
+          "Community"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "bb91b978-f7cf-4e33-898c-c911daed4eea",
+      "fields": {
+        "name": "Nature-based Solutions for Disaster and Climate Resilience",
+        "description": "",
+        "url": "https://www.edx.org/course/nature-based-solutions-for-disaster-and-climate-resilience",
+        "subgroup": "Classes",
+        "group": "Educate",
+        "icon": "edx.ico",
+        "tags": [
+          "Classes",
+          "Videos"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "c0776f6b-9ed7-416c-963c-d9211a6ea952",
+      "fields": {
+        "name": "Climate Emergency Institute",
+        "description": "",
+        "url": "https://www.climateemergencyinstitute.com",
+        "subgroup": "Science News",
+        "group": "Educate",
+        "icon": "bookmark.png",
+        "tags": [
+          "Data",
+          "News"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "d08f54e5-9f0b-43eb-98c0-e3446bf396b7",
+      "fields": {
+        "name": "Project Drawdown",
+        "description": "",
+        "url": "https://www.drawdown.org",
+        "subgroup": "Videos",
+        "group": "Educate",
+        "icon": "drawdown.ico",
+        "tags": [
+          "Solutions",
+          "Classes"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "d0d8f19e-5539-4fd5-9767-16118c491f7f",
+      "fields": {
+        "name": "Earth Shot Labs",
+        "description": "",
+        "url": "https://earthshot.eco",
+        "subgroup": "Community",
+        "group": "Direct Action",
+        "icon": "earth_shot_labs.jpeg",
+        "tags": [
+          "Data",
+          "Tools"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "d2fdc2bb-8c44-419f-9ed8-7922f1849706",
+      "fields": {
+        "name": "Sunrise Movement",
+        "description": "",
+        "url": "https://www.sunrisemovement.org",
+        "subgroup": "Community",
+        "group": "Direct Action",
+        "icon": "sunrise_movement.jpg",
+        "tags": [
+          "Donations",
+          "Community"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "d40a9d27-50cf-415b-bf3d-fcbe8cf1d8f0",
+      "fields": {
+        "name": "Ocean CDR",
+        "description": "",
+        "url": "https://oceancdr.net",
+        "subgroup": "Community",
+        "group": "Direct Action",
+        "icon": "ocean_cdr.ico",
+        "tags": [
+          "Community",
+          "Carbon Removal"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "dac5ff87-0bba-4c68-9272-3e545d3f57c2",
+      "fields": {
+        "name": "Think Resilience",
+        "description": "",
+        "url": "https://education.resilience.org",
+        "subgroup": "Videos",
+        "group": "Educate",
+        "icon": "think_resilience.ico",
+        "tags": [
+          "Classes",
+          "Videos"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "e1d8b7b9-1af6-4dba-a2d7-ddf90a4515cf",
+      "fields": {
+        "name": "Anatomy of Action",
+        "description": "",
+        "url": "https://anatomyofaction.org",
+        "subgroup": "Lifestyle",
+        "group": "Direct Action",
+        "icon": "bookmark.png",
+        "tags": [
+          "Lifestyle"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "e34d5437-d835-4fe1-aab4-0f10dc531949",
+      "fields": {
+        "name": "Stop Ecocide",
+        "description": "",
+        "url": "https://www.stopecocide.earth",
+        "subgroup": "General",
+        "group": "Donate",
+        "icon": "stop_ecocide.png",
+        "tags": [
+          "Donations",
+          "Collective"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "e948ae10-658d-4ccc-8228-84636a5ab795",
+      "fields": {
+        "name": "FacingFuture.TV",
+        "description": "",
+        "url": "https://www.youtube.com/c/FacingFuture",
+        "subgroup": "Videos",
+        "group": "Educate",
+        "icon": "youtube.ico",
+        "tags": [
+          "Channel",
+          "Videos"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "ed87d3a2-1002-4a1d-b357-878bc050f55b",
+      "fields": {
+        "name": "Lower Carbon Capital",
+        "description": "",
+        "url": "https://lowercarboncapital.com",
+        "subgroup": "Career",
+        "group": "Direct Action",
+        "icon": "lower_carbon_capital.png",
+        "tags": [
+          "Jobs"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "ee98c93d-f2f1-402e-85f3-97b63030810a",
+      "fields": {
+        "name": "Climate Emergency: Feedback Loops",
+        "description": "",
+        "url": "https://feedbackloopsclimate.com",
+        "subgroup": "Videos",
+        "group": "Educate",
+        "icon": "feedback_loops_climate.png",
+        "tags": [
+          "Videos"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "f511ff7f-e776-4c58-907e-4304aed4c2d6",
+      "fields": {
+        "name": "Rise for Animals",
+        "description": "",
+        "url": "https://riseforanimals.org",
+        "subgroup": "General",
+        "group": "Donate",
+        "icon": "rise_for_animals.png",
+        "tags": [
+          "Donations",
+          "Collective"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "f8d01191-afe1-41e6-8c50-5de57d165e74",
+      "fields": {
+        "name": "The New Climate War",
+        "description": "",
+        "url": "https://books.google.com.ar/books?id=z5flDwAAQBAJ",
+        "subgroup": "Books",
+        "group": "Educate",
+        "icon": "bookmark.png",
+        "tags": [
+          "Books"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "fec9d2eb-49ec-45aa-a004-bd267a96e5d6",
+      "fields": {
+        "name": "Intergovernmental Panel on Climate Change",
+        "description": "United Nations body for assessing climate change",
+        "url": "https://www.ipcc.ch",
+        "subgroup": "Science News",
+        "group": "Educate",
+        "icon": "ipcc.png",
+        "tags": [
+          "Data",
+          "Reports"
+        ]
+      }
+    }
+  ]
