@@ -20,13 +20,15 @@ class EmailSerializer(serializers.Serializer):
 
 class ResourceSerializer(serializers.ModelSerializer):
     """Serializer for third party resources."""
-    
+
     class Meta:
         model = Resources
-        fields = ('id', 'name', 'description', 'url', 'group', 'subgroup', 'icon', 'tags')
+        fields = ('id', 'name', 'description', 'url',
+                  'group', 'subgroup', 'icon', 'tags')
         read_only_fields = fields
 
     def to_representation(self, instance):
         """Update the represenation of the resource"""
-        instance.icon = self.context.get('request').build_absolute_uri(f"{settings.STATIC_URL}icons/{instance.icon}")
+        instance.icon = self.context.get('request').build_absolute_uri(
+            f"{settings.STATIC_URL}icons/{instance.icon}")
         return super().to_representation(instance)

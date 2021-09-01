@@ -17,4 +17,3 @@ class Resources(models.Model):
     subgroup = models.CharField(max_length=64)
     icon = models.CharField(max_length=64)
     tags = models.JSONField(default=list)
-

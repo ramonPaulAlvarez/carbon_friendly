@@ -13,6 +13,7 @@ from rest_framework import status, viewsets
 from rest_framework.exceptions import ValidationError
 from rest_framework.response import Response
 from rest_framework.views import APIView
+from core.filters import JSONFilterBackend
 
 from core.models import Resources
 from core.serializers import EmailSerializer, ResourceSerializer
@@ -81,7 +82,8 @@ def index(request):
             context[group_pk] = {}
 
         if subgroup_pk not in context[group_pk]:
-            context[group_pk][subgroup_pk] = {"name": resource.subgroup, "resources": []}
+            context[group_pk][subgroup_pk] = {
+                "name": resource.subgroup, "resources": []}
 
         context[group_pk][subgroup_pk]["resources"].append(resource)
 
@@ -177,7 +179,7 @@ class DatasetViewMixin(APIView):
                            for column_name in metric.columns.values})
 
         return Response(records)
-        
+
 
 class CarbonDioxideView(DatasetViewMixin):
     """Provide the CO2 Series."""
@@ -198,8 +200,9 @@ class ResourcesView(viewsets.ReadOnlyModelViewSet):
     """Provide all third party resources."""
     queryset = Resources.objects.all()
     serializer_class = ResourceSerializer
-    filter_backends = (filters.DjangoFilterBackend, drf_filters.OrderingFilter,)
-    filterset_fields = ('id', 'name', 'description', 'url', 'group', 'subgroup', 'icon',)
+    filter_backends = (JSONFilterBackend, drf_filters.OrderingFilter, )
+    filterset_fields = ('id', 'name', 'description', 'url',
+                        'group', 'subgroup', 'icon', 'tags')
 
 
 class TemperatureChangeView(DatasetViewMixin):

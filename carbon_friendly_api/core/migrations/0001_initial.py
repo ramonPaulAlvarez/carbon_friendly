@@ -8,7 +8,7 @@ from django.db import migrations, models
 
 def forward(apps, schema_editor):
     """Load resources JSON file."""
-    call_command('loaddata', "resources.json", app_label='core') 
+    call_command('loaddata', "resources.json", app_label='core')
 
 
 class Migration(migrations.Migration):
@@ -22,7 +22,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Resources',
             fields=[
-                ('id', models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True, serialize=False)),
+                ('id', models.UUIDField(default=uuid.uuid4,
+                 editable=False, primary_key=True, serialize=False)),
                 ('name', models.CharField(max_length=64)),
                 ('description', models.TextField()),
                 ('url', models.CharField(max_length=256)),
