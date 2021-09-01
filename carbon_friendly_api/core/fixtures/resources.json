@@ -4,14 +4,16 @@
       "pk": "0338b0d9-b879-40d7-b0d5-221be7846744",
       "fields": {
         "name": "Climate Reality Project",
-        "description": "",
+        "description": "A non-profit organization involved in education and advocacy related to climate change.",
         "url": "https://www.climaterealityproject.org",
         "subgroup": "Community",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "climate_reality_project.ico",
         "tags": [
           "Donations",
-          "Community"
+          "Community",
+          "Education",
+          "Act"
         ]
       }
     },
@@ -20,10 +22,10 @@
       "pk": "0bb4f12d-8771-4bea-97d7-64cb0ff56f53",
       "fields": {
         "name": "Work on Climate",
-        "description": "",
+        "description": "An action-oriented Slack community for people serious about climate work.",
         "url": "https://workonclimate.org",
         "subgroup": "Career",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "work_on_climate.ico",
         "tags": [
           "Career",
@@ -36,7 +38,7 @@
       "pk": "103ebbb3-3ce5-44c6-a56d-352d7b5f2473",
       "fields": {
         "name": "Once You Know",
-        "description": "",
+        "description": "The intimate journey of director Emmanuel Cappellin across the abyss of a world at the edge of climate-induced collapse.",
         "url": "https://www.onceyouknow-thefilm.com",
         "subgroup": "Videos",
         "group": "Educate",
@@ -51,10 +53,10 @@
       "pk": "11b3e485-b03b-4189-9a10-a364dbc55363",
       "fields": {
         "name": "Wren",
-        "description": "",
+        "description": "Calculate and offset your carbon footprint through a monthly subscription.",
         "url": "https://wren.co",
         "subgroup": "Lifestyle",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "bookmark.png",
         "tags": [
           "Carbon Calculator",
@@ -67,7 +69,7 @@
       "pk": "140b1761-3d1a-40b8-85d9-55c60ba9a8c8",
       "fields": {
         "name": "Carbon 180",
-        "description": "",
+        "description": "A climate-focused NGO on a mission to fundamentally rethink carbon.",
         "url": "https://carbon180.org",
         "subgroup": "Atmosphere",
         "group": "Donate",
@@ -83,7 +85,7 @@
       "pk": "2047ba33-c11e-42c9-b9f5-17265bd0cb01",
       "fields": {
         "name": "This Is Not A Drill",
-        "description": "",
+        "description": "This is a book of truth and action.  It has facts to arm you, stories to empower you, pages to fill in and pages to rip out, alongside instructions on how to rebel - from organising a roadblock to facing arrest.",
         "url": "https://books.google.com.ar/books?id=IC6VDwAAQBAJ",
         "subgroup": "Books",
         "group": "Educate",
@@ -101,7 +103,7 @@
         "description": "",
         "url": "https://www.wedonthavetime.org",
         "subgroup": "Career",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "we_dont_have_time.png",
         "tags": [
           "News",
@@ -134,7 +136,7 @@
         "description": "",
         "url": "https://earthshipbiotecture.com",
         "subgroup": "Lifestyle",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "earthship_biotecture.jpg",
         "tags": [
           "Homes"
@@ -149,7 +151,7 @@
         "description": "",
         "url": "https://carbicrete.com",
         "subgroup": "Business",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "carbicrete.png",
         "tags": [
           "Carbon Negative",
@@ -165,7 +167,7 @@
         "description": "",
         "url": "https://fridaysforfuture.org",
         "subgroup": "Community",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "fridays_for_future.png",
         "tags": [
           "Donations",
@@ -181,7 +183,7 @@
         "description": "",
         "url": "https://dollardonationclub.com",
         "subgroup": "General",
-        "group": "Direct Action",
+        "group": "Donate",
         "icon": "dollar_donation_club.png",
         "tags": [
           "Donations",
@@ -228,7 +230,7 @@
         "description": "",
         "url": "https://www.negativeemissionscentre.co.uk",
         "subgroup": "Business",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "negative_emissions_centre.png",
         "tags": [
           "Sustainability",
@@ -244,7 +246,7 @@
         "description": "",
         "url": "https://ddpinitiative.org",
         "subgroup": "Career",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "bookmark.png",
         "tags": [
           "Decarbonization"
@@ -259,7 +261,7 @@
         "description": "",
         "url": "https://carbon-calculator.climatehero.me",
         "subgroup": "Lifestyle",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "bookmark.png",
         "tags": [
           "Carbon Calculator"
@@ -274,7 +276,7 @@
         "description": "",
         "url": "https://vegan.org",
         "subgroup": "Lifestyle",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "vegan.png",
         "tags": [
           "Animal Rights",
@@ -290,7 +292,7 @@
         "description": "",
         "url": "https://climatebase.org",
         "subgroup": "Career",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "climate_base.png",
         "tags": [
           "Jobs",
@@ -307,7 +309,7 @@
         "description": "",
         "url": "https://www.climatepeople.com",
         "subgroup": "Career",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "climate_people.png",
         "tags": [
           "Jobs"
@@ -322,7 +324,7 @@
         "description": "",
         "url": "https://foe.org",
         "subgroup": "General",
-        "group": "Direct Action",
+        "group": "Donate",
         "icon": "friends_of_the_earth.png",
         "tags": [
           "Donations",
@@ -434,7 +436,7 @@
         "description": "",
         "url": "https://www.greenpeace.org",
         "subgroup": "General",
-        "group": "Direct Action",
+        "group": "Donate",
         "icon": "greenpeace.png",
         "tags": [
           "Donations",
@@ -450,7 +452,7 @@
         "description": "",
         "url": "http://greenjobsearch.org",
         "subgroup": "Career",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "bookmark.png",
         "tags": [
           "Jobs"
@@ -530,7 +532,7 @@
         "description": "",
         "url": "https://www.terra.do",
         "subgroup": "Career",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "terra_do.png",
         "tags": [
           "Jobs",
@@ -546,7 +548,7 @@
         "description": "",
         "url": "https://www.thegreenlink.co",
         "subgroup": "Business",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "the_green_link.jpeg",
         "tags": [
           "Sustainability",
@@ -673,7 +675,7 @@
         "description": "",
         "url": "https://climatereportingmasterclass.com",
         "subgroup": "Career",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "climate_reporting_master_class.png",
         "tags": [
           "Education",
@@ -705,7 +707,7 @@
         "description": "",
         "url": "https://climatefoundry.com",
         "subgroup": "Career",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "climate_foundry.png",
         "tags": [
           "Start-Up",
@@ -721,7 +723,7 @@
         "description": "",
         "url": "https://www.footprintcalculator.org",
         "subgroup": "Lifestyle",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "footprint_calculator.png",
         "tags": [
           "Carbon Calculator"
@@ -816,7 +818,7 @@
         "description": "",
         "url": "https://rebellion.global",
         "subgroup": "Community",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "extinction_rebellion.png",
         "tags": [
           "Donations",
@@ -880,7 +882,7 @@
         "description": "",
         "url": "https://www.climateinteractive.org",
         "subgroup": "Career",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "climate_interactive.png",
         "tags": [
           "Impact Modeling",
@@ -912,7 +914,7 @@
         "description": "",
         "url": "https://firedrillfridays.com",
         "subgroup": "Community",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "fire_drill_fridays.png",
         "tags": [
           "Community"
@@ -956,7 +958,7 @@
       "pk": "d08f54e5-9f0b-43eb-98c0-e3446bf396b7",
       "fields": {
         "name": "Project Drawdown",
-        "description": "",
+        "description": "A leading resource for climate solutions.",
         "url": "https://www.drawdown.org",
         "subgroup": "Videos",
         "group": "Educate",
@@ -972,14 +974,15 @@
       "pk": "d0d8f19e-5539-4fd5-9767-16118c491f7f",
       "fields": {
         "name": "Earth Shot Labs",
-        "description": "",
+        "description": "Supports landowners all over the world to restore ecosystems by helping them realize their land’s full natural and economic potential.",
         "url": "https://earthshot.eco",
         "subgroup": "Community",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "earth_shot_labs.jpeg",
         "tags": [
           "Data",
-          "Tools"
+          "Tools",
+          "Community"
         ]
       }
     },
@@ -988,10 +991,10 @@
       "pk": "d2fdc2bb-8c44-419f-9ed8-7922f1849706",
       "fields": {
         "name": "Sunrise Movement",
-        "description": "",
+        "description": "A movement to stop climate change and create millions of good-paying jobs in the process.",
         "url": "https://www.sunrisemovement.org",
         "subgroup": "Community",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "sunrise_movement.jpg",
         "tags": [
           "Donations",
@@ -1004,10 +1007,10 @@
       "pk": "d40a9d27-50cf-415b-bf3d-fcbe8cf1d8f0",
       "fields": {
         "name": "Ocean CDR",
-        "description": "",
+        "description": "A leading knowledge hub on Ocean-based Carbon Dioxide Removal.",
         "url": "https://oceancdr.net",
         "subgroup": "Community",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "ocean_cdr.ico",
         "tags": [
           "Community",
@@ -1020,7 +1023,7 @@
       "pk": "dac5ff87-0bba-4c68-9272-3e545d3f57c2",
       "fields": {
         "name": "Think Resilience",
-        "description": "",
+        "description": "An online course to help you start doing something about climate change and our other sustainability challenges—starting in your own community.",
         "url": "https://education.resilience.org",
         "subgroup": "Videos",
         "group": "Educate",
@@ -1036,10 +1039,10 @@
       "pk": "e1d8b7b9-1af6-4dba-a2d7-ddf90a4515cf",
       "fields": {
         "name": "Anatomy of Action",
-        "description": "",
+        "description": "A handy action set for everyday sustainable living.",
         "url": "https://anatomyofaction.org",
         "subgroup": "Lifestyle",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "bookmark.png",
         "tags": [
           "Lifestyle"
@@ -1051,7 +1054,7 @@
       "pk": "e34d5437-d835-4fe1-aab4-0f10dc531949",
       "fields": {
         "name": "Stop Ecocide",
-        "description": "",
+        "description": "Change the law, protect the Earth.",
         "url": "https://www.stopecocide.earth",
         "subgroup": "General",
         "group": "Donate",
@@ -1067,7 +1070,7 @@
       "pk": "e948ae10-658d-4ccc-8228-84636a5ab795",
       "fields": {
         "name": "FacingFuture.TV",
-        "description": "",
+        "description": "Stuart Scott and his team give voice to scientists & social scientists, historians & futurists, economists & philosophers, journalists & activists, thought leaders from many disciplines, and even 'undisciplined’ people with significant points of view.",
         "url": "https://www.youtube.com/c/FacingFuture",
         "subgroup": "Videos",
         "group": "Educate",
@@ -1083,10 +1086,10 @@
       "pk": "ed87d3a2-1002-4a1d-b357-878bc050f55b",
       "fields": {
         "name": "Lower Carbon Capital",
-        "description": "",
+        "description": "Backs companies that make real money slashing CO2 emissions, sucking carbon out of the sky, and buying us time.",
         "url": "https://lowercarboncapital.com",
         "subgroup": "Career",
-        "group": "Direct Action",
+        "group": "Act",
         "icon": "lower_carbon_capital.png",
         "tags": [
           "Jobs"
@@ -1098,7 +1101,7 @@
       "pk": "ee98c93d-f2f1-402e-85f3-97b63030810a",
       "fields": {
         "name": "Climate Emergency: Feedback Loops",
-        "description": "",
+        "description": "Learn why natural warming loops have scientists alarmed and why we have less time than we think.",
         "url": "https://feedbackloopsclimate.com",
         "subgroup": "Videos",
         "group": "Educate",
@@ -1110,26 +1113,10 @@
     },
     {
       "model": "core.resources",
-      "pk": "f511ff7f-e776-4c58-907e-4304aed4c2d6",
-      "fields": {
-        "name": "Rise for Animals",
-        "description": "",
-        "url": "https://riseforanimals.org",
-        "subgroup": "General",
-        "group": "Donate",
-        "icon": "rise_for_animals.png",
-        "tags": [
-          "Donations",
-          "Collective"
-        ]
-      }
-    },
-    {
-      "model": "core.resources",
       "pk": "f8d01191-afe1-41e6-8c50-5de57d165e74",
       "fields": {
         "name": "The New Climate War",
-        "description": "",
+        "description": "A renowned climate scientist shows how fossil fuel companies have waged a thirty-year campaign to deflect blame and responsibility and delay action on climate change, and offers a battle plan for how we can save the planet.",
         "url": "https://books.google.com.ar/books?id=z5flDwAAQBAJ",
         "subgroup": "Books",
         "group": "Educate",
@@ -1144,7 +1131,7 @@
       "pk": "fec9d2eb-49ec-45aa-a004-bd267a96e5d6",
       "fields": {
         "name": "Intergovernmental Panel on Climate Change",
-        "description": "United Nations body for assessing climate change",
+        "description": "United Nations body for assessing climate change.",
         "url": "https://www.ipcc.ch",
         "subgroup": "Science News",
         "group": "Educate",
@@ -1152,6 +1139,73 @@
         "tags": [
           "Data",
           "Reports"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "69ae0bfc-b9b9-4793-9af7-47f1cc1c052a",
+      "fields": {
+        "name": "Climate Tech VC",
+        "description": "A weekly newsletter on climate and innovation.",
+        "url": "https://climatetechvc.org",
+        "subgroup": "Business",
+        "group": "Act",
+        "icon": "climate_tech_vc.png",
+        "tags": [
+          "Newsletter",
+          "Industry",
+          "Investors",
+          "News",
+          "Jobs"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "91dd0cda-b07d-4d5e-9922-d242fc628e21",
+      "fields": {
+        "name": "Climate Science",
+        "description": "Understand solutions to climate change.",
+        "url": "https://climatescience.org/",
+        "subgroup": "Classes",
+        "group": "Educate",
+        "icon": "climate_science.png",
+        "tags": [
+          "Classes",
+          "Videos"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "6e9966bd-187b-4ea9-b541-c1b90dcca047",
+      "fields": {
+        "name": "Open Sustainable Technology",
+        "description": "A curated list of open technology projects sustaining a stable climate, energy supply, and vital natural resources.",
+        "url": "http://opensustain.tech",
+        "subgroup": "Career",
+        "group": "Act",
+        "icon": "open_sustain.png",
+        "tags": [
+          "Projects",
+          "Resources"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "aca6125c-b61c-49b4-a40f-41caa18d064f",
+      "fields": {
+        "name": "Rheaply",
+        "description": "Resource management and exchange platform that helps organizations better visualize, quantify, and utilize physical assets.",
+        "url": "https://rheaply.com",
+        "subgroup": "Business",
+        "group": "Act",
+        "icon": "rheaply.png",
+        "tags": [
+          "Circular Economy",
+          "SaaS"
         ]
       }
     }
