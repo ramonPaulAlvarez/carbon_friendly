@@ -100,7 +100,7 @@
       "pk": "20b5cced-bf2b-46a5-a04c-7147c64e41b4",
       "fields": {
         "name": "We Don't Have Time",
-        "description": "",
+        "description": "Get climate news in one place, give reviews to influence society, and reach leaders to discuss solutions.",
         "url": "https://www.wedonthavetime.org",
         "subgroup": "Career",
         "group": "Act",
@@ -117,7 +117,7 @@
       "pk": "21655f43-6282-4c00-93e9-80d907bf5e94",
       "fields": {
         "name": "Environmental Defense Fund",
-        "description": "",
+        "description": "Create lasting solutions to our biggest environmental challenges.",
         "url": "https://www.edf.org",
         "subgroup": "Water",
         "group": "Donate",
@@ -133,13 +133,14 @@
       "pk": "22189f00-51b6-494a-8817-b9dd38c8416e",
       "fields": {
         "name": "Earthship Biotecture",
-        "description": "",
+        "description": "Builders of sustainable residential and commercial spaces.",
         "url": "https://earthshipbiotecture.com",
         "subgroup": "Lifestyle",
         "group": "Act",
         "icon": "earthship_biotecture.jpg",
         "tags": [
-          "Homes"
+          "Homes",
+          "Construction"
         ]
       }
     },
@@ -148,14 +149,15 @@
       "pk": "241d8729-4471-488b-94dc-daa3af014695",
       "fields": {
         "name": "Carbicrete",
-        "description": "",
+        "description": "A carbon removal technology company that enables the production of cement-free, carbon-negative concrete.",
         "url": "https://carbicrete.com",
         "subgroup": "Business",
         "group": "Act",
         "icon": "carbicrete.png",
         "tags": [
           "Carbon Negative",
-          "Concrete"
+          "Concrete",
+          "Construction"
         ]
       }
     },
@@ -164,7 +166,7 @@
       "pk": "246b1a6e-856e-4a1a-8d46-59dd1e4b5bf8",
       "fields": {
         "name": "Fridays for Future",
-        "description": "",
+        "description": "A youth-led and organised global climate strike movement that started in August 2018.",
         "url": "https://fridaysforfuture.org",
         "subgroup": "Community",
         "group": "Act",
@@ -180,7 +182,7 @@
       "pk": "2abe7e28-24db-47f1-9095-aef46253857e",
       "fields": {
         "name": "Dollar Donation Club",
-        "description": "",
+        "description": "The worlds first collective billionaire philanthropist.",
         "url": "https://dollardonationclub.com",
         "subgroup": "General",
         "group": "Donate",
@@ -195,8 +197,8 @@
       "model": "core.resources",
       "pk": "2e03da30-a40f-4c29-9e7f-cb2263fc826f",
       "fields": {
-        "name": "The Madhouse Effec",
-        "description": "",
+        "name": "The Madhouse Effect",
+        "description": "Portrays the intellectual pretzels into which denialists must twist logic to explain away the clear evidence that human activity has changed Earth's climate.",
         "url": "https://books.google.com.ar/books?id=LFVxDAAAQBAJ",
         "subgroup": "Books",
         "group": "Educate",
@@ -211,7 +213,7 @@
       "pk": "3854dbeb-5e22-44dd-87e4-633698bab86d",
       "fields": {
         "name": "Skeptical Science",
-        "description": "",
+        "description": "Examines the science and arguments of global warming skepticism.",
         "url": "https://skepticalscience.com",
         "subgroup": "Science News",
         "group": "Educate",
@@ -227,7 +229,7 @@
       "pk": "4015c786-702e-4bde-81df-9550a46747c1",
       "fields": {
         "name": "Negative Emissions Centre",
-        "description": "",
+        "description": "An organisation which works with negative emissions, or carbon removal, technologies to tackle climate change.",
         "url": "https://www.negativeemissionscentre.co.uk",
         "subgroup": "Business",
         "group": "Act",
@@ -243,7 +245,7 @@
       "pk": "4c4f5cf6-8c75-4c8d-8bfe-10d9ece620c5",
       "fields": {
         "name": "Deep Decarbonization Pathways",
-        "description": "",
+        "description": "An initiative that aims at helping governments and non-state actors make choices that put economies and societies on track to reach a carbon neutral world by the second half of the century.",
         "url": "https://ddpinitiative.org",
         "subgroup": "Career",
         "group": "Act",
@@ -258,7 +260,7 @@
       "pk": "55af3368-9af9-4f0f-ade0-8d08bd263212",
       "fields": {
         "name": "Climate Hero",
-        "description": "",
+        "description": "Calculate your carbon emissions in just 5 minutes.",
         "url": "https://carbon-calculator.climatehero.me",
         "subgroup": "Lifestyle",
         "group": "Act",
@@ -273,7 +275,7 @@
       "pk": "57cba4d6-834d-43de-b1b9-3fdf998be914",
       "fields": {
         "name": "Vegan.org",
-        "description": "",
+        "description": "Certifies products as vegan so you can make better choices for the animals, for the environment, and for your health.",
         "url": "https://vegan.org",
         "subgroup": "Lifestyle",
         "group": "Act",
@@ -289,13 +291,14 @@
       "pk": "58adaa0b-540f-44c4-94d4-6ca5ceeaa925",
       "fields": {
         "name": "Climate Base",
-        "description": "",
+        "description": "Explore jobs, events, and the organizations shaping our climate-positive future.",
         "url": "https://climatebase.org",
         "subgroup": "Career",
         "group": "Act",
         "icon": "climate_base.png",
         "tags": [
           "Jobs",
+          "Events",
           "Organizations",
           "People"
         ]
@@ -306,7 +309,7 @@
       "pk": "59c1f397-0fd9-4818-8d6b-4cacbe116da1",
       "fields": {
         "name": "Climate People",
-        "description": "",
+        "description": "Connecting mission-driven talent with companies fighting climate change.",
         "url": "https://www.climatepeople.com",
         "subgroup": "Career",
         "group": "Act",
@@ -321,7 +324,7 @@
       "pk": "5c4066a8-e900-485f-b59e-1f5dc108f244",
       "fields": {
         "name": "Friends of the Earth",
-        "description": "",
+        "description": "A voice for justice and the planet.",
         "url": "https://foe.org",
         "subgroup": "General",
         "group": "Donate",
@@ -337,7 +340,7 @@
       "pk": "64e4a138-301a-4e10-9169-caf5317ea4db",
       "fields": {
         "name": "Moss",
-        "description": "",
+        "description": "Buy carbon credits to combat climate change and preserve the planet.",
         "url": "https://moss.earth",
         "subgroup": "Land",
         "group": "Donate",
@@ -353,7 +356,7 @@
       "pk": "6555f522-988b-414a-bca0-938601e6acc1",
       "fields": {
         "name": "Arbor Day Foundation",
-        "description": "",
+        "description": "Provides information about planting and caring for trees, our Rain Forest Rescue and Tree City USA programs, and much more.",
         "url": "https://www.arborday.org",
         "subgroup": "Land",
         "group": "Donate",
@@ -369,8 +372,8 @@
       "pk": "66c17579-76b8-442e-8ac9-1b0ef52b6bfb",
       "fields": {
         "name": "Collective for Climate Action",
-        "description": "",
-        "url": "https://www.youtube.com/c/UCILQpWPlaU74kIRd1cV1KtA",
+        "description": "A self organised public sector climate action group working in government throughout the UK.",
+        "url": "https://www.youtube.com/channel/UCILQpWPlaU74kIRd1cV1KtA",
         "subgroup": "Videos",
         "group": "Educate",
         "icon": "youtube.ico",
@@ -385,7 +388,7 @@
       "pk": "6870756c-c0c8-4a91-891a-2d43ef506b19",
       "fields": {
         "name": "Nori",
-        "description": "",
+        "description": "Helps organizations, companies, and individuals meet their climate goals with high-quality carbon removal offsets.",
         "url": "http://nori.com",
         "subgroup": "Land",
         "group": "Donate",
@@ -401,7 +404,7 @@
       "pk": "689f05bd-7cf3-45dc-a650-8bf7412b9788",
       "fields": {
         "name": "Oceana",
-        "description": "",
+        "description": "Protecting the world's oceans.",
         "url": "https://oceana.org",
         "subgroup": "Water",
         "group": "Donate",
@@ -417,7 +420,7 @@
       "pk": "6d0adaba-8282-4f5d-b486-19cb38886c05",
       "fields": {
         "name": "Pachama",
-        "description": "",
+        "description": "Harnessing AI to drive carbon capture and protect global forests.",
         "url": "https://pachama.com",
         "subgroup": "Land",
         "group": "Donate",
@@ -433,7 +436,7 @@
       "pk": "6eb60138-dc0b-43f4-8d72-6fe3f006ebe7",
       "fields": {
         "name": "Greenpeace",
-        "description": "",
+        "description": "A charitable entity created to increase public awareness and understanding of environmental issues through research, the media and educational programs.",
         "url": "https://www.greenpeace.org",
         "subgroup": "General",
         "group": "Donate",
@@ -449,7 +452,7 @@
       "pk": "701fc96c-0f46-404b-9712-f3c1359bb6c9",
       "fields": {
         "name": "Green Job Search",
-        "description": "",
+        "description": "A job board for sustainability jobs and environmental careers.",
         "url": "http://greenjobsearch.org",
         "subgroup": "Career",
         "group": "Act",
@@ -464,7 +467,7 @@
       "pk": "70250c84-3542-492b-9ffa-1b2dd93438b9",
       "fields": {
         "name": "Making Sense of Climate Science Denial",
-        "description": "",
+        "description": "Learn to make sense of the science and to respond to climate change denial.",
         "url": "https://www.edx.org/course/making-sense-of-climate-science-denial",
         "subgroup": "Classes",
         "group": "Educate",
@@ -480,12 +483,13 @@
       "pk": "70b46733-55d4-4328-85f9-e2cd8788e7f1",
       "fields": {
         "name": "8 Billion Trees",
-        "description": "",
+        "description": "Calculate your ecological footprint and use verified carbon offset projects to neutralize your carbon dioxide emissions and go carbon neutral.",
         "url": "https://8billiontrees.com",
         "subgroup": "Land",
         "group": "Donate",
         "icon": "8_billion_trees.png",
         "tags": [
+          "Carbon Calculator",
           "Donations",
           "Trees"
         ]
@@ -496,7 +500,7 @@
       "pk": "730cb28b-3158-4993-97dc-95fe77ccd45d",
       "fields": {
         "name": "Carbon Kapture",
-        "description": "",
+        "description": "Forget carbon neutral.  With sea kelp - and your help - we’ll reverse the effects of carbon pollution.",
         "url": "https://www.carbonkapture.org",
         "subgroup": "Water",
         "group": "Donate",
@@ -514,13 +518,14 @@
       "pk": "737b1e3c-42c9-47b8-bd29-7ba837a57b09",
       "fields": {
         "name": "Real Climate Science",
-        "description": "",
+        "description": "Climate news and data.",
         "url": "https://realclimatescience.com",
         "subgroup": "Science News",
         "group": "Educate",
         "icon": "bookmark.png",
         "tags": [
-          "News"
+          "News",
+          "Data"
         ]
       }
     },
@@ -529,7 +534,7 @@
       "pk": "76fcc33a-6ef2-4c5e-8c8d-b49fb8313e72",
       "fields": {
         "name": "Terra.do",
-        "description": "",
+        "description": "Learn about climate change and start working on climate change solutions today.",
         "url": "https://www.terra.do",
         "subgroup": "Career",
         "group": "Act",
@@ -544,15 +549,16 @@
       "model": "core.resources",
       "pk": "78d7a0da-1daf-49de-8234-7f4736aa253d",
       "fields": {
-        "name": "The Green link",
-        "description": "",
+        "name": "The Green Link",
+        "description": "Sustainability as a service.",
         "url": "https://www.thegreenlink.co",
         "subgroup": "Business",
         "group": "Act",
         "icon": "the_green_link.jpeg",
         "tags": [
           "Sustainability",
-          "Service"
+          "Service",
+          "SaaS"
         ]
       }
     },
@@ -561,7 +567,7 @@
       "pk": "7950ea83-1ae6-4ced-8633-a39da94b6c6c",
       "fields": {
         "name": "Clean Air Task Force",
-        "description": "",
+        "description": "Push the change in technologies and policies needed to get to a zero-emissions, high-energy planet at an affordable cost.",
         "url": "https://www.catf.us",
         "subgroup": "Atmosphere",
         "group": "Donate",
@@ -577,7 +583,7 @@
       "pk": "79d74efe-a483-4bca-bdd4-93fd27696b41",
       "fields": {
         "name": "Coral Reef Alliance",
-        "description": "",
+        "description": "An environmental NGO that is on a mission to save the world’s coral reefs.",
         "url": "https://coral.org",
         "subgroup": "Water",
         "group": "Donate",
@@ -594,7 +600,7 @@
       "pk": "7a51c88e-54dd-4601-9407-dca3e74c78b5",
       "fields": {
         "name": "Carbon Fund",
-        "description": "",
+        "description": "Go carbon neutral by reducing our carbon footprint where we can and offsetting it where we can't.",
         "url": "https://www.carbonfund.org",
         "subgroup": "Land",
         "group": "Donate",
@@ -610,7 +616,7 @@
       "pk": "7c64fb14-0f7d-4d08-b1e4-024198e35beb",
       "fields": {
         "name": "The Uninhabitable Earth",
-        "description": "",
+        "description": "If your anxiety about global warming is dominated by fears of sea-level rise, you are barely scratching the surface of what terrors are possible—food shortages, refugee emergencies, climate wars and economic devastation.",
         "url": "https://books.google.com.ar/books?id=A8lqDwAAQBAJ",
         "subgroup": "Books",
         "group": "Educate",
@@ -625,7 +631,7 @@
       "pk": "7f088e18-8509-485f-908c-be4f12a459bc",
       "fields": {
         "name": "Climate Change: The Science and Global Impact",
-        "description": "",
+        "description": "Understand the science behind global warming to avoid the most damaging and irreversible climate change impacts on people and planet.",
         "url": "https://www.edx.org/course/climate-change-the-science-and-global-impact",
         "subgroup": "Classes",
         "group": "Educate",
@@ -641,7 +647,7 @@
       "pk": "83fbc844-cbd2-4e22-8ea7-4cffbaab1da1",
       "fields": {
         "name": "Facing the Climate Emergency",
-        "description": "",
+        "description": "Face the truth of climate change, accept your fears, and become the hero that humanity needs.",
         "url": "https://books.google.com.ar/books?id=yihpxwEACAAJ",
         "subgroup": "Books",
         "group": "Educate",
@@ -656,7 +662,7 @@
       "pk": "84217d49-a5db-48cb-bd87-c2fcccc411f3",
       "fields": {
         "name": "ScientistsWarning.TV",
-        "description": "",
+        "description": "Scientists' Warning utilizes evidence-based approaches in problem solving.",
         "url": "https://www.youtube.com/c/ScientistsWarning",
         "subgroup": "Videos",
         "group": "Educate",
@@ -672,14 +678,15 @@
       "pk": "84bfcbea-04c5-4f36-ba97-a3179e622703",
       "fields": {
         "name": "Climate Reporting Master Class",
-        "description": "",
+        "description": "Provides localized data, graphics, story ideas, and training free to reporters on every beat.",
         "url": "https://climatereportingmasterclass.com",
         "subgroup": "Career",
         "group": "Act",
         "icon": "climate_reporting_master_class.png",
         "tags": [
           "Education",
-          "Jobs"
+          "Jobs",
+          "Reporting"
         ]
       }
     },
@@ -688,7 +695,7 @@
       "pk": "87f2ed3a-a148-4ae5-b108-08589d47cb62",
       "fields": {
         "name": "Tradewater",
-        "description": "",
+        "description": "Together we are able to fight climate change by collecting and destroying the most powerful greenhouse gases in the world.",
         "url": "https://tradewater.us",
         "subgroup": "Atmosphere",
         "group": "Donate",
@@ -704,7 +711,7 @@
       "pk": "89af5c7c-5e81-44ec-81a9-c24742e46ef1",
       "fields": {
         "name": "Climate Foundry",
-        "description": "",
+        "description": "A collective for curated climate founders and ideas.",
         "url": "https://climatefoundry.com",
         "subgroup": "Career",
         "group": "Act",
@@ -720,7 +727,7 @@
       "pk": "93b55394-721e-47c6-892e-1cbabb2b5195",
       "fields": {
         "name": "Footprint Calculator",
-        "description": "",
+        "description": "Free quiz to calculate your ecological footprint and how many planets are needed to support your lifestyle.",
         "url": "https://www.footprintcalculator.org",
         "subgroup": "Lifestyle",
         "group": "Act",
@@ -735,7 +742,7 @@
       "pk": "93c221a9-6876-4c4c-b1fb-e6aa4a0707fa",
       "fields": {
         "name": "The Ocean Cleanup",
-        "description": "",
+        "description": "Developing technologies to rid the oceans of plastic.",
         "url": "https://theoceancleanup.com",
         "subgroup": "Water",
         "group": "Donate",
@@ -751,7 +758,7 @@
       "pk": "93d9133d-4e62-4675-b42b-05f6b16fdeba",
       "fields": {
         "name": "Climeworks",
-        "description": "",
+        "description": "Removes CO₂ from the air and empowering everyone to be climate positive.",
         "url": "https://climeworks.com",
         "subgroup": "Atmosphere",
         "group": "Donate",
@@ -767,7 +774,7 @@
       "pk": "9b04182b-31c6-481f-b9d9-723b065fcc6a",
       "fields": {
         "name": "Project Drawdown",
-        "description": "",
+        "description": "On a mission to help the world reach Drawdown — the point in the future when levels of greenhouse gases in the atmosphere stop climbing and start to steadily decline, thereby stopping stopping catastrophic climate change — as quickly, safely, and equitably as possible.",
         "url": "https://www.drawdown.org",
         "subgroup": "General",
         "group": "Donate",
@@ -783,7 +790,7 @@
       "pk": "9cf09137-c93b-4cde-8de8-427c1aa2aa86",
       "fields": {
         "name": "TruTerra",
-        "description": "",
+        "description": "Brings insights and industry connections to farmers, so they can protect and restore their land, and unlock its deeper value. ",
         "url": "https://www.truterraag.com",
         "subgroup": "Land",
         "group": "Donate",
@@ -799,7 +806,7 @@
       "pk": "a358167a-1d45-4a7a-9e14-30152bb9b1f8",
       "fields": {
         "name": "Climate Communication",
-        "description": "",
+        "description": "Climate science and outreach.",
         "url": "https://www.climatecommunication.org",
         "subgroup": "Science News",
         "group": "Educate",
@@ -815,7 +822,7 @@
       "pk": "ab3640d1-415e-4f63-9a6b-69f0ffb67064",
       "fields": {
         "name": "Extinction Rebellion",
-        "description": "",
+        "description": "Help us to build a powerful movement to change the course we are on.",
         "url": "https://rebellion.global",
         "subgroup": "Community",
         "group": "Act",
@@ -831,7 +838,7 @@
       "pk": "ab8d964f-d504-4a8f-b622-d45313161843",
       "fields": {
         "name": "Climate Change Academy",
-        "description": "",
+        "description": "Guided climate change courses.",
         "url": "http://climatechangeacademy.com",
         "subgroup": "Classes",
         "group": "Educate",
@@ -847,7 +854,7 @@
       "pk": "aee7f2d5-9fb2-4b2c-8e93-f794eb46f276",
       "fields": {
         "name": "Real Climate",
-        "description": "",
+        "description": "Climate science from climate scientists.",
         "url": "https://www.realclimate.org",
         "subgroup": "Science News",
         "group": "Educate",
@@ -863,7 +870,7 @@
       "pk": "aef69af2-0bfa-445a-9d19-91b723bd1681",
       "fields": {
         "name": "NASA: Vital Signs of the Planet",
-        "description": "",
+        "description": "Current news and data streams about global warming and climate change from NASA.",
         "url": "https://climate.nasa.gov",
         "subgroup": "Science News",
         "group": "Educate",
@@ -879,7 +886,7 @@
       "pk": "b1889dcd-88bc-4e50-ab1d-5de31a7a804b",
       "fields": {
         "name": "Climate Interactive",
-        "description": "",
+        "description": "Creates accessible, scientifically rigorous tools that help people see connections, play out scenarios, and see what works to address the biggest challenges we face.",
         "url": "https://www.climateinteractive.org",
         "subgroup": "Career",
         "group": "Act",
@@ -895,7 +902,7 @@
       "pk": "b2987f64-a18e-4412-972d-0dab3854c279",
       "fields": {
         "name": "Indigo",
-        "description": "",
+        "description": "Improves farmer profitability, environmental sustainability, and consumer health through the use of natural microbiology and digital technologies in agriculture.",
         "url": "https://www.indigoag.com",
         "subgroup": "Land",
         "group": "Donate",
@@ -911,7 +918,7 @@
       "pk": "b9dbde85-97e0-43c9-9674-1e3f9c9e39e0",
       "fields": {
         "name": "Fire Drill Fridays",
-        "description": "",
+        "description": "Our house is on fire.  Join us in the streets.",
         "url": "https://firedrillfridays.com",
         "subgroup": "Community",
         "group": "Act",
@@ -926,7 +933,7 @@
       "pk": "bb91b978-f7cf-4e33-898c-c911daed4eea",
       "fields": {
         "name": "Nature-based Solutions for Disaster and Climate Resilience",
-        "description": "",
+        "description": "Nature offers many solutions for reducing the impacts from disasters and climate impacts.",
         "url": "https://www.edx.org/course/nature-based-solutions-for-disaster-and-climate-resilience",
         "subgroup": "Classes",
         "group": "Educate",
@@ -942,7 +949,7 @@
       "pk": "c0776f6b-9ed7-416c-963c-d9211a6ea952",
       "fields": {
         "name": "Climate Emergency Institute",
-        "description": "",
+        "description": "The health and human rights approach to greenhouse gas pollution.",
         "url": "https://www.climateemergencyinstitute.com",
         "subgroup": "Science News",
         "group": "Educate",
