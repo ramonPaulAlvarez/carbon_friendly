@@ -10,7 +10,7 @@
         "group": "Act",
         "icon": "climate_reality_project.ico",
         "tags": [
-          "Donations",
+          "Donate",
           "Community",
           "Education",
           "Act"
@@ -60,7 +60,7 @@
         "icon": "bookmark.png",
         "tags": [
           "Carbon Calculator",
-          "Donations"
+          "Donate"
         ]
       }
     },
@@ -75,7 +75,7 @@
         "group": "Donate",
         "icon": "carbon_180.png",
         "tags": [
-          "Donations",
+          "Donate",
           "Atmosphere"
         ]
       }
@@ -123,7 +123,7 @@
         "group": "Donate",
         "icon": "environmental_defense_fund.png",
         "tags": [
-          "Donations",
+          "Donate",
           "Water"
         ]
       }
@@ -172,7 +172,7 @@
         "group": "Act",
         "icon": "fridays_for_future.png",
         "tags": [
-          "Donations",
+          "Donate",
           "Community"
         ]
       }
@@ -188,7 +188,7 @@
         "group": "Donate",
         "icon": "dollar_donation_club.png",
         "tags": [
-          "Donations",
+          "Donate",
           "Lifestyle"
         ]
       }
@@ -282,7 +282,7 @@
         "icon": "vegan.png",
         "tags": [
           "Animal Rights",
-          "Donations"
+          "Donate"
         ]
       }
     },
@@ -330,7 +330,7 @@
         "group": "Donate",
         "icon": "friends_of_the_earth.png",
         "tags": [
-          "Donations",
+          "Donate",
           "Collective"
         ]
       }
@@ -362,7 +362,7 @@
         "group": "Donate",
         "icon": "arbor_day_foundation.png",
         "tags": [
-          "Donations",
+          "Donate",
           "Trees"
         ]
       }
@@ -410,7 +410,7 @@
         "group": "Donate",
         "icon": "oceana.ico",
         "tags": [
-          "Donations",
+          "Donate",
           "Ocean"
         ]
       }
@@ -442,7 +442,7 @@
         "group": "Donate",
         "icon": "greenpeace.png",
         "tags": [
-          "Donations",
+          "Donate",
           "Collective"
         ]
       }
@@ -490,7 +490,7 @@
         "icon": "8_billion_trees.png",
         "tags": [
           "Carbon Calculator",
-          "Donations",
+          "Donate",
           "Trees"
         ]
       }
@@ -507,7 +507,7 @@
         "icon": "carbon_kapture.png",
         "tags": [
           "Bonds",
-          "Donations",
+          "Donate",
           "Ocean",
           "Kelp"
         ]
@@ -573,7 +573,7 @@
         "group": "Donate",
         "icon": "clean_air_task_force.png",
         "tags": [
-          "Donations",
+          "Donate",
           "Atmosphere"
         ]
       }
@@ -589,7 +589,7 @@
         "group": "Donate",
         "icon": "coral_reef_alliance.ico",
         "tags": [
-          "Donations",
+          "Donate",
           "Ocean",
           "Reefs"
         ]
@@ -606,7 +606,7 @@
         "group": "Donate",
         "icon": "carbon_fund.png",
         "tags": [
-          "Donations",
+          "Donate",
           "Trees"
         ]
       }
@@ -701,7 +701,7 @@
         "group": "Donate",
         "icon": "tradewater.png",
         "tags": [
-          "Donations",
+          "Donate",
           "Atmosphere"
         ]
       }
@@ -748,7 +748,7 @@
         "group": "Donate",
         "icon": "the_ocean_cleanup.png",
         "tags": [
-          "Donations",
+          "Donate",
           "Ocean"
         ]
       }
@@ -764,7 +764,7 @@
         "group": "Donate",
         "icon": "bookmark.png",
         "tags": [
-          "Donations",
+          "Donate",
           "Atmosphere"
         ]
       }
@@ -780,7 +780,7 @@
         "group": "Donate",
         "icon": "drawdown.ico",
         "tags": [
-          "Donations",
+          "Donate",
           "Collective"
         ]
       }
@@ -828,7 +828,7 @@
         "group": "Act",
         "icon": "extinction_rebellion.png",
         "tags": [
-          "Donations",
+          "Donate",
           "Community"
         ]
       }
@@ -1004,7 +1004,7 @@
         "group": "Act",
         "icon": "sunrise_movement.jpg",
         "tags": [
-          "Donations",
+          "Donate",
           "Community"
         ]
       }
@@ -1067,7 +1067,7 @@
         "group": "Donate",
         "icon": "stop_ecocide.png",
         "tags": [
-          "Donations",
+          "Donate",
           "Collective"
         ]
       }
@@ -1213,6 +1213,70 @@
         "tags": [
           "Circular Economy",
           "SaaS"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "94a062cf-24a9-4804-9054-7f1c3cccd52f",
+      "fields": {
+        "name": "Earth Justice",
+        "description": "A non-profit environmental law organization wielding the power of law and the strength of partnership to protect people's health, to preserve magnificent places and wildlife, to advance clean energy, and to combat climate change.",
+        "url": "https://earthjustice.org/",
+        "subgroup": "General",
+        "group": "Donate",
+        "icon": "earth_justice.ico",
+        "tags": [
+          "Environmental Law",
+          "Donate"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "4a9aa150-fca4-4001-9a67-5334d2197a7b",
+      "fields": {
+        "name": "Healthy Gulf",
+        "description": "Committed to uniting and empowering people to protect and restore the natural resources of the gulf region.",
+        "url": "https://www.healthygulf.org",
+        "subgroup": "Water",
+        "group": "Donate",
+        "icon": "healthy_gulf.png",
+        "tags": [
+          "Donate",
+          "Water"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "d9ecc953-ba9b-4c10-b036-f8b64dd02ea5",
+      "fields": {
+        "name": "Sierra Club",
+        "description": "Explore, enjoy, and protect the planet.  An enduring and influential grassroots environmental organization in the United States.",
+        "url": "https://www.sierraclub.org",
+        "subgroup": "General",
+        "group": "Donate",
+        "icon": "bookmark.png",
+        "tags": [
+          "Donate",
+          "Action"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "67c6848a-8e54-46c2-a2a5-6617f84df3c4",
+      "fields": {
+        "name": "Center for Biological Diversity",
+        "description": "Works through science, law, and creative media to secure a future for all species, great or small, hovering on the brink of extinction.",
+        "url": "https://www.biologicaldiversity.org",
+        "subgroup": "General",
+        "group": "Donate",
+        "icon": "center_for_biological_diversity.ico",
+        "tags": [
+          "Act",
+          "Donate"
         ]
       }
     }
