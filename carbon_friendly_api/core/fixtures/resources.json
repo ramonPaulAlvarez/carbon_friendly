@@ -989,7 +989,8 @@
         "tags": [
           "Data",
           "Tools",
-          "Community"
+          "Community",
+          "Open Source"
         ]
       }
     },
@@ -1277,6 +1278,111 @@
         "tags": [
           "Act",
           "Donate"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "22a2aa91-326f-45fc-b342-60f7594beefb",
+      "fields": {
+        "name": "Climate Designers",
+        "description": "Climate Designers provides the knowledge, skills and professional network for designers to take climate action.",
+        "url": "https://www.climatedesigners.org",
+        "subgroup": "Career",
+        "group": "Act",
+        "icon": "climate_designers.png",
+        "tags": [
+          "Career", 
+          "Designers", 
+          "Networking", 
+          "Jobs",
+          "Education"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "5846af52-302a-4485-95f4-12f00504f5f6",
+      "fields": {
+        "name": "Climate Voice",
+        "description": "Mobilizes the voice of the workforce to urge companies to go all in on climate, both in business practices and policy advocacy.",
+        "url": "http://climatevoice.org",
+        "subgroup": "Community",
+        "group": "Act",
+        "icon": "bookmark.png",
+        "tags": [
+          "Social",
+          "Community"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "1d9481b2-2a87-4b46-8978-f7c382ea09c4",
+      "fields": {
+        "name": "Regen Network",
+        "description": "Buy and sell ecosystem service credits at the open marketplace for climate solutions.",
+        "url": "https://www.regen.network",
+        "subgroup": "Land",
+        "group": "Donate",
+        "icon": "regen_network.png",
+        "tags": [
+          "Land",
+          "Carbon Credits",
+          "Projects"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "13d99697-7782-46f3-bdf2-0891bfb77ebd",
+      "fields": {
+        "name": "Climate Farmers",
+        "description": "Building the infrastructure to scale regenerative agriculture & reverse climate change.",
+        "url": "https://www.climatefarmers.org",
+        "subgroup": "Business",
+        "group": "Act",
+        "icon": "climate_farmers.png",
+        "tags": [
+          "Business", 
+          "Agriculture", 
+          "Education", 
+          "Training", 
+          "Carbon Credits"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "3046c01c-57cb-485a-adcd-16171276b7db",
+      "fields": {
+        "name": "Watt Time",
+        "description": "A nonprofit that offers technology solutions that make it easy for anyone to achieve emissions reductions without compromising cost, comfort, and function.",
+        "url": "https://www.watttime.org",
+        "subgroup": "Business",
+        "group": "Act",
+        "icon": "watt_time.png",
+        "tags": [
+          "Business", 
+          "Energy", 
+          "Monitoring", 
+          "Drawdown"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "9ffc6257-fedc-4fe9-94dd-cf2f4937eadb",
+      "fields": {
+        "name": "Regenerative Leadership",
+        "description": "A comprehensive framework for building regenerative life-affirming businesses.  It offers a multitude of business cases, fascinating examples from nature's living systems, insights from the front-line pioneers and tools and techniques for leaders to succeed and thrive in the 21st century.",
+        "url": "https://www.google.com/books/edition/Regenerative_Leadership/iGbOxgEACAAJ",
+        "subgroup": "Books",
+        "group": "Educate",
+        "icon": "bookmark.png",
+        "tags": [
+          "Books",
+          "Leadership"
         ]
       }
     }
