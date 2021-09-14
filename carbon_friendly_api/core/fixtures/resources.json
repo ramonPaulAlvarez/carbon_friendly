@@ -1385,5 +1385,60 @@
           "Leadership"
         ]
       }
+    },
+    {
+      "model": "core.resources",
+      "pk": "1ebe0eaf-31a1-4dce-b150-3bc5486528ca",
+      "fields": {
+        "name": "The Impact",
+        "description": "A weekly newsletter providing analysis on emerging technologies, research and trending news in the clean-tech space – written by analysts, founders and executives in the industry. We arm our readers with tools and insights needed to make a climate positive impact.",
+        "url": "https://readtheimpact.com",
+        "subgroup": "Business",
+        "group": "Act",
+        "icon": "the_impact.png",
+        "tags": [
+          "Business", 
+          "Newsletter", 
+          "Technology", 
+          "Research", 
+          "Trends"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "a1ee6132-82c1-4367-b5d4-88e63405fc7f",
+      "fields": {
+        "name": "BamCore",
+        "description": "We harness the strength of timber bamboo and innovative construction techniques to deliver a customized, code-compliant, structural wall system.",
+        "url": "https://www.bamcore.com",
+        "subgroup": "Business",
+        "group": "Act",
+        "icon": "bamcore.png",
+        "tags": [
+          "Construction",
+          "Bamboo",
+          "Carbon Removal"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "f1284416-5d14-456b-bf87-bff979e05758",
+      "fields": {
+        "name": "Carbon Footprint",
+        "description": "Leading online carbon footprint calculation tools and information to help reduce and offset your emissions - for business and individuals.",
+        "url": "https://www.carbonfootprint.com",
+        "subgroup": "Lifestyle",
+        "group": "Act",
+        "icon": "bookmark.png",
+        "tags": [
+          "Carbon Calculator",
+          "Education",
+          "Business Services",
+          "Offsetting",
+          "Carbon Tracking"
+        ]
+      }
     }
   ]

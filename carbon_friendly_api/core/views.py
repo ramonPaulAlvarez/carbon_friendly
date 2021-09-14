@@ -7,7 +7,6 @@ from django.core.mail import send_mail
 from django.http import HttpResponse, HttpResponseServerError
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from django_filters import rest_framework as filters
 from rest_framework import filters as drf_filters
 from rest_framework import status, viewsets
 from rest_framework.exceptions import ValidationError

@@ -93,7 +93,7 @@
             {% if metrics %}
                 <span id="metrics" class="metrics-container">
                     {% for metric in metrics %}
-                        <span title="{{ metric.title }}">{{ metric.value }} {% if metric.label %}{{metric.label}} {% endif %}{{ metric.unit }}</span>{% if not forloop.last %} &bull;{% endif %}
+                        <span title="{{ metric.title }}"><a href="/chart" style="text-decoration: none;">{{ metric.value }} {% if metric.label %}{{metric.label}} {% endif %}{{ metric.unit }}</a></span>{% if not forloop.last %} &bull;{% endif %}
                     {% endfor %}
                 </span>
             {% endif %} 
