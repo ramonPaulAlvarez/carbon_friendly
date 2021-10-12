@@ -1440,5 +1440,41 @@
           "Carbon Tracking"
         ]
       }
+    },
+    {
+      "model": "core.resources",
+      "pk": "37c755af-648c-477a-9f97-3fc761d3f761",
+      "fields": {
+        "name": "Kairos Aerospace",
+        "description": "Our transformative technology gives the oil and gas industry the power to achieve its safety and environmental goals at the lowest possible cost.  We combine patented hardware with proprietary software to provide actionable data on our customers’ operations.",
+        "url": "https://kairosaerospace.com/",
+        "subgroup": "Business",
+        "group": "Act",
+        "icon": "kairos_aerospace.png",
+        "tags": [
+          "Methane Detection",
+          "Large Scale",
+          "Monitoring",
+          "Business",
+          "Atmosphere",
+          "Data"
+        ]
+      }
+    },
+    {
+      "model": "core.resources",
+      "pk": "1549074d-c685-4326-8e9c-58b05d36a7f0",
+      "fields": {
+        "name": "Climate Action: Solutions for a Changing Planet",
+        "description": "Harmful emissions, the degradation of the earth’s resources and global warming have loomed large for decades.  With the negotiation and ongoing ratification of the sweeping Paris Agreement, commitments to reducing the effects of climate change abound.  But how do we turn those commitments into action?",
+        "url": "https://www.edx.org/course/climate-action-solutions-for-a-changing-planet",
+        "subgroup": "Classes",
+        "group": "Educate",
+        "icon": "edx.ico",
+        "tags": [
+          "Classes",
+          "Videos"
+        ]
+      }
     }
   ]
