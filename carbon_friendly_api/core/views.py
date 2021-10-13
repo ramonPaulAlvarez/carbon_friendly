@@ -153,7 +153,8 @@ class DatasetViewMixin(APIView):
     def get(cls, request):
         """Dynamically provide a Series."""
         if not cls.metric_method:
-            return HttpResponseServerError(json.dumps({"error": "Metric not yet configured"}), content_type="application/json")
+            return HttpResponseServerError(
+                json.dumps({"error": "Metric not yet configured"}), content_type="application/json")
 
         dataset = cls.metric_method()
 

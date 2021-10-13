@@ -15,8 +15,13 @@ services:
             sh -c "python carbon_friendly_api/manage.py migrate && 
             gunicorn carbon_friendly_api.wsgi:application --bind 0.0.0.0:8000 --chdir carbon_friendly_api
             "
-        env_file:
-            - env.list
+        environment:
+            - DEBUG=${DEBUG}
+            - EMAIL_HOST=${EMAIL_HOST}
+            - EMAIL_HOST_USER=${EMAIL_HOST_USER}
+            - EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD}
+            - SECRET_KEY=${SECRET_KEY}
+            - ALLOWED_HOSTS=${ALLOWED_HOSTS}
         image: django
         expose:
             - 8000
@@ -29,8 +34,13 @@ services:
         build: .
         working_dir: /app/carbon_friendly_api
         command: celery -A carbon_friendly_api worker -l info
-        env_file:
-            - env.list
+        environment:
+            - DEBUG=${DEBUG}
+            - EMAIL_HOST=${EMAIL_HOST}
+            - EMAIL_HOST_USER=${EMAIL_HOST_USER}
+            - EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD}
+            - SECRET_KEY=${SECRET_KEY}
+            - ALLOWED_HOSTS=${ALLOWED_HOSTS}
         volumes:
             - .:/app:rw
         depends_on:
@@ -40,8 +50,13 @@ services:
         build: .
         working_dir: /app/carbon_friendly_api
         command: celery -A carbon_friendly_api beat -l info
-        env_file:
-            - env.list
+        environment:
+            - DEBUG=${DEBUG}
+            - EMAIL_HOST=${EMAIL_HOST}
+            - EMAIL_HOST_USER=${EMAIL_HOST_USER}
+            - EMAIL_HOST_PASSWORD=${EMAIL_HOST_PASSWORD}
+            - SECRET_KEY=${SECRET_KEY}
+            - ALLOWED_HOSTS=${ALLOWED_HOSTS}
         volumes:
             - .:/app:rw
         depends_on:

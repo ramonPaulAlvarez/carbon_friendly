@@ -1476,5 +1476,22 @@
           "Videos"
         ]
       }
+    },
+    {
+      "model": "core.resources",
+      "pk": "2a6dd22f-b781-4db8-818e-fed2e89a6e6f",
+      "fields": {
+        "name": "Climate Tech Action Network",
+        "description": "The Climate Tech Action Network (CTAN) connects engineers, technologists and entrepreneurs seeking opportunities to work on the climate crisis with mentors and high-impact climate tech companies.",
+        "url": "https://www.climatetechaction.network",
+        "subgroup": "Career",
+        "group": "Act",
+        "icon": "climate_tech_action_network.ico",
+        "tags": [
+          "Jobs",
+          "Development",
+          "Networking"
+        ]
+      }
     }
   ]

@@ -17,7 +17,8 @@ class CoreConfig(AppConfig):
     CH4_URL = "ftp://aftp.cmdl.noaa.gov/products/trends/ch4/ch4_mm_gl.txt"
 
     TEMPERATURE_CHANGE_FILENAME = "temperature_change.txt"
-    TEMPERATURE_CHANGE_URL = "http://data.giss.nasa.gov/gistemp/graphs_v4/graph_data/Monthly_Mean_Global_Surface_Temperature/graph.csv"
+    TEMPERATURE_CHANGE_URL = "http://data.giss.nasa.gov/gistemp/graphs_v4/graph_data/"\
+        "Monthly_Mean_Global_Surface_Temperature/graph.csv"
 
     N2O_FILENAME = "n2o.csv"
     N2O_URL = "https://gml.noaa.gov/webdata/ccgg/trends/n2o/n2o_mm_gl.txt"

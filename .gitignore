@@ -7,20 +7,21 @@ media
 
 # Python
 *.py[cod]
-*$py.class 
+*$py.class
 
 # Visual Studio Code
-.vscode/* 
+.history
+.vscode
 !.vscode/settings.json 
 !.vscode/tasks.json 
 !.vscode/launch.json 
 !.vscode/extensions.json 
-.history
 
 # OSX
 .DS_Store
 
 # Misc
-make_env.sh
-datasets
+.coverage
 celerybeat-schedule
+datasets
+make_env.sh
