@@ -1493,5 +1493,23 @@
           "Networking"
         ]
       }
+    },
+    {
+      "model": "core.resources",
+      "pk": "4df55655-2179-48f7-a603-01b8262c54e6",
+      "fields": {
+        "name": "Reforest Nation",
+        "description": "Own your own plot of Hemp Farm Land NFT, Forest Plot NFT, or Forestry Plot NFT.  Earn CO2 Credits.  Earn profit.",
+        "url": "https://www.reforestnation.com",
+        "subgroup": "Land",
+        "group": "Donate",
+        "icon": "reforestnation.png",
+        "tags": [
+          "Carbon Credits",
+          "Hemp",
+          "Reforestation",
+          "NFT"
+        ]
+      }
     }
   ]
