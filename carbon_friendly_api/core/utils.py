@@ -67,7 +67,7 @@ class Datasets:
 
     def temperature_change() -> pd.Series:
         """Get temperature change trend data."""
-        column_names = ["year_month", "station", "land_ocean"]
+        column_names = ["year_month", "station", "land_ocean", "land_only", "open_ocean"]
         file_path = f"{settings.BASE_DIR}/datasets/{app_config.TEMPERATURE_CHANGE_FILENAME}"
         dataset = pd.read_csv(file_path, skiprows=[0, 1], names=column_names)
 
@@ -107,6 +107,7 @@ def get_latest_metrics() -> dict:
 
 def year_percent_to_month_year(value: int) -> str:
     """Converts YEAR.PERCENT_COMPLETE to M/Y."""
+    print("YEAR PERCENT TO MONTH YEAR: ", value)
     year, percentage_complete = str(value).split(".")
     datetime_obj = datetime.datetime(
         int(year), 1, 1) + datetime.timedelta(365 * (int(percentage_complete) / 100) - 1)
